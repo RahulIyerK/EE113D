@@ -23,13 +23,14 @@ int led_err_tim;
 int led_err_toggle;
 
 int recording_tim;
-
+int16_t recording_dat[RECORDING_TICKS];
 
 int bool1;
 int bool2;
 int bool3;
 int bool4;
 
+int playback_tim;
 
 int check_error(){
 	if( (bool1 + bool2 + bool3 + bool4) > 1 ){
@@ -81,8 +82,31 @@ interrupt void interrupt4(void) // interrupt service routine
 	}
 
 	case s_record:{
+        if(recording_tim >= RECORDING_TICKS){
+            state = s_wait; // *?* right state?
+            break;
+        }
 
+        recording_dat[recording_tim] = input_left_sample;
+        break;
 	}
+
+    case s_reverb:{
+        
+    }
+
+    case s_playback:{
+        if(playback_tim >= RECORDING_TICKS){
+            playback_tim = 0;
+            if(bool1 + bool2 + bool3 + bool4 == 0){
+                state = s_start;
+            }
+            break;
+        }
+        output_right_sample(record_dat[playback_tim]);
+        playback_tim++;
+        break;
+    }
 
 	}
 
@@ -108,6 +132,7 @@ int main(void)
 
 	recording_tim = 0;
 
+    playback_tim = 0;
 
 	L138_initialise_intr(SAMPLING_RATE,ADC_GAIN_0DB,DAC_ATTEN_0DB,LCDK_LINE_INPUT);
 	LCDK_LED_init();
@@ -119,6 +144,12 @@ int main(void)
 		}
 
 		switch(state){
+        case s_error: {
+            if(check_error() == 0){
+                state = s_start;
+            }
+            break;
+        }
 		case s_start: {
 			if(bool1 == 1){
 				all_led_off();
@@ -166,6 +197,8 @@ int main(void)
 			}
 			break;
 		}
+
+        
 
 
 		}

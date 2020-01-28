@@ -10,8 +10,8 @@ ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
 "./vectors_intr.obj" \
 "./psc.obj" \
+"./main.obj" \
 "./gpio.obj" \
-"./Lab3s2.obj" \
 "./L138_LCDK_switch_led.obj" \
 "./L138_LCDK_aic3106_init.obj" \
 "../linker_dsp.cmd" \
@@ -129,8 +129,8 @@ Lab3s2.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(C6000_EXECUTABLE_OUTPUTS__QUOTED) "Lab3s2.out"
-	-$(RM) "L138_LCDK_aic3106_init.pp" "L138_LCDK_switch_led.pp" "Lab3s2.pp" "gpio.pp" "psc.pp" 
-	-$(RM) "L138_LCDK_aic3106_init.obj" "L138_LCDK_switch_led.obj" "Lab3s2.obj" "gpio.obj" "psc.obj" "vectors_intr.obj" 
+	-$(RM) "L138_LCDK_aic3106_init.pp" "L138_LCDK_switch_led.pp" "gpio.pp" "main.pp" "psc.pp" 
+	-$(RM) "L138_LCDK_aic3106_init.obj" "L138_LCDK_switch_led.obj" "gpio.obj" "main.obj" "psc.obj" "vectors_intr.obj" 
 	-$(RM) "vectors_intr.pp" 
 	-@echo 'Finished clean'
 	-@echo ' '

@@ -7,6 +7,9 @@
 
 #define N 1024
 
+#define FILTER_BANK_SIZE 26
+#define NUM_PHIS (FILTER_BANK_SIZE + 2)
+
 int16_t data[N];
 
 #pragma DATA_ALIGN(ham_data,8);
@@ -31,7 +34,32 @@ float   w_sp [2*N];
 float y_real_sp [N];
 float y_imag_sp [N];
 
+float fft_resolution = 0;
+
 float psd[N];
+
+float pos_slopes[FILTER_BANK_SIZE] = {0.012314,0.011345,0.010451,0.0096281,
+		0.0088699,0.0081714,0.0075279,0.0069351,0.006389,0.0058859,
+		0.0054224,0.0049954,0.004602,0.0042396,0.0039057,0.0035981,
+		0.0033148,0.0030538,0.0028133,0.0025917,0.0023876,0.0021996,
+		0.0020264,0.0018668,0.0017198,0.0015844};
+
+float neg_slopes[FILTER_BANK_SIZE] = {-0.011345,-0.010451,-0.0096281,-0.0088699,
+		-0.0081714,-0.0075279,-0.0069351,-0.006389,-0.0058859,-0.0054224,
+		-0.0049954,-0.004602,-0.0042396,-0.0039057,-0.0035981,-0.0033148,
+		-0.0030538,-0.0028133,-0.0025917,-0.0023876,-0.0021996,-0.0020264,
+		-0.0018668,-0.0017198,-0.0015844,-0.0014596};
+
+//float peaks[FILTER_BANK_SIZE] = {331.21,419.35,515.04,618.9,731.64,854.02,
+//		986.86,1131,1287.6,1457.5,1641.9,1842.1,2059.4,2295.2,2551.3,2829.2,
+//		3130.9,3458.3,3813.8,4199.6,4618.5,5073.1,5566.6,6102.3,6683.7,7314.9};
+
+float phis[NUM_PHIS] = {250,331.21,419.35,515.04,618.9,731.64,854.02,986.86,1131,
+		1287.6,1457.5,1641.9,1842.1,2059.4,2295.2,2551.3,2829.2,3130.9,3458.3,3813.8,
+		4199.6,4618.5,5073.1,5566.6,6102.3,6683.7,7314.9,8000};
+
+float y_filters [FILTER_BANK_SIZE]; //filter bank output
+float x_filters [FILTER_BANK_SIZE]; //log (y_filters)
 
 separateRealImg () {
     int i, j;
@@ -133,6 +161,45 @@ void compute_fft(){
 	}
 }
 
+void multiply_filter_banks()
+{
+	uint8_t i;
+	for (i = 0; i < FILTER_BANK_SIZE; i++)
+	{
+		//for each filter
+
+		//find start index of psd for current filter (ceil(filter start phi / FFT resolution))
+
+		float filter_start_phi = phis[i];
+
+		uint8_t psd_start_index = (uint8_t)(ceil(filter_start_phi/fft_resolution));
+
+		//find last index of psd on positive slope of current filter (floor(filter peak phi / FFT resolution))
+
+		float filter_peak_phi = phis[i+1];
+
+		uint8_t psd_last_pos_index = (uint8_t)(filter_peak_phi/fft_resolution);
+
+		//find end index of psd for current filter (floor(filter end phi / FFT resolution))
+
+		float filter_end_phi = phis[i+2];
+		uint8_t psd_end_index = (uint8_t)(filter_end_phi/fft_resolution);
+
+		//multiply and accumulate with linear interpolation
+
+		//positive slope
+		uint8_t j;
+		float accumulator = 0;
+		for (j=psd_start_index; j < psd_last_pos_index; j++)
+		{
+			float cur_freq = fft_resolution * j;
+			accumulator += psd[j] * (pos_slopes[i] * (cur_freq - filter_start_phi));
+		}
+		//negative slope
+
+	}
+}
+
 int main(void)
 {
 	counter = 0;
@@ -140,6 +207,8 @@ int main(void)
 	i = 0;
 	rec_finished = 0;
 	ham_finished = 0;
+
+	fft_resolution = (16000/2.0)/N;
 
 	LCDK_LED_init();
 	gen_twiddle_fft_sp(w_sp,N);
@@ -159,8 +228,11 @@ int main(void)
 
 			//compute the FFT
 
+			compute_fft();
 
+			//multiply by filter banks
 
+			multiply_filter_banks();
 		}
 	}
 

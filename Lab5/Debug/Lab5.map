@@ -1,17 +1,17 @@
 ******************************************************************************
                TMS320C6x Linker PC v7.4.4                      
 ******************************************************************************
->> Linked Tue Feb 04 11:49:23 2020
+>> Linked Tue Feb 11 12:04:59 2020
 
 OUTPUT FILE NAME:   <Lab5.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 11819480
+ENTRY POINT SYMBOL: "_c_int00"  address: 11827080
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  dsp_l2_ram            11800000   00040000  0001b59b  00024a65  RWIX
+  dsp_l2_ram            11800000   00040000  000297eb  00016815  RWIX
   shared_ram            80000000   00020000  00000000  00020000  RWIX
   external_ram          c0000000   08000000  00000000  08000000  RWIX
 
@@ -27,351 +27,417 @@ section   page    origin      length       input sections
                   11800000    00000008     rts6740.lib : memory.obj (.sysmem)
                   11800008    0000fff8     --HOLE--
 
-.text      0    11810000    00009a20     
-                  11810000    00001560     L138_LCDK_aic3106_init.obj (.text)
-                  11811560    00000c20     evmomapl138_bsl.lib : evmomapl138.obj (.text)
-                  11812180    000005a0     rts6740.lib : divd.obj (.text:__divd)
-                  11812720    000005a0     gpio.obj (.text)
-                  11812cc0    00000580     rts6740.lib : _printfi.obj (.text:__getarg_diouxp)
-                  11813240    000004e0     evmomapl138_bsl.lib : evmomapl138_i2c_gpio.obj (.text)
-                  11813720    00000440     rts6740.lib : _printfi.obj (.text:__printfi)
-                  11813b60    00000440                 : _printfi.obj (.text:__setfield)
-                  11813fa0    000003a0                 : fputs.obj (.text:_fputs)
-                  11814340    00000380     evmomapl138_bsl.lib : evmomapl138_gpio.obj (.text)
-                  118146c0    00000380                         : evmomapl138_i2c.obj (.text)
-                  11814a40    00000320     L138_LCDK_switch_led.obj (.text)
-                  11814d60    00000320     rts6740.lib : _printfi.obj (.text:__pproc_fge)
-                  11815080    000002c0                 : _printfi.obj (.text:__pproc_fwp)
-                  11815340    000002a0                 : _printfi.obj (.text:_ecvt)
-                  118155e0    000002a0                 : _printfi.obj (.text:_fcvt)
-                  11815880    00000280                 : memory.obj (.text:_free)
-                  11815b00    00000260                 : imath64.obj (.text:__divull)
-                  11815d60    00000260                 : _printfi.obj (.text:__pconv_e)
-                  11815fc0    00000260     main.obj (.text:retain)
-                  11816220    00000240     rts6740.lib : _printfi.obj (.text:__pproc_diouxp)
-                  11816460    00000220                 : _printfi.obj (.text:__pproc_str)
-                  11816680    00000220                 : fputc.obj (.text:_fputc)
-                  118168a0    00000200                 : _printfi.obj (.text:__pconv_g)
-                  11816aa0    00000200                 : setvbuf.obj (.text:_setvbuf)
-                  11816ca0    000001e0     evmomapl138_bsl.lib : evmomapl138_timer.obj (.text)
-                  11816e80    000001c0     rts6740.lib : _printfi.obj (.text:__mcpy)
-                  11817040    000001a0                 : imath40.obj (.text:__divul)
-                  118171e0    000001a0     evmomapl138_bsl.lib : evmomapl138_aic3106.obj (.text)
-                  11817380    00000180     rts6740.lib : trgdrv.obj (.text:_HOSTrename)
-                  11817500    00000180                 : memory.obj (.text:_malloc)
-                  11817680    00000140                 : _printfi.obj (.text:__pproc_fflags)
-                  118177c0    00000140                 : lowlev.obj (.text:_getdevice)
-                  11817900    00000140     psc.obj (.text)
-                  11817a40    00000120     rts6740.lib : fclose.obj (.text:__closefile)
-                  11817b60    00000120                 : _printfi.obj (.text:__ltostr)
-                  11817c80    00000120                 : fseek.obj (.text:_fseek)
-                  11817da0    00000100                 : trgdrv.obj (.text:_HOSTlseek)
-                  11817ea0    00000100                 : _io_perm.obj (.text:__wrt_ok)
-                  11817fa0    000000e0                 : trgdrv.obj (.text:_HOSTopen)
-                  11818080    000000e0                 : atoi.obj (.text:_atoi)
-                  11818160    000000e0                 : lowlev.obj (.text:_close)
-                  11818240    000000e0                 : memset.obj (.text:_memset)
-                  11818320    000000e0                 : printf.obj (.text:_printf)
-                  11818400    000000c0                 : trgdrv.obj (.text:_HOSTread)
-                  118184c0    000000c0                 : trgdrv.obj (.text:_HOSTunlink)
-                  11818580    000000c0                 : trgdrv.obj (.text:_HOSTwrite)
-                  11818640    000000c0                 : autoinit.obj (.text:__auto_init)
-                  11818700    000000c0                 : _printfi.obj (.text:__div)
-                  118187c0    000000c0                 : divu.obj (.text:__divu)
-                  11818880    000000c0                 : fflush.obj (.text:__doflush)
-                  11818940    000000c0                 : exit.obj (.text:_exit)
-                  11818a00    000000c0                 : ltoa.obj (.text:_ltoa)
-                  11818ac0    000000a0                 : trgdrv.obj (.text:_HOSTclose)
-                  11818b60    000000a0                 : fopen.obj (.text:__cleanup)
-                  11818c00    000000a0                 : imath40.obj (.text:__divli)
-                  11818ca0    000000a0                 : _printfi.obj (.text:__ecpy)
-                  11818d40    000000a0                 : _printfi.obj (.text:__fcpy)
-                  11818de0    000000a0                 : fixdli.obj (.text:__fixdli)
-                  11818e80    000000a0                 : _printfi.obj (.text:__pconv_f)
-                  11818f20    000000a0                 : cpy_tbl.obj (.text:_copy_in)
-                  11818fc0    000000a0                 : lowlev.obj (.text:_finddevice)
-                  11819060    000000a0                 : lowlev.obj (.text:_lseek)
-                  11819100    000000a0                 : memcpy64.obj (.text:_memcpy)
-                  118191a0    000000a0                 : memory.obj (.text:_minsert)
-                  11819240    000000a0                 : memory.obj (.text:_mremove)
-                  118192e0    000000a0                 : lowlev.obj (.text:_write)
-                  11819380    00000080                 : fltlid.obj (.text:__fltlid)
-                  11819400    00000080                 : llshift.obj (.text:__llshl)
-                  11819480    00000080                 : boot.obj (.text:_c_int00)
-                  11819500    00000080                 : trgmsg.obj (.text:_readmsg)
-                  11819580    00000080                 : lowlev.obj (.text:_unlink)
-                  11819600    00000060                 : cpp_init.obj (.text:___TI_cpp_init)
-                  11819660    00000060                 : imath64.obj (.text:__subcull)
-                  118196c0    00000060                 : memccpy.obj (.text:_memccpy)
-                  11819720    00000060                 : trgmsg.obj (.text:_writemsg)
-                  11819780    00000040                 : isinf.obj (.text:___isinf)
-                  118197c0    00000040                 : _printfi.obj (.text:___isnan)
-                  11819800    00000040                 : args_main.obj (.text:__args_main)
-                  11819840    00000040                 : frcmpyd_div.obj (.text:__frcmpyd_div)
-                  11819880    00000040                 : llshift.obj (.text:__llshru)
-                  118198c0    00000040                 : imath40.obj (.text:__remli)
-                  11819900    00000040     main.obj (.text)
-                  11819940    00000020     rts6740.lib : negll.obj (.text:__negll)
-                  11819960    00000020                 : _lock.obj (.text:__nop)
-                  11819980    00000020                 : printf.obj (.text:__outc)
-                  118199a0    00000020                 : printf.obj (.text:__outs)
-                  118199c0    00000020                 : exit.obj (.text:_abort)
-                  118199e0    00000020                 : remove.obj (.text:_remove)
-                  11819a00    00000020     vectors_intr.obj (.text)
+.far       0    11810000    0000bfb0     UNINITIALIZED
+                  11810000    0000ba88     main.obj (.far)
+                  1181ba88    00000324     rts6740.lib : defs.obj (.far)
+                  1181bdac    00000004                 : errno.obj (.far)
+                  1181bdb0    0000011c                 : lowlev.obj (.far)
+                  1181becc    00000004                 : fopen.obj (.far)
+                  1181bed0    00000040                 : cos.obj (.far)
+                  1181bf10    00000040                 : sin.obj (.far)
+                  1181bf50    00000030                 : log.obj (.far)
+                  1181bf80    0000000c                 : exit.obj (.far)
+                  1181bf8c    00000008     L138_LCDK_aic3106_init.obj (.far)
+                  1181bf94    00000008     rts6740.lib : _lock.obj (.far)
+                  1181bf9c    00000008                 : memory.obj (.far)
+                  1181bfa4    00000004     --HOLE--
+                  1181bfa8    00000008                 : trgdrv.obj (.far)
 
-.far       0    11819a20    00000c70     UNINITIALIZED
-                  11819a20    00000800     main.obj (.far)
-                  1181a220    00000324     rts6740.lib : defs.obj (.far)
-                  1181a544    00000004                 : fopen.obj (.far)
-                  1181a548    0000011c                 : lowlev.obj (.far)
-                  1181a664    0000000c                 : exit.obj (.far)
-                  1181a670    00000008     L138_LCDK_aic3106_init.obj (.far)
-                  1181a678    00000008     rts6740.lib : _lock.obj (.far)
-                  1181a680    00000008                 : memory.obj (.far)
-                  1181a688    00000008                 : trgdrv.obj (.far)
+.text      0    1181bfc0    0000b680     
+                  1181bfc0    00001560     L138_LCDK_aic3106_init.obj (.text)
+                  1181d520    00000c20     evmomapl138_bsl.lib : evmomapl138.obj (.text)
+                  1181e140    00000a00     main.obj (.text)
+                  1181eb40    000005a0     rts6740.lib : divd.obj (.text:__divd)
+                  1181f0e0    000005a0     gpio.obj (.text)
+                  1181f680    00000580     rts6740.lib : _printfi.obj (.text:__getarg_diouxp)
+                  1181fc00    000004e0     evmomapl138_bsl.lib : evmomapl138_i2c_gpio.obj (.text)
+                  118200e0    00000440     rts6740.lib : _printfi.obj (.text:__printfi)
+                  11820520    00000440                 : _printfi.obj (.text:__setfield)
+                  11820960    000003a0                 : fputs.obj (.text:_fputs)
+                  11820d00    000003a0     dsplib.a674 : DSPF_sp_fftSPxSP.o674 (.text:optimized)
+                  118210a0    00000380     evmomapl138_bsl.lib : evmomapl138_gpio.obj (.text)
+                  11821420    00000380                         : evmomapl138_i2c.obj (.text)
+                  118217a0    00000320     L138_LCDK_switch_led.obj (.text)
+                  11821ac0    00000320     rts6740.lib : _printfi.obj (.text:__pproc_fge)
+                  11821de0    000002e0                 : cos.obj (.text:_cos)
+                  118220c0    000002c0                 : _printfi.obj (.text:__pproc_fwp)
+                  11822380    000002c0     main.obj (.text:retain)
+                  11822640    000002a0     rts6740.lib : _printfi.obj (.text:_ecvt)
+                  118228e0    000002a0                 : _printfi.obj (.text:_fcvt)
+                  11822b80    00000280                 : divf.obj (.text:__divf)
+                  11822e00    00000280                 : memory.obj (.text:_free)
+                  11823080    00000280                 : sin.obj (.text:_sin)
+                  11823300    00000260                 : imath64.obj (.text:__divull)
+                  11823560    00000260                 : _printfi.obj (.text:__pconv_e)
+                  118237c0    00000240                 : _printfi.obj (.text:__pproc_diouxp)
+                  11823a00    00000220                 : _printfi.obj (.text:__pproc_str)
+                  11823c20    00000220                 : fputc.obj (.text:_fputc)
+                  11823e40    00000200                 : _printfi.obj (.text:__pconv_g)
+                  11824040    00000200                 : log.obj (.text:_log)
+                  11824240    00000200                 : setvbuf.obj (.text:_setvbuf)
+                  11824440    000001e0     evmomapl138_bsl.lib : evmomapl138_timer.obj (.text)
+                  11824620    000001c0     rts6740.lib : _printfi.obj (.text:__mcpy)
+                  118247e0    000001a0                 : imath40.obj (.text:__divul)
+                  11824980    000001a0     evmomapl138_bsl.lib : evmomapl138_aic3106.obj (.text)
+                  11824b20    00000180     rts6740.lib : trgdrv.obj (.text:_HOSTrename)
+                  11824ca0    00000180                 : memory.obj (.text:_malloc)
+                  11824e20    00000140                 : _printfi.obj (.text:__pproc_fflags)
+                  11824f60    00000140                 : lowlev.obj (.text:_getdevice)
+                  118250a0    00000140     psc.obj (.text)
+                  118251e0    00000120     rts6740.lib : fclose.obj (.text:__closefile)
+                  11825300    00000120                 : _printfi.obj (.text:__ltostr)
+                  11825420    00000120                 : frexp.obj (.text:_frexp)
+                  11825540    00000120                 : fseek.obj (.text:_fseek)
+                  11825660    00000100                 : trgdrv.obj (.text:_HOSTlseek)
+                  11825760    00000100                 : _io_perm.obj (.text:__wrt_ok)
+                  11825860    00000100                 : sqrt.obj (.text:_sqrt)
+                  11825960    000000e0                 : trgdrv.obj (.text:_HOSTopen)
+                  11825a40    000000e0                 : atoi.obj (.text:_atoi)
+                  11825b20    000000e0                 : lowlev.obj (.text:_close)
+                  11825c00    000000e0                 : memset.obj (.text:_memset)
+                  11825ce0    000000e0                 : printf.obj (.text:_printf)
+                  11825dc0    000000c0                 : trgdrv.obj (.text:_HOSTread)
+                  11825e80    000000c0                 : trgdrv.obj (.text:_HOSTunlink)
+                  11825f40    000000c0                 : trgdrv.obj (.text:_HOSTwrite)
+                  11826000    000000c0                 : autoinit.obj (.text:__auto_init)
+                  118260c0    000000c0                 : _printfi.obj (.text:__div)
+                  11826180    000000c0                 : divu.obj (.text:__divu)
+                  11826240    000000c0                 : fflush.obj (.text:__doflush)
+                  11826300    000000c0                 : exit.obj (.text:_exit)
+                  118263c0    000000c0                 : ltoa.obj (.text:_ltoa)
+                  11826480    000000a0                 : trgdrv.obj (.text:_HOSTclose)
+                  11826520    000000a0                 : fopen.obj (.text:__cleanup)
+                  118265c0    000000a0                 : imath40.obj (.text:__divli)
+                  11826660    000000a0                 : _printfi.obj (.text:__ecpy)
+                  11826700    000000a0                 : _printfi.obj (.text:__fcpy)
+                  118267a0    000000a0                 : fixdli.obj (.text:__fixdli)
+                  11826840    000000a0                 : round.obj (.text:__nround)
+                  118268e0    000000a0                 : _printfi.obj (.text:__pconv_f)
+                  11826980    000000a0                 : cpy_tbl.obj (.text:_copy_in)
+                  11826a20    000000a0                 : lowlev.obj (.text:_finddevice)
+                  11826ac0    000000a0                 : lowlev.obj (.text:_lseek)
+                  11826b60    000000a0                 : memcpy64.obj (.text:_memcpy)
+                  11826c00    000000a0                 : memory.obj (.text:_minsert)
+                  11826ca0    000000a0                 : modf.obj (.text:_modf)
+                  11826d40    000000a0                 : memory.obj (.text:_mremove)
+                  11826de0    000000a0                 : lowlev.obj (.text:_write)
+                  11826e80    00000080                 : fixdu.obj (.text:__fixdu)
+                  11826f00    00000080                 : fixfu.obj (.text:__fixfu)
+                  11826f80    00000080                 : fltlid.obj (.text:__fltlid)
+                  11827000    00000080                 : llshift.obj (.text:__llshl)
+                  11827080    00000080                 : boot.obj (.text:_c_int00)
+                  11827100    00000080                 : trgmsg.obj (.text:_readmsg)
+                  11827180    00000080                 : lowlev.obj (.text:_unlink)
+                  11827200    00000060                 : cpp_init.obj (.text:___TI_cpp_init)
+                  11827260    00000060                 : imath64.obj (.text:__subcull)
+                  118272c0    00000060                 : memccpy.obj (.text:_memccpy)
+                  11827320    00000060                 : trgmsg.obj (.text:_writemsg)
+                  11827380    00000040                 : isinf.obj (.text:___isinf)
+                  118273c0    00000040                 : _printfi.obj (.text:___isnan)
+                  11827400    00000040                 : args_main.obj (.text:__args_main)
+                  11827440    00000040                 : frcmpyd_div.obj (.text:__frcmpyd_div)
+                  11827480    00000040                 : llshift.obj (.text:__llshru)
+                  118274c0    00000040                 : imath40.obj (.text:__remli)
+                  11827500    00000040                 : ceil.obj (.text:_ceil)
+                  11827540    00000020                 : negll.obj (.text:__negll)
+                  11827560    00000020                 : _lock.obj (.text:__nop)
+                  11827580    00000020                 : printf.obj (.text:__outc)
+                  118275a0    00000020                 : printf.obj (.text:__outs)
+                  118275c0    00000020                 : trunc.obj (.text:__trunc)
+                  118275e0    00000020                 : exit.obj (.text:_abort)
+                  11827600    00000020                 : remove.obj (.text:_remove)
+                  11827620    00000020     vectors_intr.obj (.text)
 
-.stack     0    1181a690    00000800     UNINITIALIZED
-                  1181a690    00000008     rts6740.lib : boot.obj (.stack)
-                  1181a698    000007f8     --HOLE--
+.cinit     0    11827640    0000141c     
+                  11827640    000011b8     main.obj (.cinit)
+                  118287f8    0000005c     rts6740.lib : defs.obj (.cinit)
+                  11828854    00000004     --HOLE-- [fill = 0]
+                  11828858    0000005c                 : lowlev.obj (.cinit)
+                  118288b4    00000004     --HOLE-- [fill = 0]
+                  118288b8    00000048                 : cos.obj (.cinit)
+                  11828900    00000048                 : sin.obj (.cinit)
+                  11828948    00000040                 : log.obj (.cinit)
+                  11828988    0000002c     L138_LCDK_aic3106_init.obj (.cinit)
+                  118289b4    00000004     --HOLE-- [fill = 0]
+                  118289b8    0000002c     rts6740.lib : exit.obj (.cinit)
+                  118289e4    00000004     --HOLE-- [fill = 0]
+                  118289e8    0000002c                 : memory.obj (.cinit)
+                  11828a14    00000004     --HOLE-- [fill = 0]
+                  11828a18    0000001c                 : _lock.obj (.cinit)
+                  11828a34    00000004     --HOLE-- [fill = 0]
+                  11828a38    0000000c                 : errno.obj (.cinit)
+                  11828a44    00000004     --HOLE-- [fill = 0]
+                  11828a48    0000000c                 : fopen.obj (.cinit)
+                  11828a54    00000004     --HOLE-- [fill = 0]
+                  11828a58    00000004     (.pad.cinit) [fill = 0]
 
-.cio       0    1181ae90    00000120     UNINITIALIZED
-                  1181ae90    00000120     rts6740.lib : trgmsg.obj (.cio)
+.stack     0    11828a60    00000800     UNINITIALIZED
+                  11828a60    00000008     rts6740.lib : boot.obj (.stack)
+                  11828a68    000007f8     --HOLE--
 
-.bss       0    1181afb0    00000028     UNINITIALIZED
-                  1181afb0    0000001c     L138_LCDK_aic3106_init.obj (.bss)
-                  1181afcc    00000008     main.obj (.bss)
-                  1181afd4    00000004     evmomapl138_bsl.lib : evmomapl138_i2c.obj (.bss)
+.cio       0    11829260    00000120     UNINITIALIZED
+                  11829260    00000120     rts6740.lib : trgmsg.obj (.cio)
 
-.vecs      0    1181b000    00000200     
-                  1181b000    00000200     vectors_intr.obj (.vecs)
+.switch    0    11829380    00000054     
+                  11829380    00000024     evmomapl138_bsl.lib : evmomapl138_gpio.obj (.switch:_getRegisterBankAndBit)
+                  118293a4    00000010     gpio.obj (.switch:_GPIOIntTypeSet)
+                  118293b4    00000010     L138_LCDK_switch_led.obj (.switch:_LCDK_LED_off)
+                  118293c4    00000010     L138_LCDK_switch_led.obj (.switch:_LCDK_LED_on)
 
-.const     0    1181b200    000001eb     
-                  1181b200    00000101     rts6740.lib : ctype.obj (.const:.string:__ctypes_)
-                  1181b301    00000002                 : fputs.obj (.const:.string)
-                  1181b303    00000005     --HOLE-- [fill = 0]
-                  1181b308    00000080     evmomapl138_bsl.lib : evmomapl138.obj (.const:_bitval_u32)
-                  1181b388    00000040                         : evmomapl138.obj (.const:.string)
-                  1181b3c8    00000023     rts6740.lib : _printfi.obj (.const:.string)
+.vecs      0    11829400    00000200     
+                  11829400    00000200     vectors_intr.obj (.vecs)
 
-.cinit     0    1181b3f0    00000184     
-                  1181b3f0    0000005c     rts6740.lib : defs.obj (.cinit)
-                  1181b44c    00000004     --HOLE-- [fill = 0]
-                  1181b450    0000005c                 : lowlev.obj (.cinit)
-                  1181b4ac    00000004     --HOLE-- [fill = 0]
-                  1181b4b0    0000002c     L138_LCDK_aic3106_init.obj (.cinit)
-                  1181b4dc    00000004     --HOLE-- [fill = 0]
-                  1181b4e0    0000002c     rts6740.lib : exit.obj (.cinit)
-                  1181b50c    00000004     --HOLE-- [fill = 0]
-                  1181b510    0000002c                 : memory.obj (.cinit)
-                  1181b53c    00000004     --HOLE-- [fill = 0]
-                  1181b540    0000001c                 : _lock.obj (.cinit)
-                  1181b55c    00000004     --HOLE-- [fill = 0]
-                  1181b560    0000000c                 : fopen.obj (.cinit)
-                  1181b56c    00000004     --HOLE-- [fill = 0]
-                  1181b570    00000004     (.pad.cinit) [fill = 0]
+.const     0    11829600    000001eb     
+                  11829600    00000101     rts6740.lib : ctype.obj (.const:.string:__ctypes_)
+                  11829701    00000002                 : fputs.obj (.const:.string)
+                  11829703    00000005     --HOLE-- [fill = 0]
+                  11829708    00000080     evmomapl138_bsl.lib : evmomapl138.obj (.const:_bitval_u32)
+                  11829788    00000040                         : evmomapl138.obj (.const:.string)
+                  118297c8    00000023     rts6740.lib : _printfi.obj (.const:.string)
 
-.switch    0    1181b574    00000054     
-                  1181b574    00000024     evmomapl138_bsl.lib : evmomapl138_gpio.obj (.switch:_getRegisterBankAndBit)
-                  1181b598    00000010     gpio.obj (.switch:_GPIOIntTypeSet)
-                  1181b5a8    00000010     L138_LCDK_switch_led.obj (.switch:_LCDK_LED_off)
-                  1181b5b8    00000010     L138_LCDK_switch_led.obj (.switch:_LCDK_LED_on)
+.bss       0    118297ec    00000040     UNINITIALIZED
+                  118297ec    0000001d     main.obj (.bss)
+                  11829809    00000003     --HOLE--
+                  1182980c    0000001c     L138_LCDK_aic3106_init.obj (.bss)
+                  11829828    00000004     evmomapl138_bsl.lib : evmomapl138_i2c.obj (.bss)
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
 
 address    name
 --------   ----
-1181afb0   $bss
-1181afb0   .bss
+118297ec   $bss
+118297ec   .bss
 11800000   .data
-11810000   .text
-118199c0   C$$EXIT
-11819778   C$$IO$$
-118171e0   _AIC3106_init
-118172d8   _AIC3106_readRegister
-11817330   _AIC3106_writeRegister
-1181a670   _AIC31_data
-11810258   _EDMA3_PaRAM_setup
-11811748   _EVMOMAPL138_enableDsp
-11811560   _EVMOMAPL138_init
-1181158c   _EVMOMAPL138_initRAM
-11811810   _EVMOMAPL138_lpscTransition
-11811774   _EVMOMAPL138_pinmuxConfig
-11812bd0   _GPIOBankIntDisable
-11812b94   _GPIOBankIntEnable
-11812c0c   _GPIOBankPinsWrite
-118127b8   _GPIODirModeGet
-11812720   _GPIODirModeSet
-11812a64   _GPIOIntTypeGet
-118128f8   _GPIOIntTypeSet
-11812b4c   _GPIOPinIntClear
-11812aec   _GPIOPinIntStatus
-11812898   _GPIOPinRead
-11812818   _GPIOPinWrite
-118143b8   _GPIO_getInput
-11814340   _GPIO_setDir
-1181442c   _GPIO_setOutput
-118144ac   _GPIO_toggleLoop
-11818ac0   _HOSTclose
-11817da0   _HOSTlseek
-11817fa0   _HOSTopen
-11818400   _HOSTread
-11817380   _HOSTrename
-118184c0   _HOSTunlink
-11818580   _HOSTwrite
-11813314   _I2CGPIO_getInput
-11813430   _I2CGPIO_getInputAll
-11813240   _I2CGPIO_init
-11813540   _I2CGPIO_setOutput
-11813688   _I2CGPIO_setOutputAll
-118146c0   _I2C_init
-118147ac   _I2C_read
-11814908   _I2C_write
-11811118   _L138_init_LCDK_DIP
-11810de0   _L138_init_aic3106_registers
-11810630   _L138_init_mcasp_edma
-118108ec   _L138_init_mcasp_intr
-11810b4c   _L138_init_mcasp_poll
-118112ac   _L138_initialise_intr
-118111c4   _L138_initialise_poll
-11814b50   _LCDK_GPIO_init
-11814bc0   _LCDK_LED_init
-11814cc8   _LCDK_LED_off
-11814c30   _LCDK_LED_on
-11814b6c   _LCDK_SWITCH_init
-11814c10   _LCDK_SWITCH_state
-11817900   _PSCModuleControl
-11814a40   _PinMuxSetup_leds
-11814ad4   _PinMuxSetup_switches
-11816d84   _USTIMER_delay
-11816e44   _USTIMER_get
-11816ca0   _USTIMER_init
-11816e14   _USTIMER_reset
-11816e58   _USTIMER_set
-11812160   _UTIL_isUIBoardAttached
-11812008   _UTIL_printMem
-1181ae90   __CIOBUF_
-1181ae90   __STACK_END
+1181bfc0   .text
+118275e0   C$$EXIT
+11827378   C$$IO$$
+11824980   _AIC3106_init
+11824a78   _AIC3106_readRegister
+11824ad0   _AIC3106_writeRegister
+1181bf8c   _AIC31_data
+11820d00   _DSPF_sp_fftSPxSP
+1181c218   _EDMA3_PaRAM_setup
+1181d708   _EVMOMAPL138_enableDsp
+1181d520   _EVMOMAPL138_init
+1181d54c   _EVMOMAPL138_initRAM
+1181d7d0   _EVMOMAPL138_lpscTransition
+1181d734   _EVMOMAPL138_pinmuxConfig
+1181f590   _GPIOBankIntDisable
+1181f554   _GPIOBankIntEnable
+1181f5cc   _GPIOBankPinsWrite
+1181f178   _GPIODirModeGet
+1181f0e0   _GPIODirModeSet
+1181f424   _GPIOIntTypeGet
+1181f2b8   _GPIOIntTypeSet
+1181f50c   _GPIOPinIntClear
+1181f4ac   _GPIOPinIntStatus
+1181f258   _GPIOPinRead
+1181f1d8   _GPIOPinWrite
+11821118   _GPIO_getInput
+118210a0   _GPIO_setDir
+1182118c   _GPIO_setOutput
+1182120c   _GPIO_toggleLoop
+11826480   _HOSTclose
+11825660   _HOSTlseek
+11825960   _HOSTopen
+11825dc0   _HOSTread
+11824b20   _HOSTrename
+11825e80   _HOSTunlink
+11825f40   _HOSTwrite
+1181fcd4   _I2CGPIO_getInput
+1181fdf0   _I2CGPIO_getInputAll
+1181fc00   _I2CGPIO_init
+1181ff00   _I2CGPIO_setOutput
+11820048   _I2CGPIO_setOutputAll
+11821420   _I2C_init
+1182150c   _I2C_read
+11821668   _I2C_write
+1181d0d8   _L138_init_LCDK_DIP
+1181cda0   _L138_init_aic3106_registers
+1181c5f0   _L138_init_mcasp_edma
+1181c8ac   _L138_init_mcasp_intr
+1181cb0c   _L138_init_mcasp_poll
+1181d26c   _L138_initialise_intr
+1181d184   _L138_initialise_poll
+118218b0   _LCDK_GPIO_init
+11821920   _LCDK_LED_init
+11821a28   _LCDK_LED_off
+11821990   _LCDK_LED_on
+118218cc   _LCDK_SWITCH_init
+11821970   _LCDK_SWITCH_state
+118250a0   _PSCModuleControl
+118217a0   _PinMuxSetup_leds
+11821834   _PinMuxSetup_switches
+11824524   _USTIMER_delay
+118245e4   _USTIMER_get
+11824440   _USTIMER_init
+118245b4   _USTIMER_reset
+118245f8   _USTIMER_set
+1181e120   _UTIL_isUIBoardAttached
+1181dfc8   _UTIL_printMem
+11829260   __CIOBUF_
+11829260   __STACK_END
 00000800   __STACK_SIZE
 00010000   __SYSMEM_SIZE
 00000001   __TI_args_main
-11819600   ___TI_cpp_init
-1181a66c   ___TI_enable_exit_profile_output
+11827200   ___TI_cpp_init
+1181bf88   ___TI_enable_exit_profile_output
 ffffffff   ___TI_pprof_out_hndl
 ffffffff   ___TI_prof_data_size
 ffffffff   ___TI_prof_data_start
 ffffffff   ___binit__
-1181afb0   ___bss__
+118297ec   ___bss__
 ffffffff   ___c_args__
-1181b3f0   ___cinit__
+11827640   ___cinit__
 11800000   ___data__
 11800000   ___edata__
-1181afd8   ___end__
-11819a20   ___etext__
-11819780   ___isinf
+1182982c   ___end__
+11827640   ___etext__
+11827380   ___isinf
 ffffffff   ___pinit__
-11810000   ___text__
-11819800   __args_main
-11818640   __auto_init
-118187c0   __c6xabi_divu
-11818b60   __cleanup
-1181a664   __cleanup_ptr
-11817a40   __closefile
-1181b200   __ctypes_
-11812180   __divd
-11818c00   __divli
-118187c0   __divu
-11817040   __divul
-11815b00   __divull
-11818880   __doflush
-1181a668   __dtors_ptr
-11818de0   __fixdli
-11819380   __fltlid
-11819840   __frcmpyd_div
-1181a540   __ft_end
-1181a220   __ftable
-11819400   __llshl
-11819880   __llshru
-1181a678   __lock
-11819940   __negll
-11819960   __nop
-11813720   __printfi
-118198c0   __remli
-1181a690   __stack
-11819660   __subcull
+1181bfc0   ___text__
+11827400   __args_main
+11826000   __auto_init
+11826180   __c6xabi_divu
+11826520   __cleanup
+1181bf80   __cleanup_ptr
+118251e0   __closefile
+11829600   __ctypes_
+1181eb40   __divd
+11822b80   __divf
+118265c0   __divli
+11826180   __divu
+118247e0   __divul
+11823300   __divull
+11826240   __doflush
+1181bf84   __dtors_ptr
+118267a0   __fixdli
+11826e80   __fixdu
+11826f00   __fixfu
+11826f80   __fltlid
+11827440   __frcmpyd_div
+1181bda8   __ft_end
+1181ba88   __ftable
+11827000   __llshl
+11827480   __llshru
+1181bf94   __lock
+11827540   __negll
+11827560   __nop
+11826840   __nround
+118200e0   __printfi
+118274c0   __remli
+11828a60   __stack
+11827260   __subcull
 11800000   __sys_memory
-1181a400   __tmpnams
-1181a67c   __unlock
-11817ea0   __wrt_ok
-118199c0   _abort
-11818080   _atoi
-1181b308   _bitval_u32
-11819480   _c_int00
-11818160   _close
-11811be8   _config_pll0
-11811e24   _config_pll1
-11818f20   _copy_in
-1181afcc   _counter
-11819a20   _data
-11818940   _exit
-1181afc4   _fb
-11816680   _fputc
-11813fa0   _fputs
-11815880   _free
-11817c80   _fseek
-1181afd0   _i
-118101a8   _input_left_sample
-11810200   _input_right_sample
-11810150   _input_sample
-11815fc0   _interrupt4
-11819060   _lseek
-11818a00   _ltoa
-11819900   _main
-11817500   _malloc
-118196c0   _memccpy
-11819100   _memcpy
-11818240   _memset
-11810068   _output_left_sample
-118100e0   _output_right_sample
-11810000   _output_sample
-1181afb4   _pingIN
-1181afb8   _pingOUT
-1181afbc   _pongIN
-1181afc0   _pongOUT
-11811534   _prand
-1181afc8   _prand_seed
-118113e8   _prbs
-11818320   _printf
-11816680   _putc
-118114b8   _rand31_next
-11811160   _read_LCDK_user_DIP
-11819500   _readmsg
-118199e0   _remove
-11816aa0   _setvbuf
-1181a674   _sreg
-11819580   _unlink
-1181b020   _vector1
-1181b140   _vector10
-1181b160   _vector11
-1181b180   _vector12
-1181b1a0   _vector13
-1181b1c0   _vector14
-1181b1e0   _vector15
-1181b040   _vector2
-1181b060   _vector3
-1181b0a0   _vector5
-1181b0c0   _vector6
-1181b0e0   _vector7
-1181b100   _vector8
-1181b120   _vector9
-1181b000   _vectors
-118192e0   _write
-11819720   _writemsg
+1181bc68   __tmpnams
+118275c0   __trunc
+1181bf98   __unlock
+11825760   __wrt_ok
+118275e0   _abort
+11825a40   _atoi
+11829708   _bitval_u32
+118297f8   _bool
+1181ba48   _brev
+11827080   _c_int00
+1181e8d0   _calculate_mfccs
+11827500   _ceil
+11825b20   _close
+1181e4a4   _compute_fft
+1181dba8   _config_pll0
+1181dde4   _config_pll1
+11826980   _copy_in
+11821de0   _cos
+118297f0   _counter
+11811000   _data
+1181bdac   _errno
+11826300   _exit
+11829820   _fb
+11813800   _fft_mag
+11829804   _fft_resolution
+11823c20   _fputc
+11820960   _fputs
+11822e00   _free
+11825420   _frexp
+11825540   _fseek
+1181e1d8   _gen_twiddle_fft_sp
+11811800   _ham_data
+11829800   _ham_finished
+11810000   _hamming_cos_lookup
+11829808   _hold
+1181c168   _input_left_sample
+1181c1c0   _input_right_sample
+1181c110   _input_sample
+11822380   _interrupt4
+118297f4   _led_counter
+11824040   _log
+11826ac0   _lseek
+118263c0   _ltoa
+1181ea10   _main
+11824ca0   _malloc
+118272c0   _memccpy
+11826b60   _memcpy
+11825c00   _memset
+1181ba10   _mfcc
+118297ec   _mfcc_done
+11826ca0   _modf
+1181e630   _multiply_filter_banks
+1181e3f4   _multiply_hamming
+1181b868   _neg_slopes
+1181c028   _output_left_sample
+1181c0a0   _output_right_sample
+1181bfc0   _output_sample
+1181b8d0   _phis
+11829810   _pingIN
+11829814   _pingOUT
+11829818   _pongIN
+1182981c   _pongOUT
+1181b800   _pos_slopes
+1181d4f4   _prand
+11829824   _prand_seed
+1181d3a8   _prbs
+11825ce0   _printf
+1181a800   _psd
+11823c20   _putc
+1181d478   _rand31_next
+1181d120   _read_LCDK_user_DIP
+11827100   _readmsg
+118297fc   _rec_finished
+11827600   _remove
+1181e140   _separateRealImg
+11824240   _setvbuf
+11823080   _sin
+11825860   _sqrt
+1181bf90   _sreg
+11827180   _unlink
+11829420   _vector1
+11829540   _vector10
+11829560   _vector11
+11829580   _vector12
+118295a0   _vector13
+118295c0   _vector14
+118295e0   _vector15
+11829440   _vector2
+11829460   _vector3
+118294a0   _vector5
+118294c0   _vector6
+118294e0   _vector7
+11829500   _vector8
+11829520   _vector9
+11829400   _vectors
+11816800   _w_sp
+11826de0   _write
+11827320   _writemsg
+1181b9a8   _x_filters
+1181b940   _y_filters
+11819800   _y_imag_sp
+11818800   _y_real_sp
+11814800   _y_sp
 ffffffff   binit
-1181b3f0   cinit
+11827640   cinit
 11800000   edata
-1181afd8   end
-11819a20   etext
+1182982c   end
+11827640   etext
 ffffffff   pinit
 
 
@@ -387,182 +453,223 @@ address    name
 11800000   ___edata__
 11800000   __sys_memory
 11800000   edata
-11810000   .text
-11810000   ___text__
-11810000   _output_sample
-11810068   _output_left_sample
-118100e0   _output_right_sample
-11810150   _input_sample
-118101a8   _input_left_sample
-11810200   _input_right_sample
-11810258   _EDMA3_PaRAM_setup
-11810630   _L138_init_mcasp_edma
-118108ec   _L138_init_mcasp_intr
-11810b4c   _L138_init_mcasp_poll
-11810de0   _L138_init_aic3106_registers
-11811118   _L138_init_LCDK_DIP
-11811160   _read_LCDK_user_DIP
-118111c4   _L138_initialise_poll
-118112ac   _L138_initialise_intr
-118113e8   _prbs
-118114b8   _rand31_next
-11811534   _prand
-11811560   _EVMOMAPL138_init
-1181158c   _EVMOMAPL138_initRAM
-11811748   _EVMOMAPL138_enableDsp
-11811774   _EVMOMAPL138_pinmuxConfig
-11811810   _EVMOMAPL138_lpscTransition
-11811be8   _config_pll0
-11811e24   _config_pll1
-11812008   _UTIL_printMem
-11812160   _UTIL_isUIBoardAttached
-11812180   __divd
-11812720   _GPIODirModeSet
-118127b8   _GPIODirModeGet
-11812818   _GPIOPinWrite
-11812898   _GPIOPinRead
-118128f8   _GPIOIntTypeSet
-11812a64   _GPIOIntTypeGet
-11812aec   _GPIOPinIntStatus
-11812b4c   _GPIOPinIntClear
-11812b94   _GPIOBankIntEnable
-11812bd0   _GPIOBankIntDisable
-11812c0c   _GPIOBankPinsWrite
-11813240   _I2CGPIO_init
-11813314   _I2CGPIO_getInput
-11813430   _I2CGPIO_getInputAll
-11813540   _I2CGPIO_setOutput
-11813688   _I2CGPIO_setOutputAll
-11813720   __printfi
-11813fa0   _fputs
-11814340   _GPIO_setDir
-118143b8   _GPIO_getInput
-1181442c   _GPIO_setOutput
-118144ac   _GPIO_toggleLoop
-118146c0   _I2C_init
-118147ac   _I2C_read
-11814908   _I2C_write
-11814a40   _PinMuxSetup_leds
-11814ad4   _PinMuxSetup_switches
-11814b50   _LCDK_GPIO_init
-11814b6c   _LCDK_SWITCH_init
-11814bc0   _LCDK_LED_init
-11814c10   _LCDK_SWITCH_state
-11814c30   _LCDK_LED_on
-11814cc8   _LCDK_LED_off
-11815880   _free
-11815b00   __divull
-11815fc0   _interrupt4
-11816680   _fputc
-11816680   _putc
-11816aa0   _setvbuf
-11816ca0   _USTIMER_init
-11816d84   _USTIMER_delay
-11816e14   _USTIMER_reset
-11816e44   _USTIMER_get
-11816e58   _USTIMER_set
-11817040   __divul
-118171e0   _AIC3106_init
-118172d8   _AIC3106_readRegister
-11817330   _AIC3106_writeRegister
-11817380   _HOSTrename
-11817500   _malloc
-11817900   _PSCModuleControl
-11817a40   __closefile
-11817c80   _fseek
-11817da0   _HOSTlseek
-11817ea0   __wrt_ok
-11817fa0   _HOSTopen
-11818080   _atoi
-11818160   _close
-11818240   _memset
-11818320   _printf
-11818400   _HOSTread
-118184c0   _HOSTunlink
-11818580   _HOSTwrite
-11818640   __auto_init
-118187c0   __c6xabi_divu
-118187c0   __divu
-11818880   __doflush
-11818940   _exit
-11818a00   _ltoa
-11818ac0   _HOSTclose
-11818b60   __cleanup
-11818c00   __divli
-11818de0   __fixdli
-11818f20   _copy_in
-11819060   _lseek
-11819100   _memcpy
-118192e0   _write
-11819380   __fltlid
-11819400   __llshl
-11819480   _c_int00
-11819500   _readmsg
-11819580   _unlink
-11819600   ___TI_cpp_init
-11819660   __subcull
-118196c0   _memccpy
-11819720   _writemsg
-11819778   C$$IO$$
-11819780   ___isinf
-11819800   __args_main
-11819840   __frcmpyd_div
-11819880   __llshru
-118198c0   __remli
-11819900   _main
-11819940   __negll
-11819960   __nop
-118199c0   C$$EXIT
-118199c0   _abort
-118199e0   _remove
-11819a20   ___etext__
-11819a20   _data
-11819a20   etext
-1181a220   __ftable
-1181a400   __tmpnams
-1181a540   __ft_end
-1181a664   __cleanup_ptr
-1181a668   __dtors_ptr
-1181a66c   ___TI_enable_exit_profile_output
-1181a670   _AIC31_data
-1181a674   _sreg
-1181a678   __lock
-1181a67c   __unlock
-1181a690   __stack
-1181ae90   __CIOBUF_
-1181ae90   __STACK_END
-1181afb0   $bss
-1181afb0   .bss
-1181afb0   ___bss__
-1181afb4   _pingIN
-1181afb8   _pingOUT
-1181afbc   _pongIN
-1181afc0   _pongOUT
-1181afc4   _fb
-1181afc8   _prand_seed
-1181afcc   _counter
-1181afd0   _i
-1181afd8   ___end__
-1181afd8   end
-1181b000   _vectors
-1181b020   _vector1
-1181b040   _vector2
-1181b060   _vector3
-1181b0a0   _vector5
-1181b0c0   _vector6
-1181b0e0   _vector7
-1181b100   _vector8
-1181b120   _vector9
-1181b140   _vector10
-1181b160   _vector11
-1181b180   _vector12
-1181b1a0   _vector13
-1181b1c0   _vector14
-1181b1e0   _vector15
-1181b200   __ctypes_
-1181b308   _bitval_u32
-1181b3f0   ___cinit__
-1181b3f0   cinit
+11810000   _hamming_cos_lookup
+11811000   _data
+11811800   _ham_data
+11813800   _fft_mag
+11814800   _y_sp
+11816800   _w_sp
+11818800   _y_real_sp
+11819800   _y_imag_sp
+1181a800   _psd
+1181b800   _pos_slopes
+1181b868   _neg_slopes
+1181b8d0   _phis
+1181b940   _y_filters
+1181b9a8   _x_filters
+1181ba10   _mfcc
+1181ba48   _brev
+1181ba88   __ftable
+1181bc68   __tmpnams
+1181bda8   __ft_end
+1181bdac   _errno
+1181bf80   __cleanup_ptr
+1181bf84   __dtors_ptr
+1181bf88   ___TI_enable_exit_profile_output
+1181bf8c   _AIC31_data
+1181bf90   _sreg
+1181bf94   __lock
+1181bf98   __unlock
+1181bfc0   .text
+1181bfc0   ___text__
+1181bfc0   _output_sample
+1181c028   _output_left_sample
+1181c0a0   _output_right_sample
+1181c110   _input_sample
+1181c168   _input_left_sample
+1181c1c0   _input_right_sample
+1181c218   _EDMA3_PaRAM_setup
+1181c5f0   _L138_init_mcasp_edma
+1181c8ac   _L138_init_mcasp_intr
+1181cb0c   _L138_init_mcasp_poll
+1181cda0   _L138_init_aic3106_registers
+1181d0d8   _L138_init_LCDK_DIP
+1181d120   _read_LCDK_user_DIP
+1181d184   _L138_initialise_poll
+1181d26c   _L138_initialise_intr
+1181d3a8   _prbs
+1181d478   _rand31_next
+1181d4f4   _prand
+1181d520   _EVMOMAPL138_init
+1181d54c   _EVMOMAPL138_initRAM
+1181d708   _EVMOMAPL138_enableDsp
+1181d734   _EVMOMAPL138_pinmuxConfig
+1181d7d0   _EVMOMAPL138_lpscTransition
+1181dba8   _config_pll0
+1181dde4   _config_pll1
+1181dfc8   _UTIL_printMem
+1181e120   _UTIL_isUIBoardAttached
+1181e140   _separateRealImg
+1181e1d8   _gen_twiddle_fft_sp
+1181e3f4   _multiply_hamming
+1181e4a4   _compute_fft
+1181e630   _multiply_filter_banks
+1181e8d0   _calculate_mfccs
+1181ea10   _main
+1181eb40   __divd
+1181f0e0   _GPIODirModeSet
+1181f178   _GPIODirModeGet
+1181f1d8   _GPIOPinWrite
+1181f258   _GPIOPinRead
+1181f2b8   _GPIOIntTypeSet
+1181f424   _GPIOIntTypeGet
+1181f4ac   _GPIOPinIntStatus
+1181f50c   _GPIOPinIntClear
+1181f554   _GPIOBankIntEnable
+1181f590   _GPIOBankIntDisable
+1181f5cc   _GPIOBankPinsWrite
+1181fc00   _I2CGPIO_init
+1181fcd4   _I2CGPIO_getInput
+1181fdf0   _I2CGPIO_getInputAll
+1181ff00   _I2CGPIO_setOutput
+11820048   _I2CGPIO_setOutputAll
+118200e0   __printfi
+11820960   _fputs
+11820d00   _DSPF_sp_fftSPxSP
+118210a0   _GPIO_setDir
+11821118   _GPIO_getInput
+1182118c   _GPIO_setOutput
+1182120c   _GPIO_toggleLoop
+11821420   _I2C_init
+1182150c   _I2C_read
+11821668   _I2C_write
+118217a0   _PinMuxSetup_leds
+11821834   _PinMuxSetup_switches
+118218b0   _LCDK_GPIO_init
+118218cc   _LCDK_SWITCH_init
+11821920   _LCDK_LED_init
+11821970   _LCDK_SWITCH_state
+11821990   _LCDK_LED_on
+11821a28   _LCDK_LED_off
+11821de0   _cos
+11822380   _interrupt4
+11822b80   __divf
+11822e00   _free
+11823080   _sin
+11823300   __divull
+11823c20   _fputc
+11823c20   _putc
+11824040   _log
+11824240   _setvbuf
+11824440   _USTIMER_init
+11824524   _USTIMER_delay
+118245b4   _USTIMER_reset
+118245e4   _USTIMER_get
+118245f8   _USTIMER_set
+118247e0   __divul
+11824980   _AIC3106_init
+11824a78   _AIC3106_readRegister
+11824ad0   _AIC3106_writeRegister
+11824b20   _HOSTrename
+11824ca0   _malloc
+118250a0   _PSCModuleControl
+118251e0   __closefile
+11825420   _frexp
+11825540   _fseek
+11825660   _HOSTlseek
+11825760   __wrt_ok
+11825860   _sqrt
+11825960   _HOSTopen
+11825a40   _atoi
+11825b20   _close
+11825c00   _memset
+11825ce0   _printf
+11825dc0   _HOSTread
+11825e80   _HOSTunlink
+11825f40   _HOSTwrite
+11826000   __auto_init
+11826180   __c6xabi_divu
+11826180   __divu
+11826240   __doflush
+11826300   _exit
+118263c0   _ltoa
+11826480   _HOSTclose
+11826520   __cleanup
+118265c0   __divli
+118267a0   __fixdli
+11826840   __nround
+11826980   _copy_in
+11826ac0   _lseek
+11826b60   _memcpy
+11826ca0   _modf
+11826de0   _write
+11826e80   __fixdu
+11826f00   __fixfu
+11826f80   __fltlid
+11827000   __llshl
+11827080   _c_int00
+11827100   _readmsg
+11827180   _unlink
+11827200   ___TI_cpp_init
+11827260   __subcull
+118272c0   _memccpy
+11827320   _writemsg
+11827378   C$$IO$$
+11827380   ___isinf
+11827400   __args_main
+11827440   __frcmpyd_div
+11827480   __llshru
+118274c0   __remli
+11827500   _ceil
+11827540   __negll
+11827560   __nop
+118275c0   __trunc
+118275e0   C$$EXIT
+118275e0   _abort
+11827600   _remove
+11827640   ___cinit__
+11827640   ___etext__
+11827640   cinit
+11827640   etext
+11828a60   __stack
+11829260   __CIOBUF_
+11829260   __STACK_END
+11829400   _vectors
+11829420   _vector1
+11829440   _vector2
+11829460   _vector3
+118294a0   _vector5
+118294c0   _vector6
+118294e0   _vector7
+11829500   _vector8
+11829520   _vector9
+11829540   _vector10
+11829560   _vector11
+11829580   _vector12
+118295a0   _vector13
+118295c0   _vector14
+118295e0   _vector15
+11829600   __ctypes_
+11829708   _bitval_u32
+118297ec   $bss
+118297ec   .bss
+118297ec   ___bss__
+118297ec   _mfcc_done
+118297f0   _counter
+118297f4   _led_counter
+118297f8   _bool
+118297fc   _rec_finished
+11829800   _ham_finished
+11829804   _fft_resolution
+11829808   _hold
+11829810   _pingIN
+11829814   _pingOUT
+11829818   _pongIN
+1182981c   _pongOUT
+11829820   _fb
+11829824   _prand_seed
+1182982c   ___end__
+1182982c   end
 ffffffff   ___TI_pprof_out_hndl
 ffffffff   ___TI_prof_data_size
 ffffffff   ___TI_prof_data_start
@@ -572,4 +679,4 @@ ffffffff   ___pinit__
 ffffffff   binit
 ffffffff   pinit
 
-[192 symbols]
+[233 symbols]

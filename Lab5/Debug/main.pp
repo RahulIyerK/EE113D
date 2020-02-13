@@ -116,6 +116,7 @@ main.obj: C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h24/DSP_f
 main.obj: C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h24/c674/DSP_fir_r8_h24.h
 main.obj: C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h8/DSP_fir_r8_h8.h
 main.obj: C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h8/c674/DSP_fir_r8_h8.h
+main.obj: ../nnet.h
 
 ../main.c: 
 ../L138_LCDK_aic3106_init.h: 
@@ -233,3 +234,4 @@ C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h24/DSP_fir_r8_h24.
 C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h24/c674/DSP_fir_r8_h24.h: 
 C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h8/DSP_fir_r8_h8.h: 
 C:/ti/dsplib_c674x_3_4_0_0/packages/ti/dsplib/src/DSP_fir_r8_h8/c674/DSP_fir_r8_h8.h: 
+../nnet.h: 

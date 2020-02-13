@@ -1,0 +1,6 @@
+{"widgetBindings": [{
+    "propertyName": "checked",
+    "serverBindName": "bool",
+    "widgetId": "widget_1",
+    "options": {"dataType": "Boolean"}
+}]}

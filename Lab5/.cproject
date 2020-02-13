@@ -38,6 +38,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.DEBUGGING_MODEL.70416141" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.INCLUDE_PATH.1036185251" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\dsplib_c674x_3_4_0_0\packages&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\L138_support&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\OMAP-L138_GEL_BSL_Files\bsl\inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\OMAPL138_StarterWare_1_10_04_01\include&quot;"/>
@@ -62,6 +63,7 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.MAP_FILE.1233415266" name="Input and output sections listed into &lt;file&gt; (--map_file, -m)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.MAP_FILE" value="&quot;${ProjName}.map&quot;" valueType="string"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.LIBRARY.219612570" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.C6000_7.4.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="&quot;C:\ti\OMAP-L138_GEL_BSL_Files\bsl\lib\evmomapl138_bsl.lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\dsplib_c674x_3_4_0_0\packages\ti\dsplib\lib\dsplib.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\ti\OMAPL138_StarterWare_1_10_04_01\binary\c674x\cgt_ccs\omapl138\drivers\Debug\drivers.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;rts6740.lib&quot;"/>
 								</option>

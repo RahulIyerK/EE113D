@@ -14,6 +14,8 @@ C_SRCS += \
 ../L138_LCDK_switch_led.c \
 ../gpio.c \
 ../main.c \
+../maincatherine.c \
+../neuralNet.c \
 ../psc.c 
 
 OBJS += \
@@ -21,6 +23,8 @@ OBJS += \
 ./L138_LCDK_switch_led.obj \
 ./gpio.obj \
 ./main.obj \
+./maincatherine.obj \
+./neuralNet.obj \
 ./psc.obj \
 ./vectors_intr.obj 
 
@@ -32,6 +36,8 @@ C_DEPS += \
 ./L138_LCDK_switch_led.pp \
 ./gpio.pp \
 ./main.pp \
+./maincatherine.pp \
+./neuralNet.pp \
 ./psc.pp 
 
 C_DEPS__QUOTED += \
@@ -39,6 +45,8 @@ C_DEPS__QUOTED += \
 "L138_LCDK_switch_led.pp" \
 "gpio.pp" \
 "main.pp" \
+"maincatherine.pp" \
+"neuralNet.pp" \
 "psc.pp" 
 
 OBJS__QUOTED += \
@@ -46,6 +54,8 @@ OBJS__QUOTED += \
 "L138_LCDK_switch_led.obj" \
 "gpio.obj" \
 "main.obj" \
+"maincatherine.obj" \
+"neuralNet.obj" \
 "psc.obj" \
 "vectors_intr.obj" 
 
@@ -57,6 +67,8 @@ C_SRCS__QUOTED += \
 "../L138_LCDK_switch_led.c" \
 "../gpio.c" \
 "../main.c" \
+"../maincatherine.c" \
+"../neuralNet.c" \
 "../psc.c" 
 
 ASM_SRCS__QUOTED += \

@@ -1,4 +1,4 @@
-float input[13]; //should be our MFCCs
+float mfcc_proc[13]; //should be our MFCCs
 
 #define NUM_NEURONS 5
 
@@ -69,9 +69,9 @@ void nNet()
     uint8_t i;
     for(i = 0; i < 13; i++)
     {
-        neuralY[i] = input[i] - x1_step1_xoffset[i];
-        neuralY[i] = neuralY[i] * x1_step1_gain[i];
-        neuralY[i] = neuralY[i] + x1_step1_ymin[i];
+        mfcc_proc[i] = mfcc[i] - x1_step1_xoffset[i];
+        mfcc_proc[i] = mfcc_proc[i] * x1_step1_gain[i];
+        mfcc_proc[i] = mfcc_proc[i] + x1_step1_ymin[i];
     }
 
     uint8_t x; //where x is the xth hidden layer neuron
@@ -82,7 +82,7 @@ void nNet()
         temp = 0;
         uint8_t k//where k is the kth input neuron
         for(k = 0; k < NUM_INPUTS; k++){
-            temp += IW1_1[k][x] * input[k];
+            temp += IW1_1[k][x] * mfcc_proc[k];
         }
         hidden[x] = (float) sigmoid(temp + b1[x]);
     }
@@ -95,7 +95,7 @@ void nNet()
         {
             temp += LW2_1[x][k] * hidden[k];
         }
-        output_temp[x] = temp +  + b2[x];
+        output_temp[x] = temp + b2[x];
     }
 
     for(x = 0; x < NUM_OUTPUTS; x++)

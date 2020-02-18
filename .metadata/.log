@@ -3794,3 +3794,96 @@ java.lang.StackOverflowError
 	at java.beans.XMLEncoder.writeObject(Unknown Source)
 	at java.beans.Encoder.writeExpression(Unknown Source)
 	at java.beans.XMLEncoder.writeExpression(Unknown Source)
+!SESSION 2020-02-18 10:53:03.575 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 10:53:10.159
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY org.eclipse.rtsc.xdctools.managedbuild.ui 4 0 2020-02-18 10:53:42.724
+!MESSAGE An internal error was logged by 'org.eclipse.rtsc.xdctools.managedbuild.ui'.
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at org.eclipse.rtsc.project.ui.extdiscovery.InstallExtensionSitesWizard$1.run(InstallExtensionSitesWizard.java:80)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Caused by: org.eclipse.core.runtime.CoreException: Operation details
+	at org.eclipse.rtsc.project.core.extdiscovery.ExtensionSiteDiscoveryManager.installExtensionSites(ExtensionSiteDiscoveryManager.java:333)
+	at org.eclipse.rtsc.project.ui.extdiscovery.InstallExtensionSitesWizard$1.run(InstallExtensionSitesWizard.java:68)
+	... 1 more
+Root exception:
+org.eclipse.core.runtime.CoreException: Operation details
+	at org.eclipse.rtsc.project.core.extdiscovery.ExtensionSiteDiscoveryManager.installExtensionSites(ExtensionSiteDiscoveryManager.java:333)
+	at org.eclipse.rtsc.project.ui.extdiscovery.InstallExtensionSitesWizard$1.run(InstallExtensionSitesWizard.java:68)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: Your original request has been modified.
+Contains: "RTSC/XDCtools (IDE Client)" is already installed, so an update will be performed instead.
+Contains: Cannot complete the install because one or more required items could not be found.
+Contains: Software being installed: RTSC/XDCtools (IDE Client) 3.32.1.22 (org.eclipse.rtsc.xdctools.product.ui.feature.group 3.32.1.22)
+Contains: Missing requirement: Model Plug-in 3.32.1.22 (org.eclipse.rtsc.xdctools.model 3.32.1.22) requires 'bundle org.eclipse.rtsc.xdctools.buildDefinitions.XDC.minimal 0.0.0' but it could not be found
+Contains: Cannot satisfy dependency:
+Contains: From: RTSC/XDCtools (IDE Client) 3.32.1.22 (org.eclipse.rtsc.xdctools.product.ui.feature.group 3.32.1.22)
+Contains: To: org.eclipse.rtsc.xdctools.model [3.32.1.22]
+
+!ENTRY com.ti.ccstudio.debug 1 0 2020-02-18 10:58:47.140
+!MESSAGE DS_ERROR: C674X_0: Error connecting to the target: (Error -1180 @ 0x0) Device is held in reset. Take the device out of reset, and retry the operation. (Emulation package 5.1.232.0) 
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2020-02-18 10:58:47.202
+!MESSAGE DS_ERROR: Error connecting to the target:
+(Error -1180 @ 0x0)
+Device is held in reset. Take the device out of reset, and retry the operation.
+(Emulation package 5.1.232.0)
+
+
+!ENTRY org.eclipse.ui 4 0 2020-02-18 11:51:55.801
+!MESSAGE Problems opening perspective 'com.ti.ccstudio.TICPerspective'
+!SESSION 2020-02-18 11:52:02.924 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-02-18 11:52:10.700
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY org.eclipse.cdt.core 1 0 2020-02-18 12:19:24.988
+!MESSAGE Indexed 'Lab5' (7 sources, 77 headers) in 0.42 sec: 1,363 declarations; 2,834 references; 0 unresolved inclusions; 41 syntax errors; 5 unresolved names (0.12%)

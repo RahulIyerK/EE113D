@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="MemoryDumperLoadAction">
+	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.cdt.ui.wizards.NewHeaderFileCreationWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
@@ -21,8 +23,8 @@
 		<item value="false" key="MemoryDumperFileSelectionPage.STORE_USE_FILE_HEADER"/>
 		<item value="false" key="MemoryDumperMemoryBlockPage.STORE_SWAP_ID"/>
 		<item value="5" key="MemoryDumperMemoryBlockPage.STORE_FILE_FORMAT_NAME_ID"/>
+		<item value="\Users\ECE113DWS20\Documents\More_CCS_Stuff\test data\eh_mfcc_10.dat" key="MemoryDumperFileSelectionPage.STORE_FILE_PATH_ID"/>
 		<item value="293714448" key="MemoryDumperMemoryBlockPage.STORE_ADDRESS_VALUE_ID"/>
-		<item value="C:\Users\ECE113DWS20\Documents\More_CCS_Stuff\EE113D\Lab5\ee_mfcc_10.dat" key="MemoryDumperFileSelectionPage.STORE_FILE_PATH_ID"/>
 		<item value="32-Bit Floating Point" key="MemoryDumperMemoryBlockPage.STORE_FILE_FORMAT_TYPE_ID"/>
 	</section>
 	<section name="ImportExportAction">

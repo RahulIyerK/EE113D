@@ -137,7 +137,6 @@ interrupt void interrupt4(void) // interrupt service routine
 		}
 		else
 		{
-			LCDK_LED_off(4);
 
 			if(counter<ign_samples)
 			{
@@ -153,6 +152,7 @@ interrupt void interrupt4(void) // interrupt service routine
 				if(counter-ign_samples == N - 1)
 				{
 					rec_finished = 1;
+					LCDK_LED_off(4);
 				}
 				else
 				{
@@ -390,7 +390,7 @@ int main(void)
 
 	mfcc_done = 0;
 
-	fft_resolution = (16000/2.0)/N;
+	fft_resolution = (16000)/N;
 
 	uint16_t p = 0;
 
@@ -401,7 +401,7 @@ int main(void)
 
 	LCDK_LED_init();
 	gen_twiddle_fft_sp(w_sp,N);
-	L138_initialise_intr(FS_16000_HZ,ADC_GAIN_0DB,DAC_ATTEN_0DB,LCDK_LINE_INPUT);
+	L138_initialise_intr(FS_16000_HZ,ADC_GAIN_0DB,DAC_ATTEN_0DB,LCDK_MIC_INPUT);
 
 	while(1)
 	{
@@ -436,9 +436,9 @@ int main(void)
 
 			calculate_mfccs();
 
-			//#ifndef TRAINING
+#ifndef TRAINING
 			nNet();
-			//#endif //TRAINING
+#endif //TRAINING
 
 			mfcc_done = 1; //only want the computation to occur once
 

@@ -5,7 +5,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.Texas Instruments XDS100v2 USB Emulator/C674X_0" value="${build_artifact:Lab5}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.Texas Instruments XDS100v2 USB Emulator/C674X_0" value="Lab5"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:Lab5}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS100v2 USB Emulator/C674X_0" value="C:/Users\ECE113DWS20\Documents\More_CCS_Stuff\EE113D\Lab5\Training\Lab5.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS100v2 USB Emulator/C674X_0" value="C:/Users\ECE113DWS20\Documents\More_CCS_Stuff\EE113D\Lab5\Debug\Lab5.out"/>
 <mapAttribute key="com.ti.ccstudio.debug.ui.displayFormats">
 <mapEntry key="Texas Instruments XDS100v2 USB Emulator/C674X_0@##separator##@0" value="32-Bit Hex - TI Style"/>
 </mapAttribute>

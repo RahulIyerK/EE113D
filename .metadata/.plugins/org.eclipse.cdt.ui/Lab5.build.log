@@ -2,37 +2,6 @@
 **** Build of configuration Debug for project Lab5 ****
 
 "C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
-'Building file: ../main.c'
-'Invoking: C6000 Compiler'
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/dsplib_c674x_3_4_0_0/packages" --include_path="C:/ti/L138_support" --include_path="C:/ti/OMAP-L138_GEL_BSL_Files/bsl/inc" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="main.pp"  "../main.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 42: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 43: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 44: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 45: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 46: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 47: warning #303-D: typedef name has already been declared (with same type)
-'Finished building: ../main.c'
-' '
-'Building file: ../neuralNet.c'
-'Invoking: C6000 Compiler'
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/dsplib_c674x_3_4_0_0/packages" --include_path="C:/ti/L138_support" --include_path="C:/ti/OMAP-L138_GEL_BSL_Files/bsl/inc" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="neuralNet.pp"  "../neuralNet.c"
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 42: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 43: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 44: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 45: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 46: warning #303-D: typedef name has already been declared (with same type)
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include/stdint.h", line 47: warning #303-D: typedef name has already been declared (with same type)
-'Finished building: ../neuralNet.c'
-' '
-'Building target: Lab5.out'
-'Invoking: C6000 Linker'
-"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=coffabi -g --define=omapl138 --display_error_number --diag_warning=225 --diag_wrap=off -z --stack_size=0x800 -m"Lab5.map" --heap_size=0x800 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --reread_libs --define=DSP_CORE=1 --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Lab5_linkInfo.xml" --rom_model -o "Lab5.out"  "./vectors_intr.obj" "./psc.obj" "./neuralNet.obj" "./main.obj" "./gpio.obj" "./L138_LCDK_switch_led.obj" "./L138_LCDK_aic3106_init.obj" "../linker_dsp.cmd" -l"C:\ti\OMAP-L138_GEL_BSL_Files\bsl\lib\evmomapl138_bsl.lib" -l"C:\ti\dsplib_c674x_3_4_0_0\packages\ti\dsplib\lib\dsplib.lib" -l"C:\ti\OMAPL138_StarterWare_1_10_04_01\binary\c674x\cgt_ccs\omapl138\drivers\Debug\drivers.lib" -l"rts6740.lib" 
-<Linking>
-warning #10373-D: library "C:\ti\OMAPL138_StarterWare_1_10_04_01\binary\c674x\cgt_ccs\omapl138\drivers\Debug\drivers.lib" contains ELF object files which are incompatible with the TI-COFF output file.  Ensure you are using the proper library.
-warning #10373-D: library "C:\ti\OMAPL138_StarterWare_1_10_04_01\binary\c674x\cgt_ccs\omapl138\drivers\Debug\drivers.lib" contains ELF object files which are incompatible with the TI-COFF output file.  Ensure you are using the proper library.
-"../neuralNet.c", line 23: warning #17009-D: relocation type is static base-relative, but references symbol "_mfcc" defined in section ".far"; references to section ".far" are not relative to any static base, so this relocation cannot be performed (type = 'R_C60BASE' (80), file = "./neuralNet.obj", offset = 0x0000013c, section = ".text")
-warning #10015-D: output file "Lab5.out" cannot be loaded and run on a target system
-'Finished building target: Lab5.out'
-' '
+gmake: Nothing to be done for `all'.
 
 **** Build Finished ****

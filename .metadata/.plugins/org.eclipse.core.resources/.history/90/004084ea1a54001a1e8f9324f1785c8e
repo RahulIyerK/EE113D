@@ -1,0 +1,15 @@
+/*
+ * test.c
+ *
+ *  Created on: Feb 20, 2020
+ *      Author: ECE113DWS20
+ */
+
+static float my_arr [20000];
+int main(void)
+{
+	while (1)
+	{
+
+	}
+}

@@ -1,0 +1,265 @@
+/*
+ * main_cnn.c
+ *
+ */
+
+
+#include "cnn.h"
+#include <stdio.h>
+
+//This checks against the jupyter network
+
+//CONV 1
+
+/*
+ * input shape: 5x5x1
+ * number of kernels: 2
+ * kernel size: 3x3
+ */
+#define INPUT_DIM_1 5
+#define NUM_KERNELS_1 2
+#define KERNEL_SIZE_1 3
+#define INPUT_HEIGHT_1 2
+#define INPUT_ARR_DIM_1 (INPUT_DIM_1 * INPUT_DIM_1)
+#define KERNEL_ARR_DIM_1 (KERNEL_SIZE_1 * KERNEL_SIZE_1 * NUM_KERNELS_1)
+#define OUTPUT_ARR_DIM_1 (INPUT_DIM_1 * INPUT_DIM_1 * NUM_KERNELS_1)
+
+//CONV 2
+
+/*
+ * input shape: 5x5x1
+ * number of kernels: 3
+ * kernel size: 3x3
+ */
+#define INPUT_DIM_2 5
+#define NUM_KERNELS_2 3
+#define KERNEL_SIZE_2 3
+#define INPUT_HEIGHT_2 2
+#define INPUT_ARR_DIM_2 (INPUT_DIM_2 * INPUT_DIM_2 * INPUT_HEIGHT_2)
+#define KERNEL_ARR_DIM_2 (KERNEL_SIZE_2 * KERNEL_SIZE_2 * NUM_KERNELS_2)
+#define OUTPUT_ARR_DIM_2 (INPUT_DIM_2 * INPUT_DIM_2 * NUM_KERNELS_2)
+
+int main(void)
+{
+	//CONV 1
+
+    float* input_conv = (float*)malloc(INPUT_ARR_DIM_1 * sizeof(float));
+    float* kernel_conv = (float*)malloc(KERNEL_ARR_DIM_1 * sizeof(float));
+
+    //for each kernel, we get a 5x5 output because we convolve every kernel with the input image and use
+    //   "same" padding to pad the image
+    float* result_conv = (float*)malloc(OUTPUT_ARR_DIM_1 * sizeof(float));
+
+    //Tensorflow "use bias" is true by default, so there's one bias term added to each kernel convolution output
+    float* bias_conv = (float*)malloc(NUM_KERNELS_1* sizeof(float));
+
+
+    // we generate a test input for this convolution
+    // the 2d matrix is flattened into a 1d array
+    int i = 0;
+    for(i=0;i<INPUT_ARR_DIM_1;i++){
+    	input_conv[i]=1;
+    }
+
+
+    // we generate two test kernels for this convolution
+    // these 2d matrices are also flatted into 1d arrays
+
+    /* KERNEL 1
+     * 1 2 3
+     * 4 5 6
+     * 7 8 9
+     */
+
+    /* KERNEL 2
+     * 3 3 3
+     * 3 3 3
+     * 3 3 3
+     */
+
+    for(i=0;i<9;i++){
+    	kernel_conv[2*i+1] = 3;
+    }
+
+    kernel_conv[0] = 1;
+    kernel_conv[2] = 2;
+    kernel_conv[4] = 3;
+    kernel_conv[6] = 4;
+    kernel_conv[8] = 5;
+    kernel_conv[10] = 6;
+    kernel_conv[12] = 7;
+    kernel_conv[14] = 8;
+    kernel_conv[16] = 9;
+
+    //we generate two test biases
+
+    bias_conv[0] = 0.5;
+    bias_conv[1] = 1;
+
+    conv(input_conv, kernel_conv, bias_conv, result_conv, INPUT_DIM_1, INPUT_DIM_1, INPUT_HEIGHT_1, KERNEL_SIZE_1, NUM_KERNELS_1);
+
+    for(i=0; i < INPUT_ARR_DIM_1; i++)
+    {
+    	printf("%f, %f\n", result_conv[2*i], result_conv[2*i+1]);
+    }
+
+    free(input_conv);
+    free(kernel_conv);
+    free(bias_conv);
+    free(result_conv);
+
+    input_conv = (float*)malloc(INPUT_ARR_DIM_2 * sizeof(float));
+	kernel_conv = (float*)malloc(KERNEL_ARR_DIM_2 * sizeof(float));
+
+	result_conv = (float*)malloc(OUTPUT_ARR_DIM_2 * sizeof(float));
+
+	bias_conv = (float*)malloc(NUM_KERNELS_2 * sizeof(float));
+
+	// CONV 2
+
+	//input data
+
+	/* input data
+	 *
+	 * layer 1
+	 * 1 1 1 1 1
+	 * 1 1 1 1 1
+	 * 1 1 1 1 1
+	 * 1 1 1 1 1
+	 * 1 1 1 1 1
+	 *
+	 * layer 2
+	 * 2.5 2.5 2.5 2.5 2.5
+	 * 2.5 2.5 2.5 2.5 2.5
+	 * 2.5 2.5 2.5 2.5 2.5
+	 * 2.5 2.5 2.5 2.5 2.5
+	 * 2.5 2.5 2.5 2.5 2.5
+	 *
+	 */
+
+    for(i=0;i<25;i++){
+    	input_conv[2*i]=1;
+    	input_conv[2*i+1]=2.5;
+    }
+
+
+    //kernels
+
+    /* KERNEL 1 layer 1
+     * 1 2 3
+     * 4 5 6
+     * 7 8 9
+     *
+     * KERNEL 1 layer 2
+     * 1 1 1
+     * 1 1 1
+     * 1 1 1
+     *
+     * *****************
+     *
+     * KERNEL 2 layer 1
+     * 3 3 3
+     * 3 3 3
+     * 3 3 3
+     *
+     * KERNEL 2 layer 2
+     * 2 2 2
+     * 2 2 2
+     * 2 2 2
+     *
+     * *****************
+     *
+     * KERNEL 3 layer 1
+     * 5 5 5
+     * 5 5 5
+     * 5 5 5
+     *
+     * KERNEL 3 layer 2
+     * 0 0 0
+     * 0 0 0
+     * 0 0 0
+     *
+     */
+
+    for(i=0;i<9;i++){
+    	kernel_conv[i*6+1] = 3;
+    	kernel_conv[i*6+2] = 5;
+    	kernel_conv[i*6+3] = 1;
+    	kernel_conv[i*6+4] = 2;
+    	kernel_conv[i*6+5] = 0;
+    }
+
+    kernel_conv[0] = 1;
+    kernel_conv[6] = 2;
+    kernel_conv[12] = 3;
+    kernel_conv[18] = 4;
+    kernel_conv[24] = 5;
+    kernel_conv[30] = 6;
+    kernel_conv[36] = 7;
+    kernel_conv[42] = 8;
+    kernel_conv[48] = 9;
+
+    bias_conv[0] = 0.5;
+    bias_conv[1] = 1;
+    bias_conv[2] = 2.5;
+
+    conv(input_conv, kernel_conv, bias_conv, result_conv, INPUT_DIM_2, INPUT_DIM_2, INPUT_HEIGHT_2, KERNEL_SIZE_2, NUM_KERNELS_2);
+
+    for(i=0; i < INPUT_ARR_DIM_2; i++)
+    {
+    	printf("%f, %f, %f\n", result_conv[2*i], result_conv[2*i+1]);
+    }
+//    // data for pooling
+//    float* input_pool_1 = (float*)malloc(32 * sizeof(float));
+//    float* result_pool_1 = (float*)malloc(8 * sizeof(float));
+//    for(i=0;i<16;i++){
+//    	input_pool_1[2*i]=i+1;
+//    }
+//    for(i=0;i<4;i++){
+//    	input_pool_1[2*i+1]=4.5-i;
+//    }
+//    for(i=4;i<8;i++){
+//    	input_pool_1[2*i+1]=8.5-(i-4);
+//    }
+//    for(i=8;i<12;i++){
+//    	input_pool_1[2*i+1]=12.5-(i-8);
+//    }
+//    for(i=12;i<16;i++){
+//    	input_pool_1[2*i+1]=16.5-(i-12);
+//    }
+//
+//    // data for dense
+//    float* input_dense_1 = (float*)malloc(8 * sizeof(float));
+//    float* kernel_dense_1 = (float*)malloc(80 * sizeof(float));
+//    double* result_dense_1 = (float*)malloc(10 * sizeof(double));
+//    float* bias_dense_1 = (float*)malloc(10 * sizeof(float));
+//
+//    input_dense_1[0] = 2;
+//    input_dense_1[1] = 4.5;
+//    input_dense_1[2] = 2;
+//    input_dense_1[3] = 3;
+//    input_dense_1[4] = 3;
+//    input_dense_1[5] = 3;
+//    input_dense_1[6] = 2;
+//    input_dense_1[7] = 2.2;
+//
+//    int j;
+//    for(j=0;j<10;j++){
+//        for(i=0;i<8;i++){
+//        	kernel_dense_1[i*10+j] = 1 + i + j*0.5;
+//        }
+//    }
+//    for(i=0;i<10;i++){
+//    	bias_dense_1[i] = i;
+//    }
+//
+//    conv(input_conv_2, kernel_conv_2, bias_conv_2, result_conv_2, 5, 5, 2, 3, 3);
+//    nn_pool(input_pool_1, result_pool_1, 4, 4, 2, 2);
+////    dense(input_dense_1, kernel_dense_1, bias_dense_1, result_dense_1, 8, 10);
+//
+//    for(i = 0; i < 75; i++){
+//        printf("%f \n", result_conv_2[i]);
+//    }
+
+    while(1);
+}

@@ -1,0 +1,9 @@
+
+!CONFIGURATION: 'com.ti.ccstudio.buildDefinitions.C6000.Debug.1793340152' [Sun Nov 10 16:23:19 PST 2019]
+
+	!TOOL: 'com.ti.ccstudio.buildDefinitions.C6000_7.4.exe.compilerDebug.160111178'
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.CODE_STATE
+
+		!WARNING: Unresolved option: com.ti.ccstudio.buildDefinitions.C6000_7.4.compilerID.LITTLE_ENDIAN
+

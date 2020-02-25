@@ -1547,8 +1547,47 @@ int main(void)
 //	w1 = usb_txtread("sample.txt", 64);
 //	b1 = usb_txtread("sample.txt", 12);
 
-//    float* result_conv_1 = (float*)m_malloc(28*28*16*sizeof(float));
-//    conv(input_image, w1, b1, result_conv_1, 28, 28, 1, 3, 8);
+	///LAYER 1:
+	// 32 3x3 kernels on a 28 x 28 x 1 image
+	// output dimensions are 28 x 28 x 32
+//    float* result_conv_1 = (float*)m_malloc(28*28*32*sizeof(float));
+//    conv(input_image, w1, b1, result_conv_1, 28, 28, 1, 3, 32);
+
+
+	///LAYER 2:
+	//2x2 pool
+	//input dimensions: 28 x 28 x 32
+	//output dims: 14 x 14 x 32
+	float* result_pool_1 = (float*)m_malloc(14*14*32*sizeof(float));
+	nn_pool(result_conv_1, result_pool_1, 14, 14, 32, 2);
+	free(result_conv_1);
+
+
+	///LAYER 3: CONV
+	//input dims: 14 x 14 x 32
+	//32 3 x 3 x 32 kernels
+	//output: 14 x 14 x 32
+	float * result_conv_2 = (float*)m_malloc(14*14*32*sizeof(float));
+	conv(result_conv_1, w2, b2, result_conv_2, 14, 14, 32, 3, 32);
+
+	///LAYER 4: POOL
+	//2x2 pool
+	//input dims: 14 x 14 x 32
+	//output dims: 7 x 7 x 32
+
+	///LAYER 5: CONV
+	//input dims: 7 x 7 x 32
+	//32 3 x 3 x 32 kernels
+	//output: 7 x 7 x 32
+
+	///LAYER 6: POOL
+	//4x4 pool
+	//input dims: 7 x 7 x 32
+	//output dims: 1 x 1 x 32
+
+
+
+
 
 //	m_free(result_conv_1);
 //	m_free(w1);

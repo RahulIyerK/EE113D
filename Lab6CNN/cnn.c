@@ -61,6 +61,28 @@ void nn_pool(float input[], float output[], int height, int width, int channel, 
     }
 }
 
+double softmax(double input_vec[], double input, int input_size){
+    int i = 0;
+    double sum = 0;
+    for(i = 0; i < input_size; i++){
+        double sum += exp(input_vec[i]);
+    }
+    return input/sum;
+}
+
 void dense(float input[],float kernel[], float bias[], double output[], int input_size, int output_size){
-	//TODO
+	int i = 0;
+    int j = 0;
+    for(j = 0; j < input_size; j++){
+        for(i = 0; i < output_size; i++){
+            output[i] += (double) input[j] * (double) kernel[j * output_size + i];
+        }
+
+    }
+
+    i = 0;
+    for(i = 0; i < output_size; i++){
+        output[i] += (double) bias[j];
+        output[i] = softmax(output, output[i], output_size);
+    }
 }

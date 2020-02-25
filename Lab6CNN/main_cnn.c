@@ -25,6 +25,12 @@
 #define KERNEL_ARR_DIM_1 (KERNEL_SIZE_1 * KERNEL_SIZE_1 * NUM_KERNELS_1)
 #define OUTPUT_ARR_DIM_1 (INPUT_DIM_1 * INPUT_DIM_1 * NUM_KERNELS_1)
 
+
+// we assume the previous layer has 8 outputs but this can be changed
+// as we want to recognize digits and there's 10 digits, DENSE_OUPUT_DIM = 10
+#define DENSE_INPUT_DIM 8
+#define DENSE_OUPUT_DIM 10
+
 //CONV 2
 
 /*
@@ -239,10 +245,10 @@ int main(void)
 //    }
 //
 //    // data for dense
-//    float* input_dense_1 = (float*)malloc(8 * sizeof(float));
-//    float* kernel_dense_1 = (float*)malloc(80 * sizeof(float));
-//    double* result_dense_1 = (float*)malloc(10 * sizeof(double));
-//    float* bias_dense_1 = (float*)malloc(10 * sizeof(float));
+//    float* input_dense_1 = (float*)malloc(DENSE_INPUT_DIM * sizeof(float));
+//    float* kernel_dense_1 = (float*)malloc(DENSE_INPUT_DIM * DENSE_OUPUT_DIM * sizeof(float));
+//    double* result_dense_1 = (float*)malloc(DENSE_OUPUT_DIM * sizeof(double));
+//    float* bias_dense_1 = (float*)malloc(DENSE_OUPUT_DIM * sizeof(float));
 //
 //    input_dense_1[0] = 2;
 //    input_dense_1[1] = 4.5;
@@ -265,11 +271,17 @@ int main(void)
 //
 //    conv(input_conv_2, kernel_conv_2, bias_conv_2, result_conv_2, 5, 5, 2, 3, 3);
 //    nn_pool(input_pool_1, result_pool_1, 4, 4, 2, 2);
-////    dense(input_dense_1, kernel_dense_1, bias_dense_1, result_dense_1, 8, 10);
+////    dense(input_dense_1, kernel_dense_1, bias_dense_1, result_dense_1, DENSE_INPUT_DIM, DENSE_OUPUT_DIM);
 //
 //    for(i = 0; i < 75; i++){
 //        printf("%f \n", result_conv_2[i]);
 //    }
+
+    printf("DENSE OUTPUT:\n");
+
+    for(i = 0; i < DENSE_OUPUT_DIM; i++){
+        printf("%f \n", result_dense_1[i]);
+    }
 
     while(1);
 }

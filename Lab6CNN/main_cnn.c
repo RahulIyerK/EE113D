@@ -10,12 +10,14 @@
 
 //This checks against the jupyter network
 
-//CONV 1
+//Convolution Validation #1
 
 /*
  * input shape: 5x5x1
  * number of kernels: 2
- * kernel size: 3x3
+ * kernel size: 3x3x1
+ *
+ * output shape: 5x5x1 (x2)
  */
 #define INPUT_DIM_1 5
 #define NUM_KERNELS_1 2
@@ -25,24 +27,55 @@
 #define KERNEL_ARR_DIM_1 (KERNEL_SIZE_1 * KERNEL_SIZE_1 * NUM_KERNELS_1)
 #define OUTPUT_ARR_DIM_1 (INPUT_DIM_1 * INPUT_DIM_1 * NUM_KERNELS_1)
 
-//CONV 2
+//Convolution Validation #2
 
 /*
- * input shape: 5x5x1
+ * input shape: 5x5x2
  * number of kernels: 3
- * kernel size: 3x3
+ * kernel size: 3x3x2
+ *
+ * output shape: 5x5x1 (x3)
  */
 #define INPUT_DIM_2 5
 #define NUM_KERNELS_2 3
 #define KERNEL_SIZE_2 3
 #define INPUT_HEIGHT_2 2
 #define INPUT_ARR_DIM_2 (INPUT_DIM_2 * INPUT_DIM_2 * INPUT_HEIGHT_2)
-#define KERNEL_ARR_DIM_2 (KERNEL_SIZE_2 * KERNEL_SIZE_2 * NUM_KERNELS_2)
-#define OUTPUT_ARR_DIM_2 (INPUT_DIM_2 * INPUT_DIM_2 * INPUT_HEIGHT_2 * NUM_KERNELS_2)
+#define KERNEL_ARR_DIM_2 (KERNEL_SIZE_2 * KERNEL_SIZE_2 * INPUT_HEIGHT_2 * NUM_KERNELS_2)
+#define OUTPUT_ARR_DIM_2 (INPUT_DIM_2 * INPUT_DIM_2 * NUM_KERNELS_2)
+
+
+// Pooling Validation
+
+/*
+ * input shape: 4x4x2
+ * pooling tile: 2x2
+ *
+ * output shape: 2x2x2
+ */
+#define INPUT_DIM_POOL 4
+#define POOL_TILE_WIDTH 2
+#define NUM_INPUTS_POOL 2
+#define INPUT_ARR_DIM_POOL (INPUT_DIM_POOL * INPUT_DIM_POOL * NUM_INPUTS_POOL)
+#define OUTPUT_ARR_DIM_POOL (((INPUT_DIM_POOL)/POOL_TILE_WIDTH) * ((INPUT_DIM_POOL)/POOL_TILE_WIDTH) * NUM_INPUTS_POOL)
+
+// Dense Validation
+
+/*
+ * input shape: 2x2x2
+ * output shape: 10x1 (vector of 10 elements)
+ */
+
+#define INPUT_DIM_DENSE 2
+#define NUM_INPUTS_DENSE 2
+#define OUTPUT_DIM_DENSE 10
+
+#define INPUT_ARR_DIM_DENSE (INPUT_DIM_DENSE * INPUT_DIM_DENSE * NUM_INPUTS_DENSE)
+#define KERNEL_SIZE_DENSE (INPUT_DIM_DENSE * INPUT_DIM_DENSE * NUM_INPUTS_DENSE * OUTPUT_DIM_DENSE)
 
 int main(void)
 {
-	//CONV 1
+	//Convolution Validation #1
 
     float* input_conv = (float*)malloc(INPUT_ARR_DIM_1 * sizeof(float));
     float* kernel_conv = (float*)malloc(KERNEL_ARR_DIM_1 * sizeof(float));
@@ -99,9 +132,9 @@ int main(void)
 
     conv(input_conv, kernel_conv, bias_conv, result_conv, INPUT_DIM_1, INPUT_DIM_1, INPUT_HEIGHT_1, KERNEL_SIZE_1, NUM_KERNELS_1);
 
-    for(i=0; i < INPUT_ARR_DIM_1; i++)
+    for(i=0; i < OUTPUT_ARR_DIM_1;i+=NUM_KERNELS_1)
     {
-    	printf("%f, %f\n", result_conv[2*i], result_conv[2*i+1]);
+    	printf("%f, %f\n", result_conv[i], result_conv[i+1]);
     }
     printf("\n");
 
@@ -117,7 +150,7 @@ int main(void)
 
 	bias_conv = (float*)malloc(NUM_KERNELS_2 * sizeof(float));
 
-	// CONV 2
+	// Convolution Validation #2
 
 	//input data
 
@@ -207,69 +240,94 @@ int main(void)
 
     conv(input_conv, kernel_conv, bias_conv, result_conv, INPUT_DIM_2, INPUT_DIM_2, INPUT_HEIGHT_2, KERNEL_SIZE_2, NUM_KERNELS_2);
 
-    for(i=0; i < OUTPUT_ARR_DIM_2; i+=6)
+    for(i=0; i < OUTPUT_ARR_DIM_2; i+=NUM_KERNELS_2)
     {
     	printf("%f, %f, %f\n", result_conv[i], result_conv[i+1], result_conv[i+2]);
-    	printf("%f, %f, %f\n", result_conv[i+3], result_conv[i+4], result_conv[i+5]);
-    	printf("\n");
     }
+	printf("\n");
 
     free(input_conv);
     free(kernel_conv);
     free(bias_conv);
     free(result_conv);
 
-//    // data for pooling
-//    float* input_pool_1 = (float*)malloc(32 * sizeof(float));
-//    float* result_pool_1 = (float*)malloc(8 * sizeof(float));
-//    for(i=0;i<16;i++){
-//    	input_pool_1[2*i]=i+1;
-//    }
-//    for(i=0;i<4;i++){
-//    	input_pool_1[2*i+1]=4.5-i;
-//    }
-//    for(i=4;i<8;i++){
-//    	input_pool_1[2*i+1]=8.5-(i-4);
-//    }
-//    for(i=8;i<12;i++){
-//    	input_pool_1[2*i+1]=12.5-(i-8);
-//    }
-//    for(i=12;i<16;i++){
-//    	input_pool_1[2*i+1]=16.5-(i-12);
-//    }
-//
-//    // data for dense
-//    float* input_dense_1 = (float*)malloc(8 * sizeof(float));
-//    float* kernel_dense_1 = (float*)malloc(80 * sizeof(float));
-//    double* result_dense_1 = (float*)malloc(10 * sizeof(double));
-//    float* bias_dense_1 = (float*)malloc(10 * sizeof(float));
-//
-//    input_dense_1[0] = 2;
-//    input_dense_1[1] = 4.5;
-//    input_dense_1[2] = 2;
-//    input_dense_1[3] = 3;
-//    input_dense_1[4] = 3;
-//    input_dense_1[5] = 3;
-//    input_dense_1[6] = 2;
-//    input_dense_1[7] = 2.2;
-//
-//    int j;
-//    for(j=0;j<10;j++){
-//        for(i=0;i<8;i++){
-//        	kernel_dense_1[i*10+j] = 1 + i + j*0.5;
-//        }
-//    }
-//    for(i=0;i<10;i++){
-//    	bias_dense_1[i] = i;
-//    }
-//
-//    conv(input_conv_2, kernel_conv_2, bias_conv_2, result_conv_2, 5, 5, 2, 3, 3);
-//    nn_pool(input_pool_1, result_pool_1, 4, 4, 2, 2);
-////    dense(input_dense_1, kernel_dense_1, bias_dense_1, result_dense_1, 8, 10);
-//
-//    for(i = 0; i < 75; i++){
-//        printf("%f \n", result_conv_2[i]);
-//    }
+    // Pooling Validation
+    float* input_pool = (float*)malloc(INPUT_ARR_DIM_POOL * sizeof(float));
+    float* result_pool = (float*)malloc(OUTPUT_ARR_DIM_POOL * sizeof(float));
+
+    for (i = 0; i < INPUT_DIM_POOL * INPUT_DIM_POOL; i++)
+    {
+    	input_pool[2*i] = i+1;
+    }
+    for (i = 0; i < INPUT_DIM_POOL; i++)
+    {
+    	input_pool[2*i+1]= 4.5 - i;
+    }
+    for (i = INPUT_DIM_POOL; i < 2*INPUT_DIM_POOL; i++)
+    {
+    	input_pool[2*i+1] = 8.5 - (i - 4);
+    }
+    for (i = 2*INPUT_DIM_POOL; i < 3*INPUT_DIM_POOL; i++)
+    {
+    	input_pool[2*i+1] = 12.5 - (i - 8);
+    }
+    for (i = 3*INPUT_DIM_POOL; i < INPUT_DIM_POOL*INPUT_DIM_POOL; i++)
+    {
+    	input_pool[2*i+1] = 16.5 - (i - 12);
+    }
+
+    nn_pool(input_pool, result_pool, INPUT_DIM_POOL, INPUT_DIM_POOL, POOL_TILE_WIDTH, POOL_TILE_WIDTH);
+
+    for (i = 0; i < OUTPUT_ARR_DIM_POOL;i+=2)
+    {
+    	printf("%f, %f\n",result_pool[i], result_pool[i+1]);
+    }
+    printf("\n");
+
+    free(input_pool);
+    free(result_pool);
+
+    // Dense Validation
+
+    float* input_dense = (float*)malloc(INPUT_ARR_DIM_DENSE * sizeof(float));
+    float* kernel_dense = (float*)malloc(KERNEL_SIZE_DENSE * sizeof(float));
+    float* result_dense = (float*)malloc(OUTPUT_DIM_DENSE * sizeof(float));
+    float* bias_dense = (float*)malloc(OUTPUT_DIM_DENSE * sizeof(float));
+
+    // generate data to test dense
+
+	input_dense[0] = 2;
+	input_dense[1] = 4.5;
+	input_dense[2] = 2;
+	input_dense[3] = 3;
+	input_dense[4] = 3;
+	input_dense[5] = 3;
+	input_dense[6] = 2;
+	input_dense[7] = 2.2;
+
+
+    int j;
+    for(j=0;j<OUTPUT_DIM_DENSE;j++){
+        for(i=0;i<INPUT_ARR_DIM_DENSE;i++){
+        	kernel_dense[i*10+j] = 1 + i + j*0.5;
+        }
+    }
+    for(i=0;i<OUTPUT_DIM_DENSE;i++){
+    	bias_dense[i] = i;
+    }
+
+    dense(input_dense, kernel_dense, bias_dense, result_dense, INPUT_ARR_DIM_DENSE, OUTPUT_DIM_DENSE);
+
+    for(i=0;i<OUTPUT_DIM_DENSE;i++)
+    {
+    	printf("%f\n",result_dense[i]);
+    }
+    printf("\n");
+
+    free(input_dense);
+    free(kernel_dense);
+    free(result_dense);
+    free(bias_dense);
 
     while(1);
 }

@@ -1,10 +1,10 @@
 ******************************************************************************
                TMS320C6x Linker PC v7.4.4                      
 ******************************************************************************
->> Linked Thu Feb 20 13:42:03 2020
+>> Linked Tue Feb 25 11:22:29 2020
 
 OUTPUT FILE NAME:   <usb_host_msc.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: c000b000
+ENTRY POINT SYMBOL: "_c_int00"  address: c000bc00
 
 
 MEMORY CONFIGURATION
@@ -14,28 +14,29 @@ MEMORY CONFIGURATION
   L2                    11800000   00040000  00000000  00040000  RWIX
   L1P                   11e00000   00008000  00000000  00008000  RWIX
   L1D                   11f00000   00008000  00000000  00008000  RWIX
-  DDR2                  c0000000   08000000  0000b0b8  07ff4f48  RWIX
+  DDR2                  c0000000   08000000  0000bb1c  07ff44e4  RWIX
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-c0000000    c0000000    000086a0   000086a0    r-x
-  c0000000    c0000000    000086a0   000086a0    r-x .text
-c00086a0    c00086a0    00002000   00000000    rw-
-  c00086a0    c00086a0    00001000   00000000    rw- .stack
-  c00096a0    c00096a0    00001000   00000000    rw- .sysmem
-c000a6a0    c000a6a0    000006a4   000006a4    rw-
-  c000a6a0    c000a6a0    00000388   00000388    rw- .far
-  c000aa28    c000aa28    0000031c   0000031c    rw- .fardata
-c000ad48    c000ad48    0000013c   0000013c    r--
-  c000ad48    c000ad48    0000013c   0000013c    r-- .const
-c000ae88    c000ae88    00000120   00000000    rw-
-  c000ae88    c000ae88    00000120   00000000    rw- .cio
-c000b000    c000b000    00000118   00000118    r-x
-  c000b000    c000b000    00000080   00000080    r-x .text:_c_int00
-  c000b080    c000b080    00000098   00000098    r-- .cinit
+c0000000    c0000000    000090a0   000090a0    r-x
+  c0000000    c0000000    000090a0   000090a0    r-x .text
+c00090a0    c00090a0    00002000   00000000    rw-
+  c00090a0    c00090a0    00001000   00000000    rw- .stack
+  c000a0a0    c000a0a0    00001000   00000000    rw- .sysmem
+c000b0a0    c000b0a0    000006d8   000006d8    rw-
+  c000b0a0    c000b0a0    00000388   00000388    rw- .far
+  c000b428    c000b428    00000350   00000350    rw- .fardata
+c000b778    c000b778    00000140   00000140    r--
+  c000b778    c000b778    00000140   00000140    r-- .const
+c000b8b8    c000b8b8    00000120   00000000    rw-
+  c000b8b8    c000b8b8    00000120   00000000    rw- .cio
+c000b9d8    c000b9d8    000000c4   000000c4    r--
+  c000b9d8    c000b9d8    000000c4   000000c4    r-- .cinit
+c000bc00    c000bc00    00000080   00000080    r-x
+  c000bc00    c000bc00    00000080   00000080    r-x .text:_c_int00
 
 
 SECTION ALLOCATION MAP
@@ -46,141 +47,149 @@ section   page    origin      length       input sections
 .init_array 
 *          0    c0000000    00000000     UNINITIALIZED
 
-.text      0    c0000000    000086a0     
+.text      0    c0000000    000090a0     
                   c0000000    00001aa0     system_config.lib : interrupt.obj (.text:retain)
-                  c0001aa0    000005c0     rts6740_elf.lib : _printfi.obj (.text:_getarg_diouxp)
-                  c0002060    000005a0                     : divd.obj (.text:__c6xabi_divd)
-                  c0002600    000005a0     cnn.obj (.text)
-                  c0002ba0    00000560     main_cnn.obj (.text)
-                  c0003100    00000460     rts6740_elf.lib : _printfi.obj (.text:_printfi)
-                  c0003560    00000460                     : _printfi.obj (.text:_setfield)
-                  c00039c0    000003a0                     : fputs.obj (.text:fputs)
-                  c0003d60    00000320                     : _printfi.obj (.text:_pproc_fge)
-                  c0004080    000002e0                     : _printfi.obj (.text:_pproc_fwp)
-                  c0004360    000002a0                     : _printfi.obj (.text:ecvt)
-                  c0004600    000002a0                     : _printfi.obj (.text:fcvt)
-                  c00048a0    00000280                     : memory.obj (.text:free)
-                  c0004b20    00000260                     : imath64.obj (.text:__c6xabi_divull)
-                  c0004d80    00000260                     : _printfi.obj (.text:_pconv_e)
-                  c0004fe0    00000240                     : _printfi.obj (.text:_pproc_diouxp)
-                  c0005220    00000220                     : _printfi.obj (.text:_pproc_str)
-                  c0005440    00000220                     : fputc.obj (.text:fputc)
-                  c0005660    00000200                     : _printfi.obj (.text:_pconv_g)
-                  c0005860    00000200                     : setvbuf.obj (.text:setvbuf)
-                  c0005a60    000001a0                     : imath40.obj (.text:__c6xabi_divul)
-                  c0005c00    00000200     system_config.lib : intvecs.obj (.text)
-                  c0005e00    000001c0     rts6740_elf.lib : _printfi.obj (.text:_mcpy)
-                  c0005fc0    00000180                     : trgdrv.obj (.text:HOSTrename)
-                  c0006140    00000180                     : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
-                  c00062c0    00000180                     : memory.obj (.text:malloc)
-                  c0006440    00000140                     : _printfi.obj (.text:_pproc_fflags)
-                  c0006580    00000140                     : lowlev.obj (.text:getdevice)
-                  c00066c0    00000120                     : fclose.obj (.text:_closefile)
-                  c00067e0    00000120                     : _printfi.obj (.text:_ltostr)
-                  c0006900    00000120                     : fseek.obj (.text:fseek)
-                  c0006a20    00000100                     : trgdrv.obj (.text:HOSTlseek)
-                  c0006b20    00000100                     : autoinit.obj (.text:_auto_init_elf)
-                  c0006c20    00000100                     : _io_perm.obj (.text:_wrt_ok)
-                  c0006d20    00000100                     : cpy_tbl.obj (.text:copy_in)
-                  c0006e20    000000e0                     : trgdrv.obj (.text:HOSTopen)
-                  c0006f00    000000e0                     : divi.obj (.text:__divi)
-                  c0006fe0    000000e0                     : atoi.obj (.text:atoi)
-                  c00070c0    000000e0                     : lowlev.obj (.text:close)
-                  c00071a0    000000e0                     : ltoa.obj (.text:ltoa)
-                  c0007280    000000e0                     : memset.obj (.text:memset)
-                  c0007360    000000e0                     : printf.obj (.text:printf)
-                  c0007440    000000c0                     : trgdrv.obj (.text:HOSTread)
-                  c0007500    000000c0                     : trgdrv.obj (.text:HOSTunlink)
-                  c00075c0    000000c0                     : trgdrv.obj (.text:HOSTwrite)
-                  c0007680    000000c0                     : divu.obj (.text:__divu)
-                  c0007740    000000c0                     : _printfi.obj (.text:_div)
-                  c0007800    000000c0                     : fflush.obj (.text:_doflush)
-                  c00078c0    000000c0                     : tls.obj (.text:tls:init:__TI_tls_init)
-                  c0007980    000000a0                     : trgdrv.obj (.text:HOSTclose)
-                  c0007a20    000000a0                     : fopen.obj (.text:_cleanup)
-                  c0007ac0    000000a0                     : _printfi.obj (.text:_ecpy)
-                  c0007b60    000000a0                     : _printfi.obj (.text:_fcpy)
-                  c0007c00    000000a0                     : memory.obj (.text:_minit)
-                  c0007ca0    000000a0                     : _printfi.obj (.text:_pconv_f)
-                  c0007d40    000000a0     exit.obj (.text)
-                  c0007de0    000000a0     rts6740_elf.lib : lowlev.obj (.text:finddevice)
-                  c0007e80    000000a0                     : lowlev.obj (.text:lseek)
-                  c0007f20    000000a0                     : memcpy64.obj (.text:memcpy)
-                  c0007fc0    000000a0                     : memory.obj (.text:minsert)
-                  c0008060    000000a0                     : memory.obj (.text:mremove)
-                  c0008100    000000a0                     : lowlev.obj (.text:write)
-                  c00081a0    00000080                     : llshift.obj (.text:__c6xabi_llshl)
-                  c0008220    00000080                     : trgmsg.obj (.text:readmsg)
-                  c00082a0    00000080                     : lowlev.obj (.text:unlink)
-                  c0008320    00000060                     : cpp_init.obj (.text:__TI_cpp_init)
-                  c0008380    00000060                     : imath64.obj (.text:_subcull)
-                  c00083e0    00000060                     : memccpy.obj (.text:memccpy)
-                  c0008440    00000060                     : trgmsg.obj (.text:writemsg)
-                  c00084a0    00000040                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
-                  c00084e0    00000040                     : isinf.obj (.text:__c6xabi_isinf)
-                  c0008520    00000040                     : _printfi.obj (.text:__c6xabi_isnan)
-                  c0008560    00000040                     : llshift.obj (.text:__c6xabi_llshru)
-                  c00085a0    00000040                     : args_main.obj (.text:_args_main)
-                  c00085e0    00000020                     : negll.obj (.text:__c6xabi_negll)
-                  c0008600    00000020                     : _lock.obj (.text:_nop)
-                  c0008620    00000020                     : printf.obj (.text:_outc)
-                  c0008640    00000020                     : printf.obj (.text:_outs)
-                  c0008660    00000020                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
-                  c0008680    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  c0001aa0    00000920     main_cnn.obj (.text)
+                  c00023c0    00000740     cnn.obj (.text)
+                  c0002b00    000005c0     rts6740_elf.lib : _printfi.obj (.text:_getarg_diouxp)
+                  c00030c0    000005a0                     : divd.obj (.text:__c6xabi_divd)
+                  c0003660    00000460                     : _printfi.obj (.text:_printfi)
+                  c0003ac0    00000460                     : _printfi.obj (.text:_setfield)
+                  c0003f20    000003a0                     : fputs.obj (.text:fputs)
+                  c00042c0    00000320                     : _printfi.obj (.text:_pproc_fge)
+                  c00045e0    000002e0                     : _printfi.obj (.text:_pproc_fwp)
+                  c00048c0    000002a0                     : _printfi.obj (.text:ecvt)
+                  c0004b60    000002a0                     : _printfi.obj (.text:fcvt)
+                  c0004e00    00000280                     : memory.obj (.text:free)
+                  c0005080    00000260                     : imath64.obj (.text:__c6xabi_divull)
+                  c00052e0    00000260                     : _printfi.obj (.text:_pconv_e)
+                  c0005540    00000240                     : _printfi.obj (.text:_pproc_diouxp)
+                  c0005780    00000240                     : exp.obj (.text:exp)
+                  c00059c0    00000220                     : _printfi.obj (.text:_pproc_str)
+                  c0005be0    00000220                     : fputc.obj (.text:fputc)
+                  c0005e00    00000200                     : _printfi.obj (.text:_pconv_g)
+                  c0006000    00000200                     : setvbuf.obj (.text:setvbuf)
+                  c0006200    000001c0                     : _printfi.obj (.text:_mcpy)
+                  c00063c0    00000040                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
+                  c0006400    00000200     system_config.lib : intvecs.obj (.text)
+                  c0006600    000001a0     rts6740_elf.lib : imath40.obj (.text:__c6xabi_divul)
+                  c00067a0    00000180                     : trgdrv.obj (.text:HOSTrename)
+                  c0006920    00000180                     : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  c0006aa0    00000180                     : ldexp.obj (.text:ldexp)
+                  c0006c20    00000180                     : memory.obj (.text:malloc)
+                  c0006da0    00000140                     : _printfi.obj (.text:_pproc_fflags)
+                  c0006ee0    00000140                     : lowlev.obj (.text:getdevice)
+                  c0007020    00000120                     : fclose.obj (.text:_closefile)
+                  c0007140    00000120                     : _printfi.obj (.text:_ltostr)
+                  c0007260    00000120                     : fseek.obj (.text:fseek)
+                  c0007380    00000100                     : trgdrv.obj (.text:HOSTlseek)
+                  c0007480    00000100                     : autoinit.obj (.text:_auto_init_elf)
+                  c0007580    00000100                     : _io_perm.obj (.text:_wrt_ok)
+                  c0007680    00000100                     : cpy_tbl.obj (.text:copy_in)
+                  c0007780    000000e0                     : trgdrv.obj (.text:HOSTopen)
+                  c0007860    000000e0                     : divi.obj (.text:__divi)
+                  c0007940    000000e0                     : atoi.obj (.text:atoi)
+                  c0007a20    000000e0                     : lowlev.obj (.text:close)
+                  c0007b00    000000e0                     : ltoa.obj (.text:ltoa)
+                  c0007be0    000000e0                     : memset.obj (.text:memset)
+                  c0007cc0    000000e0                     : printf.obj (.text:printf)
+                  c0007da0    000000c0                     : trgdrv.obj (.text:HOSTread)
+                  c0007e60    000000c0                     : trgdrv.obj (.text:HOSTunlink)
+                  c0007f20    000000c0                     : trgdrv.obj (.text:HOSTwrite)
+                  c0007fe0    000000c0                     : divu.obj (.text:__divu)
+                  c00080a0    000000c0                     : _printfi.obj (.text:_div)
+                  c0008160    000000c0                     : fflush.obj (.text:_doflush)
+                  c0008220    000000c0                     : tls.obj (.text:tls:init:__TI_tls_init)
+                  c00082e0    000000a0                     : trgdrv.obj (.text:HOSTclose)
+                  c0008380    000000a0                     : fopen.obj (.text:_cleanup)
+                  c0008420    000000a0                     : _printfi.obj (.text:_ecpy)
+                  c00084c0    000000a0                     : _printfi.obj (.text:_fcpy)
+                  c0008560    000000a0                     : memory.obj (.text:_minit)
+                  c0008600    000000a0                     : _printfi.obj (.text:_pconv_f)
+                  c00086a0    000000a0     exit.obj (.text)
+                  c0008740    000000a0     rts6740_elf.lib : lowlev.obj (.text:finddevice)
+                  c00087e0    000000a0                     : lowlev.obj (.text:lseek)
+                  c0008880    000000a0                     : memcpy64.obj (.text:memcpy)
+                  c0008920    000000a0                     : memory.obj (.text:minsert)
+                  c00089c0    000000a0                     : modf.obj (.text:modf)
+                  c0008a60    000000a0                     : memory.obj (.text:mremove)
+                  c0008b00    000000a0                     : lowlev.obj (.text:write)
+                  c0008ba0    00000080                     : llshift.obj (.text:__c6xabi_llshl)
+                  c0008c20    00000080                     : trgmsg.obj (.text:readmsg)
+                  c0008ca0    00000080                     : lowlev.obj (.text:unlink)
+                  c0008d20    00000060                     : cpp_init.obj (.text:__TI_cpp_init)
+                  c0008d80    00000060                     : imath64.obj (.text:_subcull)
+                  c0008de0    00000060                     : memccpy.obj (.text:memccpy)
+                  c0008e40    00000060                     : trgmsg.obj (.text:writemsg)
+                  c0008ea0    00000040                     : isinf.obj (.text:__c6xabi_isinf)
+                  c0008ee0    00000040                     : _printfi.obj (.text:__c6xabi_isnan)
+                  c0008f20    00000040                     : llshift.obj (.text:__c6xabi_llshru)
+                  c0008f60    00000040                     : args_main.obj (.text:_args_main)
+                  c0008fa0    00000020                     : errno.obj (.text:__c6xabi_errno_addr)
+                  c0008fc0    00000020                     : negll.obj (.text:__c6xabi_negll)
+                  c0008fe0    00000020                     : trunc.obj (.text:__c6xabi_trunc)
+                  c0009000    00000020                     : _lock.obj (.text:_nop)
+                  c0009020    00000020                     : printf.obj (.text:_outc)
+                  c0009040    00000020                     : printf.obj (.text:_outs)
+                  c0009060    00000020                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  c0009080    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
 
-.stack     0    c00086a0    00001000     UNINITIALIZED
-                  c00086a0    00000008     rts6740_elf.lib : boot.obj (.stack)
-                  c00086a8    00000ff8     --HOLE--
+.stack     0    c00090a0    00001000     UNINITIALIZED
+                  c00090a0    00000008     rts6740_elf.lib : boot.obj (.stack)
+                  c00090a8    00000ff8     --HOLE--
 
-.sysmem    0    c00096a0    00001000     UNINITIALIZED
-                  c00096a0    00000008     rts6740_elf.lib : memory.obj (.sysmem)
-                  c00096a8    00000ff8     --HOLE--
+.sysmem    0    c000a0a0    00001000     UNINITIALIZED
+                  c000a0a0    00000008     rts6740_elf.lib : memory.obj (.sysmem)
+                  c000a0a8    00000ff8     --HOLE--
 
-.far       0    c000a6a0    00000388     
-                  c000a6a0    00000240     system_config.lib : interrupt.obj (.far) [fill = 0]
-                  c000a8e0    00000140     rts6740_elf.lib : defs.obj (.far) [fill = 0]
-                  c000aa20    00000008                     : trgdrv.obj (.far) [fill = 0]
+.far       0    c000b0a0    00000388     
+                  c000b0a0    00000240     system_config.lib : interrupt.obj (.far) [fill = 0]
+                  c000b2e0    00000140     rts6740_elf.lib : defs.obj (.far) [fill = 0]
+                  c000b420    00000008                     : trgdrv.obj (.far) [fill = 0]
 
-.fardata   0    c000aa28    0000031c     
-                  c000aa28    000001e0     rts6740_elf.lib : defs.obj (.fardata:_ftable)
-                  c000ac08    000000a0                     : lowlev.obj (.fardata:_stream)
-                  c000aca8    00000078                     : lowlev.obj (.fardata:_device)
-                  c000ad20    0000000c     exit.obj (.fardata)
-                  c000ad2c    0000000c     rts6740_elf.lib : memory.obj (.fardata)
-                  c000ad38    00000008                     : _lock.obj (.fardata)
-                  c000ad40    00000004                     : defs.obj (.fardata)
+.fardata   0    c000b428    00000350     
+                  c000b428    000001e0     rts6740_elf.lib : defs.obj (.fardata:_ftable)
+                  c000b608    000000a0                     : lowlev.obj (.fardata:_stream)
+                  c000b6a8    00000078                     : lowlev.obj (.fardata:_device)
+                  c000b720    00000018                     : exp.obj (.fardata:P$1)
+                  c000b738    00000018                     : exp.obj (.fardata:Q$2)
+                  c000b750    0000000c     exit.obj (.fardata)
+                  c000b75c    0000000c     rts6740_elf.lib : memory.obj (.fardata)
+                  c000b768    00000008                     : _lock.obj (.fardata)
+                  c000b770    00000004                     : defs.obj (.fardata)
+                  c000b774    00000004                     : errno.obj (.fardata)
 
-.const     0    c000ad48    0000013c     
-                  c000ad48    00000101     rts6740_elf.lib : ctype.obj (.const:.string:_ctypes_)
-                  c000ae49    00000023                     : _printfi.obj (.const:.string)
-                  c000ae6c    00000018     main_cnn.obj (.const:.string)
+.const     0    c000b778    00000140     
+                  c000b778    00000101     rts6740_elf.lib : ctype.obj (.const:.string:_ctypes_)
+                  c000b879    00000023                     : _printfi.obj (.const:.string)
+                  c000b89c    0000001c     main_cnn.obj (.const:.string)
 
-.cio       0    c000ae88    00000120     UNINITIALIZED
-                  c000ae88    00000120     rts6740_elf.lib : trgmsg.obj (.cio)
+.cio       0    c000b8b8    00000120     UNINITIALIZED
+                  c000b8b8    00000120     rts6740_elf.lib : trgmsg.obj (.cio)
+
+.cinit     0    c000b9d8    000000c4     
+                  c000b9d8    0000009f     (.cinit..fardata.load) [load image, compression = rle]
+                  c000ba77    00000001     --HOLE-- [fill = 0]
+                  c000ba78    0000000b     (.cinit..far.load) [load image, compression = rle]
+                  c000ba83    00000001     --HOLE-- [fill = 0]
+                  c000ba84    00000008     (__TI_handler_table)
+                  c000ba8c    00000010     (__TI_cinit_table)
 
 .text:_c_int00 
-*          0    c000b000    00000080     
-                  c000b000    00000080     rts6740_elf.lib : boot.obj (.text:_c_int00)
-
-.cinit     0    c000b080    00000098     
-                  c000b080    00000072     (.cinit..fardata.load) [load image, compression = rle]
-                  c000b0f2    00000002     --HOLE-- [fill = 0]
-                  c000b0f4    0000000b     (.cinit..far.load) [load image, compression = rle]
-                  c000b0ff    00000001     --HOLE-- [fill = 0]
-                  c000b100    00000008     (__TI_handler_table)
-                  c000b108    00000010     (__TI_cinit_table)
+*          0    c000bc00    00000080     
+                  c000bc00    00000080     rts6740_elf.lib : boot.obj (.text:_c_int00)
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ c000b108 records: 2, size/record: 8, table size: 16
-	.fardata: load addr=c000b080, load size=00000072 bytes, run addr=c000aa28, run size=0000031c bytes, compression=rle
-	.far: load addr=c000b0f4, load size=0000000b bytes, run addr=c000a6a0, run size=00000388 bytes, compression=rle
+__TI_cinit_table @ c000ba8c records: 2, size/record: 8, table size: 16
+	.fardata: load addr=c000b9d8, load size=0000009f bytes, run addr=c000b428, run size=00000350 bytes, compression=rle
+	.far: load addr=c000ba78, load size=0000000b bytes, run addr=c000b0a0, run size=00000388 bytes, compression=rle
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ c000b100 records: 2, size/record: 4, table size: 8
+__TI_handler_table @ c000ba84 records: 2, size/record: 4, table size: 8
 	index: 0, handler: __TI_decompress_rle24
 	index: 1, handler: __TI_decompress_none
 
@@ -189,53 +198,56 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 
 address    name
 --------   ----
-c0007dcc   C$$EXIT
-c0008498   C$$IO$$
-c0007980   HOSTclose
-c0006a20   HOSTlseek
-c0006e20   HOSTopen
-c0007440   HOSTread
-c0005fc0   HOSTrename
-c0007500   HOSTunlink
-c00075c0   HOSTwrite
-c000ae88   __CIOBUF_
-c000b108   __TI_CINIT_Base
-c000b118   __TI_CINIT_Limit
-c000b100   __TI_Handler_Table_Base
-c000b108   __TI_Handler_Table_Limit
+c000872c   C$$EXIT
+c0008e98   C$$IO$$
+c00082e0   HOSTclose
+c0007380   HOSTlseek
+c0007780   HOSTopen
+c0007da0   HOSTread
+c00067a0   HOSTrename
+c0007e60   HOSTunlink
+c0007f20   HOSTwrite
+c000b8b8   __CIOBUF_
+c000ba8c   __TI_CINIT_Base
+c000ba9c   __TI_CINIT_Limit
+c000ba84   __TI_Handler_Table_Base
+c000ba8c   __TI_Handler_Table_Limit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
-c00096a0   __TI_STACK_END
+c000a0a0   __TI_STACK_END
 00001000   __TI_STACK_SIZE
 00000000   __TI_STATIC_BASE
 00001000   __TI_SYSMEM_SIZE
 UNDEFED    __TI_TLS_INIT_Base
 UNDEFED    __TI_TLS_INIT_Limit
 00000001   __TI_args_main
-c0008320   __TI_cpp_init
-c0008660   __TI_decompress_none
-c0008680   __TI_decompress_rle24
-c000ad28   __TI_enable_exit_profile_output
+c0008d20   __TI_cpp_init
+c0009060   __TI_decompress_none
+c0009080   __TI_decompress_rle24
+c000b758   __TI_enable_exit_profile_output
 ffffffff   __TI_pprof_out_hndl
 ffffffff   __TI_prof_data_size
 ffffffff   __TI_prof_data_start
-c00078c0   __TI_tls_init
+c0008220   __TI_tls_init
 ffffffff   __binit__
-c0002060   __c6xabi_divd
-c0006f00   __c6xabi_divi
-c0007680   __c6xabi_divu
-c0005a60   __c6xabi_divul
-c0004b20   __c6xabi_divull
-c00084a0   __c6xabi_frcmpyd_div
-c00084e0   __c6xabi_isinf
-c00081a0   __c6xabi_llshl
-c0008560   __c6xabi_llshru
-c00085e0   __c6xabi_negll
+c00030c0   __c6xabi_divd
+c0007860   __c6xabi_divi
+c0007fe0   __c6xabi_divu
+c0006600   __c6xabi_divul
+c0005080   __c6xabi_divull
+c0008fa0   __c6xabi_errno_addr
+c00063c0   __c6xabi_frcmpyd_div
+c0008ea0   __c6xabi_isinf
+c0008ba0   __c6xabi_llshl
+c0008f20   __c6xabi_llshru
+c0008fc0   __c6xabi_negll
+c0008fe0   __c6xabi_trunc
 ffffffff   __c_args__
-c0006f00   __divi
-c0007680   __divu
-c00085a0   _args_main
-c0006b20   _auto_init_elf
+c0007860   __divi
+c0007fe0   __divu
+c000b774   __errno
+c0008f60   _args_main
+c0007480   _auto_init_elf
 c0000ff8   _c674x_mask_int10_isr
 c00011c0   _c674x_mask_int11_isr
 c0001384   _c674x_mask_int12_isr
@@ -251,53 +263,58 @@ c0000e30   _c674x_mask_int9_isr
 c0000000   _c674x_nmi_isr
 c00001c4   _c674x_rsvd_int2_isr
 c0000388   _c674x_rsvd_int3_isr
-c000b000   _c_int00
-c0007a20   _cleanup
-c000ad20   _cleanup_ptr
-c00066c0   _closefile
-c000ad48   _ctypes_
-c0007800   _doflush
-c000ad24   _dtors_ptr
-c000ad40   _ft_end
-c000aa28   _ftable
-c0005c00   _intcVectorTable
-c000ad38   _lock
-c0007c00   _minit
-c0008600   _nop
-c0003100   _printfi
-c00086a0   _stack
-c0008380   _subcull
-c00096a0   _sys_memory
-c000a8e0   _tmpnams
-c000ad3c   _unlock
-c0006c20   _wrt_ok
-c0007dcc   abort
-c0006fe0   atoi
+c000bc00   _c_int00
+c0008380   _cleanup
+c000b750   _cleanup_ptr
+c0007020   _closefile
+c000b778   _ctypes_
+c0008160   _doflush
+c000b754   _dtors_ptr
+c000b770   _ft_end
+c000b428   _ftable
+c0006400   _intcVectorTable
+c000b768   _lock
+c0008560   _minit
+c0009000   _nop
+c0003660   _printfi
+c00090a0   _stack
+c0008d80   _subcull
+c000a0a0   _sys_memory
+c000b2e0   _tmpnams
+c000b76c   _unlock
+c0007580   _wrt_ok
+c000872c   abort
+c0007940   atoi
 ffffffff   binit
-c00070c0   close
-c0002600   conv
-c0006d20   copy_in
-c0002b64   dense
-c0007d40   exit
-c0005440   fputc
-c00039c0   fputs
-c00048a0   free
-c0006900   fseek
-c0007e80   lseek
-c00071a0   ltoa
-c0002ba0   main
-c00062c0   malloc
-c00083e0   memccpy
-c0007f20   memcpy
-c0007280   memset
-c0002968   nn_pool
-c0007360   printf
-c0008220   readmsg
-c00082a0   remove
-c0005860   setvbuf
-c00082a0   unlink
-c0008100   write
-c0008440   writemsg
+c0007a20   close
+c00023c0   conv
+c0007680   copy_in
+c00029ac   dense
+c000b774   errno
+c00086a0   exit
+c0005780   exp
+c0005be0   fputc
+c0003f20   fputs
+c0004e00   free
+c0007260   fseek
+c0006aa0   ldexp
+c00087e0   lseek
+c0007b00   ltoa
+c0001aa0   main
+c0006c20   malloc
+c0008de0   memccpy
+c0008880   memcpy
+c0007be0   memset
+c00089c0   modf
+c0002728   nn_pool
+c0007cc0   printf
+c0008c20   readmsg
+c0008ca0   remove
+c0006000   setvbuf
+c0002924   softmax
+c0008ca0   unlink
+c0008b00   write
+c0008e40   writemsg
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -323,86 +340,94 @@ c0001384   _c674x_mask_int12_isr
 c0001548   _c674x_mask_int13_isr
 c0001710   _c674x_mask_int14_isr
 c00018d8   _c674x_mask_int15_isr
-c0002060   __c6xabi_divd
-c0002600   conv
-c0002968   nn_pool
-c0002b64   dense
-c0002ba0   main
-c0003100   _printfi
-c00039c0   fputs
-c00048a0   free
-c0004b20   __c6xabi_divull
-c0005440   fputc
-c0005860   setvbuf
-c0005a60   __c6xabi_divul
-c0005c00   _intcVectorTable
-c0005fc0   HOSTrename
-c00062c0   malloc
-c00066c0   _closefile
-c0006900   fseek
-c0006a20   HOSTlseek
-c0006b20   _auto_init_elf
-c0006c20   _wrt_ok
-c0006d20   copy_in
-c0006e20   HOSTopen
-c0006f00   __c6xabi_divi
-c0006f00   __divi
-c0006fe0   atoi
-c00070c0   close
-c00071a0   ltoa
-c0007280   memset
-c0007360   printf
-c0007440   HOSTread
-c0007500   HOSTunlink
-c00075c0   HOSTwrite
-c0007680   __c6xabi_divu
-c0007680   __divu
-c0007800   _doflush
-c00078c0   __TI_tls_init
-c0007980   HOSTclose
-c0007a20   _cleanup
-c0007c00   _minit
-c0007d40   exit
-c0007dcc   C$$EXIT
-c0007dcc   abort
-c0007e80   lseek
-c0007f20   memcpy
-c0008100   write
-c00081a0   __c6xabi_llshl
-c0008220   readmsg
-c00082a0   remove
-c00082a0   unlink
-c0008320   __TI_cpp_init
-c0008380   _subcull
-c00083e0   memccpy
-c0008440   writemsg
-c0008498   C$$IO$$
-c00084a0   __c6xabi_frcmpyd_div
-c00084e0   __c6xabi_isinf
-c0008560   __c6xabi_llshru
-c00085a0   _args_main
-c00085e0   __c6xabi_negll
-c0008600   _nop
-c0008660   __TI_decompress_none
-c0008680   __TI_decompress_rle24
-c00086a0   _stack
-c00096a0   __TI_STACK_END
-c00096a0   _sys_memory
-c000a8e0   _tmpnams
-c000aa28   _ftable
-c000ad20   _cleanup_ptr
-c000ad24   _dtors_ptr
-c000ad28   __TI_enable_exit_profile_output
-c000ad38   _lock
-c000ad3c   _unlock
-c000ad40   _ft_end
-c000ad48   _ctypes_
-c000ae88   __CIOBUF_
-c000b000   _c_int00
-c000b100   __TI_Handler_Table_Base
-c000b108   __TI_CINIT_Base
-c000b108   __TI_Handler_Table_Limit
-c000b118   __TI_CINIT_Limit
+c0001aa0   main
+c00023c0   conv
+c0002728   nn_pool
+c0002924   softmax
+c00029ac   dense
+c00030c0   __c6xabi_divd
+c0003660   _printfi
+c0003f20   fputs
+c0004e00   free
+c0005080   __c6xabi_divull
+c0005780   exp
+c0005be0   fputc
+c0006000   setvbuf
+c00063c0   __c6xabi_frcmpyd_div
+c0006400   _intcVectorTable
+c0006600   __c6xabi_divul
+c00067a0   HOSTrename
+c0006aa0   ldexp
+c0006c20   malloc
+c0007020   _closefile
+c0007260   fseek
+c0007380   HOSTlseek
+c0007480   _auto_init_elf
+c0007580   _wrt_ok
+c0007680   copy_in
+c0007780   HOSTopen
+c0007860   __c6xabi_divi
+c0007860   __divi
+c0007940   atoi
+c0007a20   close
+c0007b00   ltoa
+c0007be0   memset
+c0007cc0   printf
+c0007da0   HOSTread
+c0007e60   HOSTunlink
+c0007f20   HOSTwrite
+c0007fe0   __c6xabi_divu
+c0007fe0   __divu
+c0008160   _doflush
+c0008220   __TI_tls_init
+c00082e0   HOSTclose
+c0008380   _cleanup
+c0008560   _minit
+c00086a0   exit
+c000872c   C$$EXIT
+c000872c   abort
+c00087e0   lseek
+c0008880   memcpy
+c00089c0   modf
+c0008b00   write
+c0008ba0   __c6xabi_llshl
+c0008c20   readmsg
+c0008ca0   remove
+c0008ca0   unlink
+c0008d20   __TI_cpp_init
+c0008d80   _subcull
+c0008de0   memccpy
+c0008e40   writemsg
+c0008e98   C$$IO$$
+c0008ea0   __c6xabi_isinf
+c0008f20   __c6xabi_llshru
+c0008f60   _args_main
+c0008fa0   __c6xabi_errno_addr
+c0008fc0   __c6xabi_negll
+c0008fe0   __c6xabi_trunc
+c0009000   _nop
+c0009060   __TI_decompress_none
+c0009080   __TI_decompress_rle24
+c00090a0   _stack
+c000a0a0   __TI_STACK_END
+c000a0a0   _sys_memory
+c000b2e0   _tmpnams
+c000b428   _ftable
+c000b750   _cleanup_ptr
+c000b754   _dtors_ptr
+c000b758   __TI_enable_exit_profile_output
+c000b768   _lock
+c000b76c   _unlock
+c000b770   _ft_end
+c000b774   __errno
+c000b774   errno
+c000b778   _ctypes_
+c000b8b8   __CIOBUF_
+c000ba84   __TI_Handler_Table_Base
+c000ba8c   __TI_CINIT_Base
+c000ba8c   __TI_Handler_Table_Limit
+c000ba9c   __TI_CINIT_Limit
+c000bc00   _c_int00
 ffffffff   __TI_pprof_out_hndl
 ffffffff   __TI_prof_data_size
 ffffffff   __TI_prof_data_start
@@ -414,4 +439,4 @@ UNDEFED    __TI_INITARRAY_Limit
 UNDEFED    __TI_TLS_INIT_Base
 UNDEFED    __TI_TLS_INIT_Limit
 
-[109 symbols]
+[117 symbols]

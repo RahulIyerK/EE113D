@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench version="2.0">
 <workbenchAdvisor/>
-<window height="984" width="640" x="640" y="0">
+<window height="984" maximized="true" width="640" x="296" y="-9">
 <fastViewData fastViewLocation="1024">
 <orientation position="512" view="com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView"/>
 </fastViewData>
@@ -10,7 +10,7 @@
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="248" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="99" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.ti.ccstudio.project.ui.projectActionSet" itemType="typeToolBarContribution" x="52" y="22"/>
 <coolItem id="com.ti.dvt.profile.setup.actionSet" itemType="typeToolBarContribution" x="53" y="22"/>
@@ -38,6 +38,8 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
@@ -46,13 +48,21 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab6CNN/test.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="85" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main_cnn.c" partName="main_cnn.c" path="C:/Users/ECE113DWS20/Documents/More_CCS_Stuff/EE113D/Lab6CNN/main_cnn.c" title="main_cnn.c" tooltip="Lab6CNN/main_cnn.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab6CNN/main_cnn.c"/>
-<editorState selectionHorizontalPixel="11" selectionLength="0" selectionOffset="626" selectionTopPixel="315"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="fat_usbmsc.c" partName="fat_usbmsc.c" path="C:/Users/ECE113DWS20/Documents/More_CCS_Stuff/EE113D/Lab6CNN/fat_usbmsc.c" title="fat_usbmsc.c" tooltip="Lab6CNN/fat_usbmsc.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab6CNN/fat_usbmsc.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3400" selectionTopPixel="1560"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="cnn.h" partName="cnn.h" path="C:/Users/ECE113DWS20/Documents/More_CCS_Stuff/EE113D/Lab6CNN/cnn.h" title="cnn.h" tooltip="Lab6CNN/cnn.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab6CNN/cnn.h"/>
-<editorState selectionHorizontalPixel="35" selectionLength="4" selectionOffset="65" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="usb.c" partName="usb.c" path="C:/Users/ECE113DWS20/Documents/More_CCS_Stuff/EE113D/Lab6CNN/usb.c" title="usb.c" tooltip="Lab6CNN/usb.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab6CNN/usb.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="42868" selectionTopPixel="23575"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="cnn.c" partName="cnn.c" path="C:/Users/ECE113DWS20/Documents/More_CCS_Stuff/EE113D/Lab6CNN/cnn.c" title="cnn.c" tooltip="Lab6CNN/cnn.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab6CNN/cnn.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="283" selectionTopPixel="15"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="CNN_weights.h" partName="CNN_weights.h" path="C:/Users/ECE113DWS20/Documents/More_CCS_Stuff/EE113D/Lab6CNN/CNN_weights.h" title="CNN_weights.h" tooltip="Lab6CNN/CNN_weights.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab6CNN/CNN_weights.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="565" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -68,15 +78,10 @@
 <view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
 <viewState/>
 </view>
-<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
-<viewState/>
-</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (15 items)"/>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Warnings (4 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="130" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="491"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -85,6 +90,9 @@
 <visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
 </viewState>
+</view>
+<view id="org.eclipse.debug.ui.DebugView" partName="Debug">
+<viewState/>
 </view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
@@ -354,6 +362,7 @@
 <hide_toolbar_item_id id="org.eclipse.ui.navigate.next"/>
 <hide_toolbar_item_id id="com.ti.ccstudio.debug.ui.command.realtime"/>
 <hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <fastViewBars>
 <fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@e0dcba" orientation="256" selectedTabId="org.eclipse.ui.views.ProblemView" style="1">
 <fastViews>
@@ -362,21 +371,18 @@
 </fastViewBar>
 <fastViewBar fastViewLocation="1024" id="bottomLeft" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="1">
 <fastViews>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-<fastViewBar fastViewLocation="16384" id="left" orientation="512" selectedTabId="org.eclipse.ui.navigator.ProjectExplorer" style="1">
-<fastViews>
-<view id="org.eclipse.ui.navigator.ProjectExplorer" ratio="0.3"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.29920363"/>
 </fastViews>
 </fastViewBar>
 </fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="left">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="left">
@@ -386,14 +392,14 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="topLeft" ratio="0.17292006" ratioLeft="106" ratioRight="507" relationship="2" relative="left">
+<info folder="true" part="topLeft" ratio="0.23404256" ratioLeft="297" ratioRight="972" relationship="2" relative="left">
 <folder appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.24884081" ratioLeft="161" ratioRight="486" relationship="4" relative="topLeft"/>
 <info folder="true" part="bottomLeft" ratio="0.96437347" ratioLeft="785" ratioRight="29" relationship="4" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -425,7 +431,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@e0dcba" ratio="0.7404844" ratioLeft="428" ratioRight="150" relationship="4" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -658,13 +664,13 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.ui.navigate.next"/>
 <hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
+<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.debug.ui.ExpressionView"/>
 <view id="org.eclipse.debug.ui.RegisterView"/>
 <view id="org.eclipse.debug.ui.BreakpointView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
-<view id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <fastViews>
 <view id="com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView" ratio="0.3"/>
 </fastViews>
@@ -691,14 +697,14 @@
 </presentation>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.3002283" ratioLeft="263" ratioRight="613" relationship="4" relative="topLeft"/>
+<info part="org.eclipse.ui.editorss" ratio="0.34246576" ratioLeft="300" ratioRight="576" relationship="4" relative="topLeft"/>
 <info folder="true" part="bottomRight" ratio="0.6995885" ratioLeft="340" ratioRight="146" relationship="4" relative="org.eclipse.ui.editorss">
 <folder appearance="2" expanded="2">
 <page content="com.ti.ccstudio.scripting.console.ConsoleView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
 </folder>
 </info>
-<info folder="true" part="right" ratio="0.82707995" ratioLeft="507" ratioRight="106" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="right" ratio="0.5382191" ratioLeft="683" ratioRight="586" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" label="Memory Browser"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -752,7 +758,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="topRight" ratio="0.2750197" ratioLeft="349" ratioRight="920" relationship="2" relative="topLeft">
+<info folder="true" part="topRight" ratio="0.4609929" ratioLeft="585" ratioRight="684" relationship="2" relative="topLeft">
 <folder activePageID="org.eclipse.debug.ui.ExpressionView" appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="Expressions"/>
@@ -774,164 +780,165 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/usb.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/cnn.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/CNN_weights.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/test.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/fat_usbmsc.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/cnn.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/m_mem.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/exit.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/main_cnn.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/test.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab5/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/cnn.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/fat_usbmsc.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/cnn.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab6CNN/CNN_weights.h"/>
 </editors>
+<item historyLabel="CNN_weights.h" index="2">
+<position info="not_deleted" x="388274" y="2"/>
+</item>
+<item historyLabel="cnn.c" index="1">
+<position info="not_deleted" x="102" y="0"/>
+</item>
 <item historyLabel="usb.c" index="0">
-<position info="not_deleted" x="40763" y="4"/>
+<position info="not_deleted" x="40750" y="0"/>
 </item>
-<item historyLabel="fat_usbmsc.c" index="1">
-<position info="not_deleted" x="1078" y="0"/>
+<item historyLabel="cnn.c" index="1">
+<position info="not_deleted" x="2157" y="0"/>
 </item>
-<item historyLabel="cnn.c" index="2">
-<position info="not_deleted" x="1498" y="0"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="42195" y="0"/>
 </item>
-<item historyLabel="m_mem.h" index="3">
-<position info="not_deleted" x="4338" y="0"/>
+<item historyLabel="cnn.c" index="1">
+<position info="not_deleted" x="2158" y="0"/>
 </item>
-<item historyLabel="cnn.c" index="2">
-<position info="not_deleted" x="1498" y="0"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="42932" y="0"/>
 </item>
-<item historyLabel="exit.c" index="4">
+<item historyLabel="cnn.c" index="1">
+<position info="not_deleted" x="2157" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="43653" y="0"/>
+</item>
+<item historyLabel="cnn.c" index="1">
+<position info="not_deleted" x="4411" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="40862" y="0"/>
+</item>
+<item historyLabel="cnn.c" index="1">
+<position info="not_deleted" x="2158" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="40862" y="0"/>
+</item>
+<item historyLabel="test.c" index="3">
+<position info="not_deleted" x="85" y="0"/>
+</item>
+<item historyLabel="fat_usbmsc.c" index="4">
+<position info="not_deleted" x="3400" y="0"/>
+</item>
+<item historyLabel="cnn.c" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2618" y="0"/>
-</item>
 <item historyLabel="usb.c" index="0">
-<position info="not_deleted" x="40763" y="4"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2618" y="0"/>
-</item>
-<item historyLabel="usb.c" index="0">
-<position info="not_deleted" x="40763" y="4"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2618" y="0"/>
-</item>
-<item historyLabel="exit.c" index="4">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="test.c" index="6">
-<position info="not_deleted" x="127" y="0"/>
-</item>
-<item historyLabel="fat_usbmsc.c" index="1">
-<position info="not_deleted" x="1078" y="0"/>
-</item>
-<item historyLabel="test.c" index="6">
-<position info="not_deleted" x="127" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="948" y="14"/>
-</item>
-<item historyLabel="test.c" index="6">
-<position info="not_deleted" x="127" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="948" y="14"/>
-</item>
-<item historyLabel="test.c" index="6">
-<position info="not_deleted" x="127" y="0"/>
-</item>
-<item historyLabel="test.c" index="6">
-<position info="not_deleted" x="113" y="0"/>
-</item>
-<item historyLabel="test.c" index="6">
 <position/>
 </item>
-<item historyLabel="main.c" index="7">
-<position info="not_deleted" x="6445" y="0"/>
+<item historyLabel="cnn.c" index="5">
+<position info="not_deleted" x="4327" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position/>
+</item>
+<item historyLabel="cnn.c" index="5">
+<position info="not_deleted" x="4327" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position/>
+</item>
+<item historyLabel="cnn.c" index="5">
+<position info="not_deleted" x="4327" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="40890" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="41158" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="40750" y="0"/>
+</item>
+<item historyLabel="cnn.c" index="5">
+<position info="not_deleted" x="4327" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="40750" y="0"/>
+</item>
+<item historyLabel="cnn.c" index="5">
+<position info="not_deleted" x="4327" y="0"/>
+</item>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="40750" y="0"/>
 </item>
 <item historyLabel="test.c" index="6">
 <position info="not_deleted" x="85" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="948" y="14"/>
+<item historyLabel="fat_usbmsc.c" index="7">
+<position info="not_deleted" x="3400" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2382" y="0"/>
+<item historyLabel="cnn.c" index="8">
+<position info="not_deleted" x="4327" y="0"/>
 </item>
-<item historyLabel="cnn.h" index="8">
-<position info="not_deleted" x="65" y="4"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="41938" y="138"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2445" y="0"/>
+<item historyLabel="cnn.c" index="8">
+<position info="not_deleted" x="4327" y="0"/>
 </item>
-<item historyLabel="cnn.h" index="8">
-<position info="not_deleted" x="65" y="4"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="41938" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2458" y="0"/>
+<item historyLabel="cnn.c" index="8">
+<position info="not_deleted" x="953" y="0"/>
 </item>
-<item historyLabel="cnn.h" index="8">
-<position info="not_deleted" x="205" y="14"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="41938" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2458" y="0"/>
+<item historyLabel="cnn.c" index="8">
+<position info="not_deleted" x="953" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="377" y="0"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="41938" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="452" y="0"/>
+<item historyLabel="CNN_weights.h" index="9">
+<position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2596" y="0"/>
+<item historyLabel="CNN_weights.h" index="9">
+<position info="not_deleted" x="677" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2616" y="0"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="40750" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position/>
+<item historyLabel="cnn.c" index="8">
+<position info="not_deleted" x="372" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position/>
+<item historyLabel="CNN_weights.h" index="9">
+<position info="not_deleted" x="565" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2533" y="0"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="41943" y="0"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2791" y="0"/>
+<item historyLabel="cnn.c" index="8">
+<position info="not_deleted" x="283" y="14"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="4436" y="0"/>
+<item historyLabel="usb.c" index="0">
+<position info="not_deleted" x="42868" y="0"/>
 </item>
-<item historyLabel="cnn.h" index="8">
-<position info="not_deleted" x="65" y="4"/>
+<item historyLabel="cnn.c" index="8">
+<position info="not_deleted" x="283" y="14"/>
 </item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="4436" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="4796" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="4797" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2642" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2643" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="4505" y="0"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="624" y="11"/>
-</item>
-<item historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="2909" y="16"/>
-</item>
-<item active="true" historyLabel="main_cnn.c" index="5">
-<position info="not_deleted" x="867" y="16"/>
+<item active="true" historyLabel="usb.c" index="0">
+<position info="not_deleted" x="42868" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -939,9 +946,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="left"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -959,6 +963,21 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="CNN_weights.h" tooltip="Lab6CNN/CNN_weights.h">
+<persistable path="/Lab6CNN/CNN_weights.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="cnn.c" tooltip="Lab6CNN/cnn.c">
+<persistable path="/Lab6CNN/cnn.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="m_mem.h" tooltip="Lab6CNN/m_mem.h">
+<persistable path="/Lab6CNN/m_mem.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb.c" tooltip="Lab6CNN/usb.c">
+<persistable path="/Lab6CNN/usb.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fat_usbmsc.c" tooltip="Lab6CNN/fat_usbmsc.c">
+<persistable path="/Lab6CNN/fat_usbmsc.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="cnn.h" tooltip="Lab6CNN/cnn.h">
 <persistable path="/Lab6CNN/cnn.h"/>
 </file>
@@ -974,18 +993,6 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="exit.c" tooltip="Lab6CNN/exit.c">
 <persistable path="/Lab6CNN/exit.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="m_mem.h" tooltip="Lab6CNN/m_mem.h">
-<persistable path="/Lab6CNN/m_mem.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="cnn.c" tooltip="Lab6CNN/cnn.c">
-<persistable path="/Lab6CNN/cnn.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="fat_usbmsc.c" tooltip="Lab6CNN/fat_usbmsc.c">
-<persistable path="/Lab6CNN/fat_usbmsc.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="usb.c" tooltip="Lab6CNN/usb.c">
-<persistable path="/Lab6CNN/usb.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="usb_trial.map" tooltip="Lab6CNN/Debug/usb_trial.map">
 <persistable path="/Lab6CNN/Debug/usb_trial.map"/>
 </file>
@@ -1000,9 +1007,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="neuralNet.c" tooltip="Lab5/NeuralNet/neuralNet.c">
 <persistable path="/Lab5/NeuralNet/neuralNet.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="Lab3s2/main.c">
-<persistable path="/Lab3s2/main.c"/>
 </file>
 </mruList>
 </workbench>

@@ -1521,6 +1521,7 @@ msc_inti(void)
 int main(void)
 {
 
+	int a;
 	msc_inti();
 
 	//
@@ -1528,86 +1529,108 @@ int main(void)
 	//
 	int i,j;
 	mem_init();
-	bitmap = usb_imread("num2.bmp");
-	input_image = m_malloc(InfoHeader.Height*InfoHeader.Width*sizeof(float));
-	for(i = 0; i< InfoHeader.Height; i++){
-		for(j = 0;j < InfoHeader.Width; j++){
-			input_image[i*InfoHeader.Width+j] = (255-bitmap[(i*InfoHeader.Width+j)*3]);
-		}
-	}
-	for(i = 0; i< InfoHeader.Height; i++){
-		for(j = 0;j < InfoHeader.Width; j++)
-			printf("%.0f ",input_image[i*InfoHeader.Width+j]);
-		printf("\n");
-	}
-//	w1 = usb_txtread("sample.txt", 64);
-//	b1 = usb_txtread("sample.txt", 12);
 
-	///LAYER 1:
-	// 32 3x3 kernels on a 28 x 28 x 1 image
-	// output dimensions are 28 x 28 x 32
-
-	float* result_conv_1 = (float*)m_malloc(CONV1_INPUT_DIM*CONV1_INPUT_DIM*CONV1_NUM_KERNELS*sizeof(float));
-	conv(input_image, w1, b1, result_conv_1, CONV1_INPUT_DIM, CONV1_INPUT_DIM, CONV1_INPUT_CHANNELS, CONV1_KERNEL_DIM, CONV1_NUM_KERNELS);
-
-
-	///LAYER 2:
-	//2x2 pool
-	//input dimensions: 28 x 28 x 32
-	//output dims: 14 x 14 x 32
-	float* result_pool_1 = (float*)m_malloc((POOL1_INPUT_DIM/POOL1_STRIDE)*(POOL1_INPUT_DIM/POOL1_STRIDE)*POOL1_INPUT_CHANNELS*sizeof(float));
-	nn_pool(result_conv_1, result_pool_1, POOL1_INPUT_DIM, POOL1_INPUT_DIM, POOL1_INPUT_CHANNELS, POOL1_STRIDE);
-	free(result_conv_1);
-
-
-	///LAYER 3: CONV
-	//input dims: 14 x 14 x 32
-	//32 3 x 3 x 32 kernels
-	//output: 14 x 14 x 32
-	float* result_conv_2 = (float*)m_malloc(CONV2_INPUT_DIM*CONV2_INPUT_DIM*CONV2_NUM_KERNELS*sizeof(float));
-	conv(result_pool_1, w2, b2, result_conv_2, CONV2_INPUT_DIM, CONV2_INPUT_DIM, CONV2_INPUT_CHANNELS, CONV2_KERNEL_DIM, CONV2_NUM_KERNELS);
-	free(result_pool_1);
-
-	///LAYER 4: POOL
-	//2x2 pool
-	//input dims: 14 x 14 x 32
-	//output dims: 7 x 7 x 32
-
-	float* result_pool_2 = (float*)m_malloc((POOL2_INPUT_DIM/POOL2_STRIDE)*(POOL2_INPUT_DIM/POOL2_STRIDE)*POOL2_INPUT_CHANNELS*sizeof(float));
-	nn_pool(result_conv_2, result_pool_2, POOL2_INPUT_DIM, POOL2_INPUT_DIM, POOL2_INPUT_CHANNELS, POOL2_STRIDE);
-	free(result_conv_2);
-
-
-	///LAYER 5: CONV
-	//input dims: 7 x 7 x 32
-	//32 3 x 3 x 32 kernels
-	//output: 7 x 7 x 32
-	float* result_conv_3 = (float*)m_malloc(CONV3_INPUT_DIM*CONV3_INPUT_DIM*CONV3_NUM_KERNELS*sizeof(float));
-	conv(result_pool_2, w3, b3, result_conv_3, CONV3_INPUT_DIM, CONV3_INPUT_DIM, CONV3_INPUT_CHANNELS, CONV3_KERNEL_DIM, CONV3_NUM_KERNELS);
-	free(result_pool_2);
-
-	///LAYER 6: POOL
-	//4x4 pool
-	//input dims: 7 x 7 x 32
-	//output dims: 1 x 1 x 32
-	float* result_pool_3 = (float*)m_malloc((POOL3_INPUT_DIM/POOL3_STRIDE)*(POOL3_INPUT_DIM/POOL3_STRIDE)*POOL3_INPUT_CHANNELS*sizeof(float));
-	nn_pool(result_conv_3, result_pool_3, POOL3_INPUT_DIM, POOL3_INPUT_DIM, POOL3_INPUT_CHANNELS, POOL3_STRIDE);
-	free(result_conv_3);
-
-
-	//LAYER 7: DENSE
-	//input dims: 1 x 1 x 32 kernels
-	//output dims: 10x1 vector
-	double* res_dense = (double*)m_malloc(DENSE1_OUTPUT_DIM*sizeof(double));
-	dense(result_pool_3, w4, b4, res_dense, DENSE1_INPUT_DIM, DENSE1_OUTPUT_DIM);
-	free(result_pool_3);
-
-	uint8_t max = res_dense[0];
-	for (i = 0; i < 10; i++)
+	for (a = 0; a < 4; a++)
 	{
-		if (res_dense[i] > max) max = res_dense[i];
-	}
-	printf("guess: %d\n", max);
+//		if (a == 0)
+//		{
+//			bitmap = usb_imread("num0.bmp");
+//		}
+//		else if (a == 1)
+//		{
+//			bitmap = usb_imread("num1.bmp");
+//		}
+//		else if (a == 2)
+//		{
+//			bitmap = usb_imread("num2.bmp");
+//		}
+//		else if (a == 3)
+//		{
+//			bitmap = usb_imread("num3.bmp");
+//		}
+		bitmap = usb_imread("num2.bmp");
+		input_image = m_malloc(InfoHeader.Height*InfoHeader.Width*sizeof(float));
+		for(i = 0; i< InfoHeader.Height; i++){
+			for(j = 0;j < InfoHeader.Width; j++){
+				input_image[i*InfoHeader.Width+j] = (255-bitmap[(i*InfoHeader.Width+j)*3]);
+			}
+		}
+		for(i = 0; i< InfoHeader.Height; i++){
+			for(j = 0;j < InfoHeader.Width; j++)
+				printf("%.0f ",input_image[i*InfoHeader.Width+j]);
+			printf("\n");
+		}
+	//	w1 = usb_txtread("sample.txt", 64);
+	//	b1 = usb_txtread("sample.txt", 12);
 
+		///LAYER 1:
+		// 32 3x3 kernels on a 28 x 28 x 1 image
+		// output dimensions are 28 x 28 x 32
+
+		float* result_conv_1 = (float*)m_malloc(CONV1_INPUT_DIM*CONV1_INPUT_DIM*CONV1_NUM_KERNELS*sizeof(float));
+		conv(input_image, w1, b1, result_conv_1, CONV1_INPUT_DIM, CONV1_INPUT_DIM, CONV1_INPUT_CHANNELS, CONV1_KERNEL_DIM, CONV1_NUM_KERNELS);
+
+
+		///LAYER 2:
+		//2x2 pool
+		//input dimensions: 28 x 28 x 32
+		//output dims: 14 x 14 x 32
+		float* result_pool_1 = (float*)m_malloc((POOL1_INPUT_DIM/POOL1_STRIDE)*(POOL1_INPUT_DIM/POOL1_STRIDE)*POOL1_INPUT_CHANNELS*sizeof(float));
+		nn_pool(result_conv_1, result_pool_1, POOL1_INPUT_DIM, POOL1_INPUT_DIM, POOL1_INPUT_CHANNELS, POOL1_STRIDE);
+		free(result_conv_1);
+
+
+		///LAYER 3: CONV
+		//input dims: 14 x 14 x 32
+		//32 3 x 3 x 32 kernels
+		//output: 14 x 14 x 32
+		float* result_conv_2 = (float*)m_malloc(CONV2_INPUT_DIM*CONV2_INPUT_DIM*CONV2_NUM_KERNELS*sizeof(float));
+		conv(result_pool_1, w2, b2, result_conv_2, CONV2_INPUT_DIM, CONV2_INPUT_DIM, CONV2_INPUT_CHANNELS, CONV2_KERNEL_DIM, CONV2_NUM_KERNELS);
+		free(result_pool_1);
+
+		///LAYER 4: POOL
+		//2x2 pool
+		//input dims: 14 x 14 x 32
+		//output dims: 7 x 7 x 32
+
+		float* result_pool_2 = (float*)m_malloc((POOL2_INPUT_DIM/POOL2_STRIDE)*(POOL2_INPUT_DIM/POOL2_STRIDE)*POOL2_INPUT_CHANNELS*sizeof(float));
+		nn_pool(result_conv_2, result_pool_2, POOL2_INPUT_DIM, POOL2_INPUT_DIM, POOL2_INPUT_CHANNELS, POOL2_STRIDE);
+		free(result_conv_2);
+
+
+		///LAYER 5: CONV
+		//input dims: 7 x 7 x 32
+		//32 3 x 3 x 32 kernels
+		//output: 7 x 7 x 32
+		float* result_conv_3 = (float*)m_malloc(CONV3_INPUT_DIM*CONV3_INPUT_DIM*CONV3_NUM_KERNELS*sizeof(float));
+		conv(result_pool_2, w3, b3, result_conv_3, CONV3_INPUT_DIM, CONV3_INPUT_DIM, CONV3_INPUT_CHANNELS, CONV3_KERNEL_DIM, CONV3_NUM_KERNELS);
+		free(result_pool_2);
+
+		///LAYER 6: POOL
+		//4x4 pool
+		//input dims: 7 x 7 x 32
+		//output dims: 1 x 1 x 32
+		float* result_pool_3 = (float*)m_malloc((POOL3_INPUT_DIM/POOL3_STRIDE)*(POOL3_INPUT_DIM/POOL3_STRIDE)*POOL3_INPUT_CHANNELS*sizeof(float));
+		nn_pool(result_conv_3, result_pool_3, POOL3_INPUT_DIM, POOL3_INPUT_DIM, POOL3_INPUT_CHANNELS, POOL3_STRIDE);
+		free(result_conv_3);
+
+
+		//LAYER 7: DENSE
+		//input dims: 1 x 1 x 32 kernels
+		//output dims: 10x1 vector
+		double* res_dense = (double*)m_malloc(DENSE1_OUTPUT_DIM*sizeof(double));
+		dense(result_pool_3, w4, b4, res_dense, DENSE1_INPUT_DIM, DENSE1_OUTPUT_DIM);
+		free(result_pool_3);
+
+		uint8_t max = 0;
+		for (i = 0; i < 10; i++)
+		{
+			if (res_dense[i] > res_dense[max]) max = i;
+			printf("res_dense[%d]: %f\n", i, res_dense[i]);
+		}
+
+		printf("highest probability prediction: %d\n",max);
+
+	}
 	while(1);
 }

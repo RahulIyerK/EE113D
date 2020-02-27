@@ -131,6 +131,17 @@ void dense(float input[],float kernel[], float bias[], double output[], int inpu
 
     i = 0;
 
+    double max = output[0];
+    for (i = 0; i < output_size; i++)
+    {
+    	if (output[i] > max) max = output[i];
+    }
+
+    for (i = 0; i < output_size; i++)
+    {
+    	output[i] -= max;
+    }
+
     //for a "better" softmax function`
     softmax_ran_once = 0;
 

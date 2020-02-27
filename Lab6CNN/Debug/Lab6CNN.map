@@ -1,10 +1,10 @@
 ******************************************************************************
                TMS320C6x Linker PC v7.4.4                      
 ******************************************************************************
->> Linked Tue Feb 25 11:22:29 2020
+>> Linked Thu Feb 27 11:46:20 2020
 
 OUTPUT FILE NAME:   <usb_host_msc.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: c000bc00
+ENTRY POINT SYMBOL: "_c_int00"  address: c0082000
 
 
 MEMORY CONFIGURATION
@@ -14,29 +14,39 @@ MEMORY CONFIGURATION
   L2                    11800000   00040000  00000000  00040000  RWIX
   L1P                   11e00000   00008000  00000000  00008000  RWIX
   L1D                   11f00000   00008000  00000000  00008000  RWIX
-  DDR2                  c0000000   08000000  0000bb1c  07ff44e4  RWIX
+  DDR2                  c0000000   08000000  00e835a8  0717ca58  RWIX
 
 
 SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-c0000000    c0000000    000090a0   000090a0    r-x
-  c0000000    c0000000    000090a0   000090a0    r-x .text
-c00090a0    c00090a0    00002000   00000000    rw-
-  c00090a0    c00090a0    00001000   00000000    rw- .stack
-  c000a0a0    c000a0a0    00001000   00000000    rw- .sysmem
-c000b0a0    c000b0a0    000006d8   000006d8    rw-
-  c000b0a0    c000b0a0    00000388   00000388    rw- .far
-  c000b428    c000b428    00000350   00000350    rw- .fardata
-c000b778    c000b778    00000140   00000140    r--
-  c000b778    c000b778    00000140   00000140    r-- .const
-c000b8b8    c000b8b8    00000120   00000000    rw-
-  c000b8b8    c000b8b8    00000120   00000000    rw- .cio
-c000b9d8    c000b9d8    000000c4   000000c4    r--
-  c000b9d8    c000b9d8    000000c4   000000c4    r-- .cinit
-c000bc00    c000bc00    00000080   00000080    r-x
-  c000bc00    c000bc00    00000080   00000080    r-x .text:_c_int00
+c0000000    c0000000    00061338   00061338    rw-
+  c0000000    c0000000    00061338   00061338    rw- .far
+c0061338    c0061338    00000070   00000070    r--
+  c0061338    c0061338    00000070   00000070    r-- .switch
+c0061400    c0061400    0001c800   0001c800    r-x
+  c0061400    c0061400    0001c800   0001c800    r-x .text
+c007dc00    c007dc00    000038f0   000018f0    rw-
+  c007dc00    c007dc00    000018f0   000018f0    rw- .fardata
+  c007f4f0    c007f4f0    00001000   00000000    rw- .stack
+  c00804f0    c00804f0    00001000   00000000    rw- .sysmem
+c00814f0    c00814f0    000008b8   000008b8    r--
+  c00814f0    c00814f0    000008b8   000008b8    r-- .const
+c0081da8    c0081da8    00000120   00000000    rw-
+  c0081da8    c0081da8    00000120   00000000    rw- .cio
+c0081ec8    c0081ec8    00000031   00000031    rw-
+  c0081ec8    c0081ec8    00000031   00000031    rw- .neardata
+c0081efc    c0081efc    00000004   00000004    r--
+  c0081efc    c0081efc    00000004   00000004    r-- .rodata
+c0081f00    c0081f00    00000038   00000000    rw-
+  c0081f00    c0081f00    00000038   00000000    rw- .bss
+c0082000    c0082000    00000080   00000080    r-x
+  c0082000    c0082000    00000080   00000080    r-x .text:_c_int00
+c0082080    c0082080    00e00000   00000000    rw-
+  c0082080    c0082080    00e00000   00000000    rw- .EXT_RAM
+c0e82080    c0e82080    00001648   00001648    r--
+  c0e82080    c0e82080    00001648   00001648    r-- .cinit
 
 
 SECTION ALLOCATION MAP
@@ -47,387 +57,1252 @@ section   page    origin      length       input sections
 .init_array 
 *          0    c0000000    00000000     UNINITIALIZED
 
-.text      0    c0000000    000090a0     
-                  c0000000    00001aa0     system_config.lib : interrupt.obj (.text:retain)
-                  c0001aa0    00000920     main_cnn.obj (.text)
-                  c00023c0    00000740     cnn.obj (.text)
-                  c0002b00    000005c0     rts6740_elf.lib : _printfi.obj (.text:_getarg_diouxp)
-                  c00030c0    000005a0                     : divd.obj (.text:__c6xabi_divd)
-                  c0003660    00000460                     : _printfi.obj (.text:_printfi)
-                  c0003ac0    00000460                     : _printfi.obj (.text:_setfield)
-                  c0003f20    000003a0                     : fputs.obj (.text:fputs)
-                  c00042c0    00000320                     : _printfi.obj (.text:_pproc_fge)
-                  c00045e0    000002e0                     : _printfi.obj (.text:_pproc_fwp)
-                  c00048c0    000002a0                     : _printfi.obj (.text:ecvt)
-                  c0004b60    000002a0                     : _printfi.obj (.text:fcvt)
-                  c0004e00    00000280                     : memory.obj (.text:free)
-                  c0005080    00000260                     : imath64.obj (.text:__c6xabi_divull)
-                  c00052e0    00000260                     : _printfi.obj (.text:_pconv_e)
-                  c0005540    00000240                     : _printfi.obj (.text:_pproc_diouxp)
-                  c0005780    00000240                     : exp.obj (.text:exp)
-                  c00059c0    00000220                     : _printfi.obj (.text:_pproc_str)
-                  c0005be0    00000220                     : fputc.obj (.text:fputc)
-                  c0005e00    00000200                     : _printfi.obj (.text:_pconv_g)
-                  c0006000    00000200                     : setvbuf.obj (.text:setvbuf)
-                  c0006200    000001c0                     : _printfi.obj (.text:_mcpy)
-                  c00063c0    00000040                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
-                  c0006400    00000200     system_config.lib : intvecs.obj (.text)
-                  c0006600    000001a0     rts6740_elf.lib : imath40.obj (.text:__c6xabi_divul)
-                  c00067a0    00000180                     : trgdrv.obj (.text:HOSTrename)
-                  c0006920    00000180                     : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
-                  c0006aa0    00000180                     : ldexp.obj (.text:ldexp)
-                  c0006c20    00000180                     : memory.obj (.text:malloc)
-                  c0006da0    00000140                     : _printfi.obj (.text:_pproc_fflags)
-                  c0006ee0    00000140                     : lowlev.obj (.text:getdevice)
-                  c0007020    00000120                     : fclose.obj (.text:_closefile)
-                  c0007140    00000120                     : _printfi.obj (.text:_ltostr)
-                  c0007260    00000120                     : fseek.obj (.text:fseek)
-                  c0007380    00000100                     : trgdrv.obj (.text:HOSTlseek)
-                  c0007480    00000100                     : autoinit.obj (.text:_auto_init_elf)
-                  c0007580    00000100                     : _io_perm.obj (.text:_wrt_ok)
-                  c0007680    00000100                     : cpy_tbl.obj (.text:copy_in)
-                  c0007780    000000e0                     : trgdrv.obj (.text:HOSTopen)
-                  c0007860    000000e0                     : divi.obj (.text:__divi)
-                  c0007940    000000e0                     : atoi.obj (.text:atoi)
-                  c0007a20    000000e0                     : lowlev.obj (.text:close)
-                  c0007b00    000000e0                     : ltoa.obj (.text:ltoa)
-                  c0007be0    000000e0                     : memset.obj (.text:memset)
-                  c0007cc0    000000e0                     : printf.obj (.text:printf)
-                  c0007da0    000000c0                     : trgdrv.obj (.text:HOSTread)
-                  c0007e60    000000c0                     : trgdrv.obj (.text:HOSTunlink)
-                  c0007f20    000000c0                     : trgdrv.obj (.text:HOSTwrite)
-                  c0007fe0    000000c0                     : divu.obj (.text:__divu)
-                  c00080a0    000000c0                     : _printfi.obj (.text:_div)
-                  c0008160    000000c0                     : fflush.obj (.text:_doflush)
-                  c0008220    000000c0                     : tls.obj (.text:tls:init:__TI_tls_init)
-                  c00082e0    000000a0                     : trgdrv.obj (.text:HOSTclose)
-                  c0008380    000000a0                     : fopen.obj (.text:_cleanup)
-                  c0008420    000000a0                     : _printfi.obj (.text:_ecpy)
-                  c00084c0    000000a0                     : _printfi.obj (.text:_fcpy)
-                  c0008560    000000a0                     : memory.obj (.text:_minit)
-                  c0008600    000000a0                     : _printfi.obj (.text:_pconv_f)
-                  c00086a0    000000a0     exit.obj (.text)
-                  c0008740    000000a0     rts6740_elf.lib : lowlev.obj (.text:finddevice)
-                  c00087e0    000000a0                     : lowlev.obj (.text:lseek)
-                  c0008880    000000a0                     : memcpy64.obj (.text:memcpy)
-                  c0008920    000000a0                     : memory.obj (.text:minsert)
-                  c00089c0    000000a0                     : modf.obj (.text:modf)
-                  c0008a60    000000a0                     : memory.obj (.text:mremove)
-                  c0008b00    000000a0                     : lowlev.obj (.text:write)
-                  c0008ba0    00000080                     : llshift.obj (.text:__c6xabi_llshl)
-                  c0008c20    00000080                     : trgmsg.obj (.text:readmsg)
-                  c0008ca0    00000080                     : lowlev.obj (.text:unlink)
-                  c0008d20    00000060                     : cpp_init.obj (.text:__TI_cpp_init)
-                  c0008d80    00000060                     : imath64.obj (.text:_subcull)
-                  c0008de0    00000060                     : memccpy.obj (.text:memccpy)
-                  c0008e40    00000060                     : trgmsg.obj (.text:writemsg)
-                  c0008ea0    00000040                     : isinf.obj (.text:__c6xabi_isinf)
-                  c0008ee0    00000040                     : _printfi.obj (.text:__c6xabi_isnan)
-                  c0008f20    00000040                     : llshift.obj (.text:__c6xabi_llshru)
-                  c0008f60    00000040                     : args_main.obj (.text:_args_main)
-                  c0008fa0    00000020                     : errno.obj (.text:__c6xabi_errno_addr)
-                  c0008fc0    00000020                     : negll.obj (.text:__c6xabi_negll)
-                  c0008fe0    00000020                     : trunc.obj (.text:__c6xabi_trunc)
-                  c0009000    00000020                     : _lock.obj (.text:_nop)
-                  c0009020    00000020                     : printf.obj (.text:_outc)
-                  c0009040    00000020                     : printf.obj (.text:_outs)
-                  c0009060    00000020                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
-                  c0009080    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+.far       0    c0000000    00061338     
+                  c0000000    00056380     drivers.lib : cppi41dma.obj (.far) [fill = 0]
+                  c0056380    00009c58     usblib.lib : usbdata.obj (.far) [fill = 0]
+                  c005ffd8    00000a18     usb.obj (.far) [fill = 0]
+                  c00609f0    00000578     usblib.lib : usbhostenum.obj (.far) [fill = 0]
+                  c0060f68    00000240     system_config.lib : interrupt.obj (.far) [fill = 0]
+                  c00611a8    00000140     rts6740_elf.lib : defs.obj (.far) [fill = 0]
+                  c00612e8    00000020     usblib.lib : usbhmsc.obj (.far) [fill = 0]
+                  c0061308    0000001c                : usbtick.obj (.far) [fill = 0]
+                  c0061324    00000004     --HOLE--
+                  c0061328    00000008     ff.obj (.far) [fill = 0]
+                  c0061330    00000008     rts6740_elf.lib : trgdrv.obj (.far) [fill = 0]
 
-.stack     0    c00090a0    00001000     UNINITIALIZED
-                  c00090a0    00000008     rts6740_elf.lib : boot.obj (.stack)
-                  c00090a8    00000ff8     --HOLE--
+.switch    0    c0061338    00000070     
+                  c0061338    00000030     usblib.lib : usbhostenum.obj (.switch:USBHCDMain)
+                  c0061368    00000024     utils.lib : uartStdio.obj (.switch:UARTprintf)
+                  c006138c    0000001c     usblib.lib : usbhostenum.obj (.switch:USBHCDEnumHandler)
 
-.sysmem    0    c000a0a0    00001000     UNINITIALIZED
-                  c000a0a0    00000008     rts6740_elf.lib : memory.obj (.sysmem)
-                  c000a0a8    00000ff8     --HOLE--
+.text      0    c0061400    0001c800     
+                  c0061400    00005940     usblib.lib : usbhostenum.obj (.text)
+                  c0066d40    00003440     ff.obj (.text)
+                  c006a180    000027e0     usb.obj (.text)
+                  c006c960    00001ac0     drivers.lib : cppi41dma.obj (.text)
+                  c006e420    00001aa0     system_config.lib : interrupt.obj (.text:retain)
+                  c006fec0    00001980     drivers.lib : usb.obj (.text)
+                  c0071840    00000b60     utils.lib : uartStdio.obj (.text)
+                  c00723a0    00000820     drivers.lib : timer.obj (.text)
+                  c0072bc0    000007a0     cnn.obj (.text)
+                  c0073360    00000620     usblib.lib : usbhmsc.obj (.text)
+                  c0073980    000005e0     system_config.lib : interrupt.obj (.text)
+                  c0073f60    000005c0     rts6740_elf.lib : _printfi.obj (.text:_getarg_diouxp)
+                  c0074520    000005a0                     : divd.obj (.text:__c6xabi_divd)
+                  c0074ac0    00000580     drivers.lib : uart.obj (.text)
+                  c0075040    00000580     usblib.lib : usbhscsi.obj (.text)
+                  c00755c0    000004c0     rts6740_elf.lib : fwrite.obj (.text:fwrite)
+                  c0075a80    00000480                     : strtod.obj (.text:strtod)
+                  c0075f00    00000460                     : _printfi.obj (.text:_printfi)
+                  c0076360    00000460                     : _printfi.obj (.text:_setfield)
+                  c00767c0    00000420     system_config.lib : cache.obj (.text)
+                  c0076be0    000003a0     rts6740_elf.lib : fputs.obj (.text:fputs)
+                  c0076f80    00000320                     : _printfi.obj (.text:_pproc_fge)
+                  c00772a0    00000320     usblib.lib : usbdesc.obj (.text)
+                  c00775c0    000002e0     rts6740_elf.lib : _printfi.obj (.text:_pproc_fwp)
+                  c00778a0    000002c0                     : fread.obj (.text:fread)
+                  c0077b60    000002a0                     : _printfi.obj (.text:ecvt)
+                  c0077e00    000002a0                     : _printfi.obj (.text:fcvt)
+                  c00780a0    00000280                     : memory.obj (.text:free)
+                  c0078320    00000260                     : imath64.obj (.text:__c6xabi_divull)
+                  c0078580    00000260                     : _printfi.obj (.text:_pconv_e)
+                  c00787e0    00000240                     : _printfi.obj (.text:_pproc_diouxp)
+                  c0078a20    00000240                     : exp.obj (.text:exp)
+                  c0078c60    00000220                     : _printfi.obj (.text:_pproc_str)
+                  c0078e80    00000220                     : fputc.obj (.text:fputc)
+                  c00790a0    00000200                     : _printfi.obj (.text:_pconv_g)
+                  c00792a0    00000200                     : setvbuf.obj (.text:setvbuf)
+                  c00794a0    000001e0     fat_usbmsc.obj (.text)
+                  c0079680    00000180     rts6740_elf.lib : trgdrv.obj (.text:HOSTrename)
+                  c0079800    00000200     system_config.lib : intvecs.obj (.text)
+                  c0079a00    000001c0     rts6740_elf.lib : _printfi.obj (.text:_mcpy)
+                  c0079bc0    000001c0                     : fopen.obj (.text:_openfile)
+                  c0079d80    000001c0     platform.lib : sysdelay.obj (.text)
+                  c0079f40    000001a0     rts6740_elf.lib : imath40.obj (.text:__c6xabi_divul)
+                  c007a0e0    00000180                     : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  c007a260    00000180                     : ldexp.obj (.text:ldexp)
+                  c007a3e0    00000180                     : memory.obj (.text:malloc)
+                  c007a560    00000180                     : lowlev.obj (.text:open)
+                  c007a6e0    00000180     platform.lib : uart.obj (.text)
+                  c007a860    00000140     rts6740_elf.lib : _printfi.obj (.text:_pproc_fflags)
+                  c007a9a0    00000140     drivers.lib : psc.obj (.text)
+                  c007aae0    00000140     rts6740_elf.lib : lowlev.obj (.text:getdevice)
+                  c007ac20    00000140                     : perror.obj (.text:perror)
+                  c007ad60    00000120                     : _bufread.obj (.text:_buff_read)
+                  c007ae80    00000120                     : fclose.obj (.text:_closefile)
+                  c007afa0    00000120                     : _printfi.obj (.text:_ltostr)
+                  c007b0c0    00000120                     : fopen.obj (.text:_search_fp)
+                  c007b1e0    00000120                     : fseek.obj (.text:fseek)
+                  c007b300    00000120     usblib.lib : usbtick.obj (.text)
+                  c007b420    00000100     rts6740_elf.lib : trgdrv.obj (.text:HOSTlseek)
+                  c007b520    00000100                     : autoinit.obj (.text:_auto_init_elf)
+                  c007b620    00000100                     : _io_perm.obj (.text:_wrt_ok)
+                  c007b720    00000100                     : cpy_tbl.obj (.text:copy_in)
+                  c007b820    00000100     drivers.lib : usbphyGS60.obj (.text)
+                  c007b920    000000e0     rts6740_elf.lib : trgdrv.obj (.text:HOSTopen)
+                  c007ba00    000000e0                     : divi.obj (.text:__divi)
+                  c007bae0    000000e0                     : atoi.obj (.text:atoi)
+                  c007bbc0    000000e0                     : lowlev.obj (.text:close)
+                  c007bca0    000000e0                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  c007bd80    000000e0                     : ltoa.obj (.text:ltoa)
+                  c007be60    000000e0                     : memset.obj (.text:memset)
+                  c007bf40    000000e0     platform.lib : uartConsole.obj (.text)
+                  c007c020    000000e0     rts6740_elf.lib : printf.obj (.text:printf)
+                  c007c100    000000c0                     : trgdrv.obj (.text:HOSTread)
+                  c007c1c0    000000c0                     : trgdrv.obj (.text:HOSTunlink)
+                  c007c280    000000c0                     : trgdrv.obj (.text:HOSTwrite)
+                  c007c340    000000c0                     : divu.obj (.text:__divu)
+                  c007c400    000000c0                     : remi.obj (.text:__remi)
+                  c007c4c0    000000c0                     : _printfi.obj (.text:_div)
+                  c007c580    000000c0                     : fflush.obj (.text:_doflush)
+                  c007c640    000000c0                     : _io_perm.obj (.text:_rd_ok)
+                  c007c700    000000c0                     : tls.obj (.text:tls:init:__TI_tls_init)
+                  c007c7c0    000000a0                     : trgdrv.obj (.text:HOSTclose)
+                  c007c860    000000a0                     : remu.obj (.text:__remu)
+                  c007c900    000000a0                     : fopen.obj (.text:_cleanup)
+                  c007c9a0    000000a0                     : _printfi.obj (.text:_ecpy)
+                  c007ca40    000000a0                     : _printfi.obj (.text:_fcpy)
+                  c007cae0    000000a0                     : memory.obj (.text:_minit)
+                  c007cb80    000000a0                     : _printfi.obj (.text:_pconv_f)
+                  c007cc20    000000a0     exit.obj (.text)
+                  c007ccc0    000000a0     rts6740_elf.lib : lowlev.obj (.text:finddevice)
+                  c007cd60    000000a0                     : lowlev.obj (.text:lseek)
+                  c007ce00    000000a0                     : memcpy64.obj (.text:memcpy)
+                  c007cea0    000000a0                     : memory.obj (.text:minsert)
+                  c007cf40    000000a0                     : modf.obj (.text:modf)
+                  c007cfe0    000000a0                     : memory.obj (.text:mremove)
+                  c007d080    000000a0     platform.lib : usb.obj (.text)
+                  c007d120    000000a0     rts6740_elf.lib : lowlev.obj (.text:read)
+                  c007d1c0    000000a0                     : lowlev.obj (.text:write)
+                  c007d260    00000080                     : fixdu.obj (.text:__c6xabi_fixdu)
+                  c007d2e0    00000080                     : llshift.obj (.text:__c6xabi_llshl)
+                  c007d360    00000080                     : trgmsg.obj (.text:readmsg)
+                  c007d3e0    00000080                     : strcat.obj (.text:strcat)
+                  c007d460    00000080                     : strncpy.obj (.text:strncpy)
+                  c007d4e0    00000080                     : lowlev.obj (.text:unlink)
+                  c007d560    00000060                     : cpp_init.obj (.text:__TI_cpp_init)
+                  c007d5c0    00000060                     : imath64.obj (.text:_subcull)
+                  c007d620    00000060                     : fclose.obj (.text:fclose)
+                  c007d680    00000060                     : fopen.obj (.text:fopen)
+                  c007d6e0    00000060                     : memccpy.obj (.text:memccpy)
+                  c007d740    00000060                     : memcmp.obj (.text:memcmp)
+                  c007d7a0    00000060                     : strcpy.obj (.text:strcpy)
+                  c007d800    00000060                     : lowlev.obj (.text:tabinit)
+                  c007d860    00000060     utils.lib : delay.obj (.text)
+                  c007d8c0    00000060     rts6740_elf.lib : trgmsg.obj (.text:writemsg)
+                  c007d920    00000040                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
+                  c007d960    00000040                     : isinf.obj (.text:__c6xabi_isinf)
+                  c007d9a0    00000040                     : _printfi.obj (.text:__c6xabi_isnan)
+                  c007d9e0    00000040                     : llshift.obj (.text:__c6xabi_llshru)
+                  c007da20    00000040                     : args_main.obj (.text:_args_main)
+                  c007da60    00000040                     : strcmp.obj (.text:strcmp)
+                  c007daa0    00000040                     : strlen.obj (.text:strlen)
+                  c007dae0    00000020                     : errno.obj (.text:__c6xabi_errno_addr)
+                  c007db00    00000020                     : negll.obj (.text:__c6xabi_negll)
+                  c007db20    00000020                     : trunc.obj (.text:__c6xabi_trunc)
+                  c007db40    00000020                     : _lock.obj (.text:_nop)
+                  c007db60    00000020                     : printf.obj (.text:_outc)
+                  c007db80    00000020                     : printf.obj (.text:_outs)
+                  c007dba0    00000020                     : atof.obj (.text:atof)
+                  c007dbc0    00000020                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  c007dbe0    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
 
-.far       0    c000b0a0    00000388     
-                  c000b0a0    00000240     system_config.lib : interrupt.obj (.far) [fill = 0]
-                  c000b2e0    00000140     rts6740_elf.lib : defs.obj (.far) [fill = 0]
-                  c000b420    00000008                     : trgdrv.obj (.far) [fill = 0]
+.fardata   0    c007dc00    000018f0     
+                  c007dc00    00000500     usb.obj (.fardata:w4)
+                  c007e100    00000480     usb.obj (.fardata:w1)
+                  c007e580    00000480     usb.obj (.fardata:w2)
+                  c007ea00    00000480     usb.obj (.fardata:w3)
+                  c007ee80    000001e0     rts6740_elf.lib : defs.obj (.fardata:_ftable)
+                  c007f060    000000a0                     : lowlev.obj (.fardata:_stream)
+                  c007f100    00000080     usb.obj (.fardata:b1)
+                  c007f180    00000080     usb.obj (.fardata:b2)
+                  c007f200    00000080     usb.obj (.fardata:b3)
+                  c007f280    00000078     rts6740_elf.lib : lowlev.obj (.fardata:_device)
+                  c007f2f8    00000078     usb.obj (.fardata:g_sCmdTable)
+                  c007f370    00000070     usb.obj (.fardata:g_sFresultStrings)
+                  c007f3e0    00000050     usb.obj (.fardata:g_cCwdBuf)
+                  c007f430    00000028     usb.obj (.fardata:b4)
+                  c007f458    00000020     usb.obj (.fardata:epInfo)
+                  c007f478    00000018     rts6740_elf.lib : exp.obj (.fardata:P$1)
+                  c007f490    00000018                     : exp.obj (.fardata:Q$2)
+                  c007f4a8    00000018     usblib.lib : usbhostenum.obj (.fardata:g_sUSBHEP0State)
+                  c007f4c0    0000000c     exit.obj (.fardata)
+                  c007f4cc    0000000c     rts6740_elf.lib : memory.obj (.fardata)
+                  c007f4d8    00000008                     : _lock.obj (.fardata)
+                  c007f4e0    00000004                     : defs.obj (.fardata)
+                  c007f4e4    00000004                     : errno.obj (.fardata)
+                  c007f4e8    00000004                     : fopen.obj (.fardata)
+                  c007f4ec    00000004                     : lowlev.obj (.fardata)
 
-.fardata   0    c000b428    00000350     
-                  c000b428    000001e0     rts6740_elf.lib : defs.obj (.fardata:_ftable)
-                  c000b608    000000a0                     : lowlev.obj (.fardata:_stream)
-                  c000b6a8    00000078                     : lowlev.obj (.fardata:_device)
-                  c000b720    00000018                     : exp.obj (.fardata:P$1)
-                  c000b738    00000018                     : exp.obj (.fardata:Q$2)
-                  c000b750    0000000c     exit.obj (.fardata)
-                  c000b75c    0000000c     rts6740_elf.lib : memory.obj (.fardata)
-                  c000b768    00000008                     : _lock.obj (.fardata)
-                  c000b770    00000004                     : defs.obj (.fardata)
-                  c000b774    00000004                     : errno.obj (.fardata)
+.stack     0    c007f4f0    00001000     UNINITIALIZED
+                  c007f4f0    00000008     rts6740_elf.lib : boot.obj (.stack)
+                  c007f4f8    00000ff8     --HOLE--
 
-.const     0    c000b778    00000140     
-                  c000b778    00000101     rts6740_elf.lib : ctype.obj (.const:.string:_ctypes_)
-                  c000b879    00000023                     : _printfi.obj (.const:.string)
-                  c000b89c    0000001c     main_cnn.obj (.const:.string)
+.sysmem    0    c00804f0    00001000     UNINITIALIZED
+                  c00804f0    00000008     rts6740_elf.lib : memory.obj (.sysmem)
+                  c00804f8    00000ff8     --HOLE--
 
-.cio       0    c000b8b8    00000120     UNINITIALIZED
-                  c000b8b8    00000120     rts6740_elf.lib : trgmsg.obj (.cio)
+.const     0    c00814f0    000008b8     
+                  c00814f0    00000608     usb.obj (.const:.string)
+                  c0081af8    00000101     rts6740_elf.lib : ctype.obj (.const:.string:_ctypes_)
+                  c0081bf9    00000064                     : perror.obj (.const:.string)
+                  c0081c5d    00000003     --HOLE-- [fill = 0]
+                  c0081c60    00000050                     : strtod.obj (.const:digits)
+                  c0081cb0    00000048                     : strtod.obj (.const:powerof10)
+                  c0081cf8    00000028     usb.obj (.const:.string:$P$T1$3)
+                  c0081d20    00000023     rts6740_elf.lib : _printfi.obj (.const:.string)
+                  c0081d43    00000001     --HOLE-- [fill = 0]
+                  c0081d44    0000001c     utils.lib : uartStdio.obj (.const:.string)
+                  c0081d60    00000010     usb.obj (.const)
+                  c0081d70    00000010     usblib.lib : usbhmsc.obj (.const)
+                  c0081d80    0000000e     usb.obj (.const:.string:$P$T0$2)
+                  c0081d8e    00000002     --HOLE-- [fill = 0]
+                  c0081d90    0000000c     ff.obj (.const:.string)
+                  c0081d9c    00000004     --HOLE-- [fill = 0]
+                  c0081da0    00000008     usb.obj (.const:g_ppHostClassDrivers)
 
-.cinit     0    c000b9d8    000000c4     
-                  c000b9d8    0000009f     (.cinit..fardata.load) [load image, compression = rle]
-                  c000ba77    00000001     --HOLE-- [fill = 0]
-                  c000ba78    0000000b     (.cinit..far.load) [load image, compression = rle]
-                  c000ba83    00000001     --HOLE-- [fill = 0]
-                  c000ba84    00000008     (__TI_handler_table)
-                  c000ba8c    00000010     (__TI_cinit_table)
+.cio       0    c0081da8    00000120     UNINITIALIZED
+                  c0081da8    00000120     rts6740_elf.lib : trgmsg.obj (.cio)
+
+.neardata 
+*          0    c0081ec8    00000031     
+                  c0081ec8    00000018     usb.obj (.neardata)
+                  c0081ee0    0000000c     usblib.lib : usbtick.obj (.neardata)
+                  c0081eec    00000008                : usbhostenum.obj (.neardata)
+                  c0081ef4    00000004     platform.lib : sysdelay.obj (.neardata)
+                  c0081ef8    00000001     fat_usbmsc.obj (.neardata)
+
+.rodata    0    c0081efc    00000004     
+                  c0081efc    00000004     utils.lib : uartStdio.obj (.rodata)
+
+.bss       0    c0081f00    00000038     UNINITIALIZED
+                  c0081f00    00000024     usb.obj (.bss)
+                  c0081f24    00000002     ff.obj (.bss)
+                  c0081f26    00000002     --HOLE--
+                  c0081f28    00000010     cnn.obj (.bss)
 
 .text:_c_int00 
-*          0    c000bc00    00000080     
-                  c000bc00    00000080     rts6740_elf.lib : boot.obj (.text:_c_int00)
+*          0    c0082000    00000080     
+                  c0082000    00000080     rts6740_elf.lib : boot.obj (.text:_c_int00)
+
+.EXT_RAM   0    c0082080    00e00000     UNINITIALIZED
+                  c0082080    00e00000     usb.obj (.EXT_RAM)
+
+.cinit     0    c0e82080    00001648     
+                  c0e82080    000015c8     (.cinit..fardata.load) [load image, compression = rle]
+                  c0e83648    00000016     (.cinit..neardata.load) [load image, compression = rle]
+                  c0e8365e    00000002     --HOLE-- [fill = 0]
+                  c0e83660    0000000d     (.cinit..far.load) [load image, compression = rle]
+                  c0e8366d    00000003     --HOLE-- [fill = 0]
+                  c0e83670    0000000c     (__TI_handler_table)
+                  c0e8367c    0000000a     (.cinit..rodata.load) [load image, compression = rle]
+                  c0e83686    00000002     --HOLE-- [fill = 0]
+                  c0e83688    00000008     (.cinit..EXT_RAM.load) [load image, compression = zero_init]
+                  c0e83690    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  c0e83698    00000030     (__TI_cinit_table)
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ c000ba8c records: 2, size/record: 8, table size: 16
-	.fardata: load addr=c000b9d8, load size=0000009f bytes, run addr=c000b428, run size=00000350 bytes, compression=rle
-	.far: load addr=c000ba78, load size=0000000b bytes, run addr=c000b0a0, run size=00000388 bytes, compression=rle
+__TI_cinit_table @ c0e83698 records: 6, size/record: 8, table size: 48
+	.fardata: load addr=c0e82080, load size=000015c8 bytes, run addr=c007dc00, run size=000018f0 bytes, compression=rle
+	.neardata: load addr=c0e83648, load size=00000016 bytes, run addr=c0081ec8, run size=00000031 bytes, compression=rle
+	.far: load addr=c0e83660, load size=0000000d bytes, run addr=c0000000, run size=00061338 bytes, compression=rle
+	.rodata: load addr=c0e8367c, load size=0000000a bytes, run addr=c0081efc, run size=00000004 bytes, compression=rle
+	.EXT_RAM: load addr=c0e83688, load size=00000008 bytes, run addr=c0082080, run size=00e00000 bytes, compression=zero_init
+	.bss: load addr=c0e83690, load size=00000008 bytes, run addr=c0081f00, run size=00000038 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ c000ba84 records: 2, size/record: 4, table size: 8
+__TI_handler_table @ c0e83670 records: 3, size/record: 4, table size: 12
 	index: 0, handler: __TI_decompress_rle24
 	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
 
 address    name
 --------   ----
-c000872c   C$$EXIT
-c0008e98   C$$IO$$
-c00082e0   HOSTclose
-c0007380   HOSTlseek
-c0007780   HOSTopen
-c0007da0   HOSTread
-c00067a0   HOSTrename
-c0007e60   HOSTunlink
-c0007f20   HOSTwrite
-c000b8b8   __CIOBUF_
-c000ba8c   __TI_CINIT_Base
-c000ba9c   __TI_CINIT_Limit
-c000ba84   __TI_Handler_Table_Base
-c000ba8c   __TI_Handler_Table_Limit
+c007ccac   C$$EXIT
+c007d918   C$$IO$$
+c0076ac0   CacheDisableMAR
+c0076948   CacheEnable
+c0076a28   CacheEnableMAR
+c0076b74   CacheInv
+c0076b4c   CacheInvL1pAll
+c0076b90   CacheWB
+c0076b58   CacheWBAll
+c0076bac   CacheWBInv
+c0076b68   CacheWBInvAll
+c006bd64   Cmd_cat
+c006bb00   Cmd_cd
+c006beec   Cmd_help
+c006bf78   Cmd_imread
+c006b89c   Cmd_ls
+c006bd20   Cmd_pwd
+c006c960   Cppi41DmaInit
+c006dc74   CppiDmaGetINTD0Status
+c006dc4c   CppiDmaGetPendStatus
+c007d860   DelayTimerSetup
+c0073dd8   ExcCombineAdd
+c0073e20   ExcCombineRemove
+c0073db8   ExcGlobalEnable
+c006b7c4   GetTickms
+c007c7c0   HOSTclose
+c007b420   HOSTlseek
+c007b920   HOSTopen
+c007c100   HOSTread
+c0079680   HOSTrename
+c007c1c0   HOSTunlink
+c007c280   HOSTwrite
+c0060168   Header
+c0060176   InfoHeader
+c0073980   IntDSPINTCInit
+c0073d30   IntDisable
+c0073d00   IntEnable
+c0073af8   IntEventClear
+c0073c34   IntEventCombineAdd
+c0073b30   IntEventCombineInit
+c0073cd8   IntEventCombineRegister
+c0073c88   IntEventCombineRemove
+c0073a3c   IntEventMap
+c0073ac4   IntEventSet
+c0073d8c   IntGlobalDisable
+c0073d78   IntGlobalEnable
+c0073da0   IntGlobalRestore
+c00739f0   IntRegister
+c0073d64   IntReset
+c0073a14   IntUnRegister
+c00655b4   InternalUSBHCDSendEvent
+c007b368   InternalUSBRegisterTickHandler
+c007b3a0   InternalUSBStartOfFrameTick
+c007b300   InternalUSBTickInit
+c007d894   IsTimerElapsed
+c006c270   MSCCallback
+c006b818   ModeCallback
+c007a9a0   PSCModuleControl
+c007d878   StartTimer
+c007d888   StopTimer
+c006b830   StringFromFresult
+c0079dec   SysDelayTimerSetup
+c0079f18   SysIsTimerElapsed
+c0079ea0   SysStartTimer
+c0079ef8   SysStopTimer
+c006b7b0   SysTickIntHandler
+c0079e14   Sysdelay
+c007286c   TimerCaptureConfigure
+c0072668   TimerCaptureGet
+c0072a14   TimerClockModeSet
+c00726b8   TimerCompareGet
+c0072694   TimerCompareSet
+c0072434   TimerConfigure
+c00725d4   TimerCounterGet
+c00725a0   TimerCounterSet
+c00723fc   TimerDisable
+c0072850   TimerDivDwnRatio34Get
+c0072804   TimerDivDwnRatio34Set
+c00723a0   TimerEnable
+c0072978   TimerInputGateDisable
+c0072940   TimerInputGateEnable
+c0072708   TimerIntDisable
+c00726d8   TimerIntEnable
+c0072758   TimerIntStatusClear
+c0072734   TimerIntStatusGet
+c0072af4   TimerInvertINDisable
+c0072abc   TimerInvertINEnable
+c0072b6c   TimerInvertOUTDisable
+c0072b30   TimerInvertOUTEnable
+c0072a8c   TimerOUTStatusGet
+c0072570   TimerPeriodGet
+c0072534   TimerPeriodSet
+c00727e8   TimerPreScalarCount34Get
+c0072794   TimerPreScalarCount34Set
+c0072a50   TimerPulseModeSet
+c00729b0   TimerPulseWidthSet
+c0072908   TimerReadResetDisable
+c00728cc   TimerReadResetEnable
+c0072638   TimerReloadGet
+c0072604   TimerReloadSet
+c00724ac   TimerWatchdogActivate
+c00724ec   TimerWatchdogReactivate
+c0074f24   UARTBreakCtl
+c0074e14   UARTCharGet
+c0074de8   UARTCharGetNonBlocking
+c0074e50   UARTCharPut
+c0074da8   UARTCharPutNonBlocking
+c0074d58   UARTCharsAvail
+c0074b54   UARTConfigGetExpClk
+c0074ac0   UARTConfigSetExpClk
+c007c000   UARTConsoleGetc
+c007bfa0   UARTConsoleInit
+c007bfd8   UARTConsolePutc
+c0074c2c   UARTDMADisable
+c0074c0c   UARTDMAEnable
+c0074cd4   UARTDisable
+c0074cb8   UARTEnable
+c0074d14   UARTFIFODisable
+c0074d00   UARTFIFOEnable
+c0074be8   UARTFIFOLevelSet
+c0071bf4   UARTGetHexNum
+c0071b34   UARTGetNum
+c0071ea4   UARTGetc
+c00718e4   UARTGets
+c0074ed0   UARTIntDisable
+c0074ea8   UARTIntEnable
+c0074ef8   UARTIntStatus
+c0074fb0   UARTModemControlClear
+c0074fe4   UARTModemControlGet
+c0074f58   UARTModemControlSet
+c0075004   UARTModemStatusGet
+c0074c94   UARTParityModeGet
+c0074c4c   UARTParityModeSet
+c007a6e0   UARTPinMuxSetup
+c0071a44   UARTPutHexNum
+c0071980   UARTPutNum
+c0071e8c   UARTPutc
+c007184c   UARTPuts
+c0074d88   UARTRxErrorGet
+c0074d2c   UARTSpaceAvail
+c0071840   UARTStdioInit
+c0071f14   UARTprintf
+c0071eb0   UARTwrite
+c006524c   USB0HostIntHandler
+c0065304   USB1HostIntHandler
+c007d0a4   USBClearInt
+c0071824   USBClearOtgIntr
+c0077328   USBDescGet
+c0077538   USBDescGetInterface
+c0077578   USBDescGetInterfaceEndpoint
+c00772a0   USBDescGetNum
+c00773c4   USBDescGetNumAlternateInterfaces
+c007096c   USBDevAddrGet
+c007094c   USBDevAddrSet
+c0070914   USBDevConnect
+c0070930   USBDevDisconnect
+c0070d34   USBDevEndpointConfigGet
+c0070bd8   USBDevEndpointConfigSet
+c0071158   USBDevEndpointDataAck
+c00707ec   USBDevEndpointStall
+c0070858   USBDevEndpointStallClear
+c00705cc   USBDevEndpointStatusClear
+c007d084   USBEnableInt
+c00717a4   USBEnableOtgIntr
+c0071740   USBEndpointDMAChannel
+c0071000   USBEndpointDMADisable
+c0070fac   USBEndpointDMAEnable
+c0071050   USBEndpointDataAvail
+c00710a0   USBEndpointDataGet
+c00711f0   USBEndpointDataPut
+c0071288   USBEndpointDataSend
+c0070798   USBEndpointDataToggleClear
+c007050c   USBEndpointStatus
+c0071700   USBFIFOAddrGet
+c0070f18   USBFIFOConfigGet
+c0070e94   USBFIFOConfigSet
+c00712ec   USBFIFOFlush
+c0071698   USBFrameNumberGet
+c00661d0   USBHCDControlTransfer
+c006c2ac   USBHCDEvents
+c0066cf4   USBHCDGetSpeed
+c00638e0   USBHCDInit
+c0065974   USBHCDMain
+c0061bc4   USBHCDPipeAlloc
+c0061778   USBHCDPipeAllocSize
+c0061be4   USBHCDPipeConfig
+c0062f40   USBHCDPipeFree
+c0062828   USBHCDPipeRead
+c0062784   USBHCDPipeReadNonBlocking
+c0062680   USBHCDPipeSchedule
+c0062078   USBHCDPipeStatus
+c006208c   USBHCDPipeWrite
+c00638a0   USBHCDPowerAutomatic
+c00636d8   USBHCDPowerConfigGet
+c00636a0   USBHCDPowerConfigInit
+c0063710   USBHCDPowerConfigSet
+c0063be8   USBHCDRegisterDrivers
+c0063f14   USBHCDReset
+c0063fa8   USBHCDResume
+c00642cc   USBHCDSetAddress
+c0064474   USBHCDSetConfig
+c00644d8   USBHCDSetInterface
+c0063f78   USBHCDSuspend
+c0063c68   USBHCDTerm
+c0066cc0   USBHCDTimeOutHook
+c0073874   USBHMSCBlockRead
+c00738ec   USBHMSCBlockWrite
+c0073854   USBHMSCDriveClose
+c00737d4   USBHMSCDriveOpen
+c00735c8   USBHMSCDriveReady
+c0075194   USBHSCSIInquiry
+c00752ec   USBHSCSIModeSense6
+c0075440   USBHSCSIRead10
+c0075284   USBHSCSIReadCapacities
+c0075214   USBHSCSIReadCapacity
+c00753d0   USBHSCSIRequestSense
+c0075374   USBHSCSITestUnitReady
+c00754f8   USBHSCSIWrite10
+c0081ed4   USBHTimeOut
+c00714e0   USBHostAddrGet
+c0071488   USBHostAddrSet
+c0071438   USBHostAutoReqClear
+c0071408   USBHostAutoReqSet
+c0064548   USBHostCheckPipes
+c0070984   USBHostEndpointConfig
+c00711ac   USBHostEndpointDataAck
+c00706a4   USBHostEndpointDataToggle
+c007054c   USBHostEndpointStatusClear
+c0071580   USBHostHubAddrGet
+c0071528   USBHostHubAddrSet
+c0064748   USBHostIntHandlerInternal
+c00715c8   USBHostPwrConfig
+c0071674   USBHostPwrDisable
+c0071650   USBHostPwrEnable
+c0071630   USBHostPwrFaultDisable
+c0071614   USBHostPwrFaultEnable
+c00713a8   USBHostRequestIN
+c00713d4   USBHostRequestINClear
+c007146c   USBHostRequestStatus
+c006ffc8   USBHostReset
+c0070004   USBHostResume
+c0070040   USBHostSpeedGet
+c006ffa8   USBHostSuspend
+c0070134   USBIntDisable
+c00702c8   USBIntDisableControl
+c0070414   USBIntDisableEndpoint
+c0070200   USBIntEnable
+c0070330   USBIntEnableControl
+c0070460   USBIntEnableEndpoint
+c00704d8   USBIntRegister
+c007008c   USBIntStatus
+c0070398   USBIntStatusControl
+c00704a8   USBIntStatusEndpoint
+c00704f8   USBIntUnregister
+c0071720   USBModeGet
+c007d0e8   USBModuleClkDisable
+c007d0c0   USBModuleClkEnable
+c00716b0   USBOTGSessionRequest
+c00717d0   USBReset
+c007d080   USBVersionGet
+c007b8a4   UsbPhyOff
+c007b820   UsbPhyOn
+c0081da8   __CIOBUF_
+c0e83698   __TI_CINIT_Base
+c0e836c8   __TI_CINIT_Limit
+c0e83670   __TI_Handler_Table_Base
+c0e8367c   __TI_Handler_Table_Limit
 UNDEFED    __TI_INITARRAY_Base
 UNDEFED    __TI_INITARRAY_Limit
-c000a0a0   __TI_STACK_END
+c00804f0   __TI_STACK_END
 00001000   __TI_STACK_SIZE
-00000000   __TI_STATIC_BASE
+c0081ec8   __TI_STATIC_BASE
 00001000   __TI_SYSMEM_SIZE
 UNDEFED    __TI_TLS_INIT_Base
 UNDEFED    __TI_TLS_INIT_Limit
 00000001   __TI_args_main
-c0008d20   __TI_cpp_init
-c0009060   __TI_decompress_none
-c0009080   __TI_decompress_rle24
-c000b758   __TI_enable_exit_profile_output
+c007d560   __TI_cpp_init
+c007dbc0   __TI_decompress_none
+c007dbe0   __TI_decompress_rle24
+c007f4c8   __TI_enable_exit_profile_output
 ffffffff   __TI_pprof_out_hndl
 ffffffff   __TI_prof_data_size
 ffffffff   __TI_prof_data_start
-c0008220   __TI_tls_init
+c007c700   __TI_tls_init
+c007bca0   __TI_zero_init
 ffffffff   __binit__
-c00030c0   __c6xabi_divd
-c0007860   __c6xabi_divi
-c0007fe0   __c6xabi_divu
-c0006600   __c6xabi_divul
-c0005080   __c6xabi_divull
-c0008fa0   __c6xabi_errno_addr
-c00063c0   __c6xabi_frcmpyd_div
-c0008ea0   __c6xabi_isinf
-c0008ba0   __c6xabi_llshl
-c0008f20   __c6xabi_llshru
-c0008fc0   __c6xabi_negll
-c0008fe0   __c6xabi_trunc
+c0074520   __c6xabi_divd
+c007ba00   __c6xabi_divi
+c007c340   __c6xabi_divu
+c0079f40   __c6xabi_divul
+c0078320   __c6xabi_divull
+c007dae0   __c6xabi_errno_addr
+c007d260   __c6xabi_fixdu
+c007d920   __c6xabi_frcmpyd_div
+c007d960   __c6xabi_isinf
+c007d2e0   __c6xabi_llshl
+c007d9e0   __c6xabi_llshru
+c007db00   __c6xabi_negll
+c007c400   __c6xabi_remi
+c007c860   __c6xabi_remu
+c007db20   __c6xabi_trunc
 ffffffff   __c_args__
-c0007860   __divi
-c0007fe0   __divu
-c000b774   __errno
-c0008f60   _args_main
-c0007480   _auto_init_elf
-c0000ff8   _c674x_mask_int10_isr
-c00011c0   _c674x_mask_int11_isr
-c0001384   _c674x_mask_int12_isr
-c0001548   _c674x_mask_int13_isr
-c0001710   _c674x_mask_int14_isr
-c00018d8   _c674x_mask_int15_isr
-c0000550   _c674x_mask_int4_isr
-c0000718   _c674x_mask_int5_isr
-c00008e0   _c674x_mask_int6_isr
-c0000aa4   _c674x_mask_int7_isr
-c0000c68   _c674x_mask_int8_isr
-c0000e30   _c674x_mask_int9_isr
-c0000000   _c674x_nmi_isr
-c00001c4   _c674x_rsvd_int2_isr
-c0000388   _c674x_rsvd_int3_isr
-c000bc00   _c_int00
-c0008380   _cleanup
-c000b750   _cleanup_ptr
-c0007020   _closefile
-c000b778   _ctypes_
-c0008160   _doflush
-c000b754   _dtors_ptr
-c000b770   _ft_end
-c000b428   _ftable
-c0006400   _intcVectorTable
-c000b768   _lock
-c0008560   _minit
-c0009000   _nop
-c0003660   _printfi
-c00090a0   _stack
-c0008d80   _subcull
-c000a0a0   _sys_memory
-c000b2e0   _tmpnams
-c000b76c   _unlock
-c0007580   _wrt_ok
-c000872c   abort
-c0007940   atoi
+c007ba00   __divi
+c007c340   __divu
+c007f4e4   __errno
+c007c400   __remi
+c007c860   __remu
+c007da20   _args_main
+c007b520   _auto_init_elf
+c007ad60   _buff_read
+c006f418   _c674x_mask_int10_isr
+c006f5e0   _c674x_mask_int11_isr
+c006f7a4   _c674x_mask_int12_isr
+c006f968   _c674x_mask_int13_isr
+c006fb30   _c674x_mask_int14_isr
+c006fcf8   _c674x_mask_int15_isr
+c006e970   _c674x_mask_int4_isr
+c006eb38   _c674x_mask_int5_isr
+c006ed00   _c674x_mask_int6_isr
+c006eec4   _c674x_mask_int7_isr
+c006f088   _c674x_mask_int8_isr
+c006f250   _c674x_mask_int9_isr
+c006e420   _c674x_nmi_isr
+c006e5e4   _c674x_rsvd_int2_isr
+c006e7a8   _c674x_rsvd_int3_isr
+c0082000   _c_int00
+c007c900   _cleanup
+c007f4c0   _cleanup_ptr
+c007ae80   _closefile
+c0081af8   _ctypes_
+c007c580   _doflush
+c007f4c4   _dtors_ptr
+c007f4e0   _ft_end
+c007ee80   _ftable
+c0079800   _intcVectorTable
+c007f4d8   _lock
+c007cae0   _minit
+c007db40   _nop
+c0075f00   _printfi
+c007c640   _rd_ok
+c007f4f0   _stack
+c007d5c0   _subcull
+c00804f0   _sys_memory
+c00611a8   _tmpnams
+c007f4dc   _unlock
+c007b620   _wrt_ok
+c007ccac   abort
+c007dba0   atof
+c007bae0   atoi
+c007f100   b1
+c007f180   b2
+c007f200   b3
+c007f430   b4
 ffffffff   binit
-c0007a20   close
-c00023c0   conv
-c0007680   copy_in
-c00029ac   dense
-c000b774   errno
-c00086a0   exit
-c0005780   exp
-c0005be0   fputc
-c0003f20   fputs
-c0004e00   free
-c0007260   fseek
-c0006aa0   ldexp
-c00087e0   lseek
-c0007b00   ltoa
-c0001aa0   main
-c0006c20   malloc
-c0008de0   memccpy
-c0008880   memcpy
-c0007be0   memset
-c00089c0   modf
-c0002728   nn_pool
-c0007cc0   printf
-c0008c20   readmsg
-c0008ca0   remove
-c0006000   setvbuf
-c0002924   softmax
-c0008ca0   unlink
-c0008b00   write
-c0008e40   writemsg
+c0081f04   bitmap
+c007bbc0   close
+c0072bc0   conv
+c007b720   copy_in
+c006e110   cppiDmaAllocBuffer
+c006e224   cppiDmaAllocnBuffer
+c006e1a4   cppiDmaFreeBuffer
+c006e320   cppiDmaFreenBuffer
+c006e3f4   cppiDmaHandleError
+c0015200   cppiInfo
+c0015380   dBuffer
+c007d86c   delay
+c00731f4   dense
+c0081ed8   deviceRetryOnTimeOut
+c006d28c   disableCoreRxDMA
+c006d310   disableCoreTxDMA
+c00794a0   disk_initialize
+c0079628   disk_ioctl
+c0079528   disk_read
+c0079500   disk_status
+c0079590   disk_write
+c0055380   dmaBuffer
+c006dbb4   dmaRxCompletion
+c006dad8   dmaTxCompletion
+c006da48   doDmaRxTransfer
+c006d738   doDmaTxTransfer
+c006d1cc   enableCoreRxDMA
+c006d130   enableCoreTxDMA
+c007f458   epInfo
+c007f4e4   errno
+c007cc20   exit
+c0078a20   exp
+c0069f58   f_chmod
+c00693b8   f_close
+c00698c0   f_getfree
+c00693e4   f_lseek
+c0069c14   f_mkdir
+c006868c   f_mount
+c006870c   f_open
+c0069678   f_opendir
+c0068b0c   f_read
+c0069750   f_readdir
+c006a00c   f_rename
+c0069858   f_stat
+c00691e4   f_sync
+c0069a90   f_unlink
+c0068e40   f_write
+c007d620   fclose
+c007d680   fopen
+c0078e80   fputc
+c0076be0   fputs
+c00778a0   fread
+c00780a0   free
+c007b1e0   fseek
+c00755c0   fwrite
+c00612e8   g_USBHMSCDevice
+c0081d70   g_USBHostMSCClassDriver
+c0056380   g_USBInstance
+c0056398   g_USBPerfInfo
+c0081ee0   g_bUSBTimerInitialized
+c0081f20   g_eCurrentUSBMode
+c0081f18   g_eState
+c0081f1c   g_eUIState
+c0060728   g_pHCDPool
+c0061308   g_pfTickHandlers
+c0061318   g_pvTickInstance
+c007f2f8   g_sCmdTable
+c007f370   g_sFresultStrings
+c0081d60   g_sUSBEventDriver
+c00609f8   g_sUSBHCD
+c00609f0   g_ulConnectRetry
+c0081ee4   g_ulCurrentUSBTick
+c0081f14   g_ulLastTick
+c0081edc   g_ulMSCInstance
+c0081f10   g_ulSysTickCount
+c0081ee8   g_ulUSBSOFCount
+c006d618   getFreeBd
+c0079670   get_fattime
+c0081f08   image
+c006b234   imread
+c006b48c   imshow
+c0081f0c   input_image
+c007a260   ldexp
+c007cd60   lseek
+c007bd80   ltoa
+c006a638   m_free
+c006a36c   m_malloc
+c0082080   m_mem
+c006a7d8   m_stat
+c006c558   main
+c007a3e0   malloc
+c0081ec8   mem_count
+c006a180   mem_init
+c007d6e0   memccpy
+c007d740   memcmp
+c007ce00   memcpy
+c007be60   memset
+c007cf40   modf
+c006c350   msc_inti
+c0072f28   nn_pool
+c007a560   open
+c007ac20   perror
+c005ffd8   pointers
+c007c020   printf
+c006d6c8   pushToSubmitQ
+c006d670   putFreeBd
+c007d120   read
+c007d360   readmsg
+c0001000   region0DescriptorSpace
+c007d4e0   remove
+c006a7a0   s_free
+c006a728   s_malloc
+c0c82080   s_mem
+c00792a0   setvbuf
+c0073124   softmax
+c0081f28   softmax_ran_once
+c0081f30   softmax_sum
+c006a248   sort
+c0081f00   sp
+c007d3e0   strcat
+c007da60   strcmp
+c007d7a0   strcpy
+c007daa0   strlen
+c007d460   strncpy
+c0075a80   strtod
+c007d4e0   unlink
+c0081ecc   upper_bound_m
+c0081ed0   upper_bound_s
+c006a8cc   usb_imread
+c006ae84   usb_imshow
+c006ad0c   usb_txtread
+c007e100   w1
+c007e580   w2
+c007ea00   w3
+c007dc00   w4
+c007d1c0   write
+c007d8c0   writemsg
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
 
 address    name
 --------   ----
-00000000   __TI_STATIC_BASE
 00000001   __TI_args_main
 00001000   __TI_STACK_SIZE
 00001000   __TI_SYSMEM_SIZE
-c0000000   _c674x_nmi_isr
-c00001c4   _c674x_rsvd_int2_isr
-c0000388   _c674x_rsvd_int3_isr
-c0000550   _c674x_mask_int4_isr
-c0000718   _c674x_mask_int5_isr
-c00008e0   _c674x_mask_int6_isr
-c0000aa4   _c674x_mask_int7_isr
-c0000c68   _c674x_mask_int8_isr
-c0000e30   _c674x_mask_int9_isr
-c0000ff8   _c674x_mask_int10_isr
-c00011c0   _c674x_mask_int11_isr
-c0001384   _c674x_mask_int12_isr
-c0001548   _c674x_mask_int13_isr
-c0001710   _c674x_mask_int14_isr
-c00018d8   _c674x_mask_int15_isr
-c0001aa0   main
-c00023c0   conv
-c0002728   nn_pool
-c0002924   softmax
-c00029ac   dense
-c00030c0   __c6xabi_divd
-c0003660   _printfi
-c0003f20   fputs
-c0004e00   free
-c0005080   __c6xabi_divull
-c0005780   exp
-c0005be0   fputc
-c0006000   setvbuf
-c00063c0   __c6xabi_frcmpyd_div
-c0006400   _intcVectorTable
-c0006600   __c6xabi_divul
-c00067a0   HOSTrename
-c0006aa0   ldexp
-c0006c20   malloc
-c0007020   _closefile
-c0007260   fseek
-c0007380   HOSTlseek
-c0007480   _auto_init_elf
-c0007580   _wrt_ok
-c0007680   copy_in
-c0007780   HOSTopen
-c0007860   __c6xabi_divi
-c0007860   __divi
-c0007940   atoi
-c0007a20   close
-c0007b00   ltoa
-c0007be0   memset
-c0007cc0   printf
-c0007da0   HOSTread
-c0007e60   HOSTunlink
-c0007f20   HOSTwrite
-c0007fe0   __c6xabi_divu
-c0007fe0   __divu
-c0008160   _doflush
-c0008220   __TI_tls_init
-c00082e0   HOSTclose
-c0008380   _cleanup
-c0008560   _minit
-c00086a0   exit
-c000872c   C$$EXIT
-c000872c   abort
-c00087e0   lseek
-c0008880   memcpy
-c00089c0   modf
-c0008b00   write
-c0008ba0   __c6xabi_llshl
-c0008c20   readmsg
-c0008ca0   remove
-c0008ca0   unlink
-c0008d20   __TI_cpp_init
-c0008d80   _subcull
-c0008de0   memccpy
-c0008e40   writemsg
-c0008e98   C$$IO$$
-c0008ea0   __c6xabi_isinf
-c0008f20   __c6xabi_llshru
-c0008f60   _args_main
-c0008fa0   __c6xabi_errno_addr
-c0008fc0   __c6xabi_negll
-c0008fe0   __c6xabi_trunc
-c0009000   _nop
-c0009060   __TI_decompress_none
-c0009080   __TI_decompress_rle24
-c00090a0   _stack
-c000a0a0   __TI_STACK_END
-c000a0a0   _sys_memory
-c000b2e0   _tmpnams
-c000b428   _ftable
-c000b750   _cleanup_ptr
-c000b754   _dtors_ptr
-c000b758   __TI_enable_exit_profile_output
-c000b768   _lock
-c000b76c   _unlock
-c000b770   _ft_end
-c000b774   __errno
-c000b774   errno
-c000b778   _ctypes_
-c000b8b8   __CIOBUF_
-c000ba84   __TI_Handler_Table_Base
-c000ba8c   __TI_CINIT_Base
-c000ba8c   __TI_Handler_Table_Limit
-c000ba9c   __TI_CINIT_Limit
-c000bc00   _c_int00
+c0001000   region0DescriptorSpace
+c0015200   cppiInfo
+c0015380   dBuffer
+c0055380   dmaBuffer
+c0056380   g_USBInstance
+c0056398   g_USBPerfInfo
+c005ffd8   pointers
+c0060168   Header
+c0060176   InfoHeader
+c0060728   g_pHCDPool
+c00609f0   g_ulConnectRetry
+c00609f8   g_sUSBHCD
+c00611a8   _tmpnams
+c00612e8   g_USBHMSCDevice
+c0061308   g_pfTickHandlers
+c0061318   g_pvTickInstance
+c0061778   USBHCDPipeAllocSize
+c0061bc4   USBHCDPipeAlloc
+c0061be4   USBHCDPipeConfig
+c0062078   USBHCDPipeStatus
+c006208c   USBHCDPipeWrite
+c0062680   USBHCDPipeSchedule
+c0062784   USBHCDPipeReadNonBlocking
+c0062828   USBHCDPipeRead
+c0062f40   USBHCDPipeFree
+c00636a0   USBHCDPowerConfigInit
+c00636d8   USBHCDPowerConfigGet
+c0063710   USBHCDPowerConfigSet
+c00638a0   USBHCDPowerAutomatic
+c00638e0   USBHCDInit
+c0063be8   USBHCDRegisterDrivers
+c0063c68   USBHCDTerm
+c0063f14   USBHCDReset
+c0063f78   USBHCDSuspend
+c0063fa8   USBHCDResume
+c00642cc   USBHCDSetAddress
+c0064474   USBHCDSetConfig
+c00644d8   USBHCDSetInterface
+c0064548   USBHostCheckPipes
+c0064748   USBHostIntHandlerInternal
+c006524c   USB0HostIntHandler
+c0065304   USB1HostIntHandler
+c00655b4   InternalUSBHCDSendEvent
+c0065974   USBHCDMain
+c00661d0   USBHCDControlTransfer
+c0066cc0   USBHCDTimeOutHook
+c0066cf4   USBHCDGetSpeed
+c006868c   f_mount
+c006870c   f_open
+c0068b0c   f_read
+c0068e40   f_write
+c00691e4   f_sync
+c00693b8   f_close
+c00693e4   f_lseek
+c0069678   f_opendir
+c0069750   f_readdir
+c0069858   f_stat
+c00698c0   f_getfree
+c0069a90   f_unlink
+c0069c14   f_mkdir
+c0069f58   f_chmod
+c006a00c   f_rename
+c006a180   mem_init
+c006a248   sort
+c006a36c   m_malloc
+c006a638   m_free
+c006a728   s_malloc
+c006a7a0   s_free
+c006a7d8   m_stat
+c006a8cc   usb_imread
+c006ad0c   usb_txtread
+c006ae84   usb_imshow
+c006b234   imread
+c006b48c   imshow
+c006b7b0   SysTickIntHandler
+c006b7c4   GetTickms
+c006b818   ModeCallback
+c006b830   StringFromFresult
+c006b89c   Cmd_ls
+c006bb00   Cmd_cd
+c006bd20   Cmd_pwd
+c006bd64   Cmd_cat
+c006beec   Cmd_help
+c006bf78   Cmd_imread
+c006c270   MSCCallback
+c006c2ac   USBHCDEvents
+c006c350   msc_inti
+c006c558   main
+c006c960   Cppi41DmaInit
+c006d130   enableCoreTxDMA
+c006d1cc   enableCoreRxDMA
+c006d28c   disableCoreRxDMA
+c006d310   disableCoreTxDMA
+c006d618   getFreeBd
+c006d670   putFreeBd
+c006d6c8   pushToSubmitQ
+c006d738   doDmaTxTransfer
+c006da48   doDmaRxTransfer
+c006dad8   dmaTxCompletion
+c006dbb4   dmaRxCompletion
+c006dc4c   CppiDmaGetPendStatus
+c006dc74   CppiDmaGetINTD0Status
+c006e110   cppiDmaAllocBuffer
+c006e1a4   cppiDmaFreeBuffer
+c006e224   cppiDmaAllocnBuffer
+c006e320   cppiDmaFreenBuffer
+c006e3f4   cppiDmaHandleError
+c006e420   _c674x_nmi_isr
+c006e5e4   _c674x_rsvd_int2_isr
+c006e7a8   _c674x_rsvd_int3_isr
+c006e970   _c674x_mask_int4_isr
+c006eb38   _c674x_mask_int5_isr
+c006ed00   _c674x_mask_int6_isr
+c006eec4   _c674x_mask_int7_isr
+c006f088   _c674x_mask_int8_isr
+c006f250   _c674x_mask_int9_isr
+c006f418   _c674x_mask_int10_isr
+c006f5e0   _c674x_mask_int11_isr
+c006f7a4   _c674x_mask_int12_isr
+c006f968   _c674x_mask_int13_isr
+c006fb30   _c674x_mask_int14_isr
+c006fcf8   _c674x_mask_int15_isr
+c006ffa8   USBHostSuspend
+c006ffc8   USBHostReset
+c0070004   USBHostResume
+c0070040   USBHostSpeedGet
+c007008c   USBIntStatus
+c0070134   USBIntDisable
+c0070200   USBIntEnable
+c00702c8   USBIntDisableControl
+c0070330   USBIntEnableControl
+c0070398   USBIntStatusControl
+c0070414   USBIntDisableEndpoint
+c0070460   USBIntEnableEndpoint
+c00704a8   USBIntStatusEndpoint
+c00704d8   USBIntRegister
+c00704f8   USBIntUnregister
+c007050c   USBEndpointStatus
+c007054c   USBHostEndpointStatusClear
+c00705cc   USBDevEndpointStatusClear
+c00706a4   USBHostEndpointDataToggle
+c0070798   USBEndpointDataToggleClear
+c00707ec   USBDevEndpointStall
+c0070858   USBDevEndpointStallClear
+c0070914   USBDevConnect
+c0070930   USBDevDisconnect
+c007094c   USBDevAddrSet
+c007096c   USBDevAddrGet
+c0070984   USBHostEndpointConfig
+c0070bd8   USBDevEndpointConfigSet
+c0070d34   USBDevEndpointConfigGet
+c0070e94   USBFIFOConfigSet
+c0070f18   USBFIFOConfigGet
+c0070fac   USBEndpointDMAEnable
+c0071000   USBEndpointDMADisable
+c0071050   USBEndpointDataAvail
+c00710a0   USBEndpointDataGet
+c0071158   USBDevEndpointDataAck
+c00711ac   USBHostEndpointDataAck
+c00711f0   USBEndpointDataPut
+c0071288   USBEndpointDataSend
+c00712ec   USBFIFOFlush
+c00713a8   USBHostRequestIN
+c00713d4   USBHostRequestINClear
+c0071408   USBHostAutoReqSet
+c0071438   USBHostAutoReqClear
+c007146c   USBHostRequestStatus
+c0071488   USBHostAddrSet
+c00714e0   USBHostAddrGet
+c0071528   USBHostHubAddrSet
+c0071580   USBHostHubAddrGet
+c00715c8   USBHostPwrConfig
+c0071614   USBHostPwrFaultEnable
+c0071630   USBHostPwrFaultDisable
+c0071650   USBHostPwrEnable
+c0071674   USBHostPwrDisable
+c0071698   USBFrameNumberGet
+c00716b0   USBOTGSessionRequest
+c0071700   USBFIFOAddrGet
+c0071720   USBModeGet
+c0071740   USBEndpointDMAChannel
+c00717a4   USBEnableOtgIntr
+c00717d0   USBReset
+c0071824   USBClearOtgIntr
+c0071840   UARTStdioInit
+c007184c   UARTPuts
+c00718e4   UARTGets
+c0071980   UARTPutNum
+c0071a44   UARTPutHexNum
+c0071b34   UARTGetNum
+c0071bf4   UARTGetHexNum
+c0071e8c   UARTPutc
+c0071ea4   UARTGetc
+c0071eb0   UARTwrite
+c0071f14   UARTprintf
+c00723a0   TimerEnable
+c00723fc   TimerDisable
+c0072434   TimerConfigure
+c00724ac   TimerWatchdogActivate
+c00724ec   TimerWatchdogReactivate
+c0072534   TimerPeriodSet
+c0072570   TimerPeriodGet
+c00725a0   TimerCounterSet
+c00725d4   TimerCounterGet
+c0072604   TimerReloadSet
+c0072638   TimerReloadGet
+c0072668   TimerCaptureGet
+c0072694   TimerCompareSet
+c00726b8   TimerCompareGet
+c00726d8   TimerIntEnable
+c0072708   TimerIntDisable
+c0072734   TimerIntStatusGet
+c0072758   TimerIntStatusClear
+c0072794   TimerPreScalarCount34Set
+c00727e8   TimerPreScalarCount34Get
+c0072804   TimerDivDwnRatio34Set
+c0072850   TimerDivDwnRatio34Get
+c007286c   TimerCaptureConfigure
+c00728cc   TimerReadResetEnable
+c0072908   TimerReadResetDisable
+c0072940   TimerInputGateEnable
+c0072978   TimerInputGateDisable
+c00729b0   TimerPulseWidthSet
+c0072a14   TimerClockModeSet
+c0072a50   TimerPulseModeSet
+c0072a8c   TimerOUTStatusGet
+c0072abc   TimerInvertINEnable
+c0072af4   TimerInvertINDisable
+c0072b30   TimerInvertOUTEnable
+c0072b6c   TimerInvertOUTDisable
+c0072bc0   conv
+c0072f28   nn_pool
+c0073124   softmax
+c00731f4   dense
+c00735c8   USBHMSCDriveReady
+c00737d4   USBHMSCDriveOpen
+c0073854   USBHMSCDriveClose
+c0073874   USBHMSCBlockRead
+c00738ec   USBHMSCBlockWrite
+c0073980   IntDSPINTCInit
+c00739f0   IntRegister
+c0073a14   IntUnRegister
+c0073a3c   IntEventMap
+c0073ac4   IntEventSet
+c0073af8   IntEventClear
+c0073b30   IntEventCombineInit
+c0073c34   IntEventCombineAdd
+c0073c88   IntEventCombineRemove
+c0073cd8   IntEventCombineRegister
+c0073d00   IntEnable
+c0073d30   IntDisable
+c0073d64   IntReset
+c0073d78   IntGlobalEnable
+c0073d8c   IntGlobalDisable
+c0073da0   IntGlobalRestore
+c0073db8   ExcGlobalEnable
+c0073dd8   ExcCombineAdd
+c0073e20   ExcCombineRemove
+c0074520   __c6xabi_divd
+c0074ac0   UARTConfigSetExpClk
+c0074b54   UARTConfigGetExpClk
+c0074be8   UARTFIFOLevelSet
+c0074c0c   UARTDMAEnable
+c0074c2c   UARTDMADisable
+c0074c4c   UARTParityModeSet
+c0074c94   UARTParityModeGet
+c0074cb8   UARTEnable
+c0074cd4   UARTDisable
+c0074d00   UARTFIFOEnable
+c0074d14   UARTFIFODisable
+c0074d2c   UARTSpaceAvail
+c0074d58   UARTCharsAvail
+c0074d88   UARTRxErrorGet
+c0074da8   UARTCharPutNonBlocking
+c0074de8   UARTCharGetNonBlocking
+c0074e14   UARTCharGet
+c0074e50   UARTCharPut
+c0074ea8   UARTIntEnable
+c0074ed0   UARTIntDisable
+c0074ef8   UARTIntStatus
+c0074f24   UARTBreakCtl
+c0074f58   UARTModemControlSet
+c0074fb0   UARTModemControlClear
+c0074fe4   UARTModemControlGet
+c0075004   UARTModemStatusGet
+c0075194   USBHSCSIInquiry
+c0075214   USBHSCSIReadCapacity
+c0075284   USBHSCSIReadCapacities
+c00752ec   USBHSCSIModeSense6
+c0075374   USBHSCSITestUnitReady
+c00753d0   USBHSCSIRequestSense
+c0075440   USBHSCSIRead10
+c00754f8   USBHSCSIWrite10
+c00755c0   fwrite
+c0075a80   strtod
+c0075f00   _printfi
+c0076948   CacheEnable
+c0076a28   CacheEnableMAR
+c0076ac0   CacheDisableMAR
+c0076b4c   CacheInvL1pAll
+c0076b58   CacheWBAll
+c0076b68   CacheWBInvAll
+c0076b74   CacheInv
+c0076b90   CacheWB
+c0076bac   CacheWBInv
+c0076be0   fputs
+c00772a0   USBDescGetNum
+c0077328   USBDescGet
+c00773c4   USBDescGetNumAlternateInterfaces
+c0077538   USBDescGetInterface
+c0077578   USBDescGetInterfaceEndpoint
+c00778a0   fread
+c00780a0   free
+c0078320   __c6xabi_divull
+c0078a20   exp
+c0078e80   fputc
+c00792a0   setvbuf
+c00794a0   disk_initialize
+c0079500   disk_status
+c0079528   disk_read
+c0079590   disk_write
+c0079628   disk_ioctl
+c0079670   get_fattime
+c0079680   HOSTrename
+c0079800   _intcVectorTable
+c0079dec   SysDelayTimerSetup
+c0079e14   Sysdelay
+c0079ea0   SysStartTimer
+c0079ef8   SysStopTimer
+c0079f18   SysIsTimerElapsed
+c0079f40   __c6xabi_divul
+c007a260   ldexp
+c007a3e0   malloc
+c007a560   open
+c007a6e0   UARTPinMuxSetup
+c007a9a0   PSCModuleControl
+c007ac20   perror
+c007ad60   _buff_read
+c007ae80   _closefile
+c007b1e0   fseek
+c007b300   InternalUSBTickInit
+c007b368   InternalUSBRegisterTickHandler
+c007b3a0   InternalUSBStartOfFrameTick
+c007b420   HOSTlseek
+c007b520   _auto_init_elf
+c007b620   _wrt_ok
+c007b720   copy_in
+c007b820   UsbPhyOn
+c007b8a4   UsbPhyOff
+c007b920   HOSTopen
+c007ba00   __c6xabi_divi
+c007ba00   __divi
+c007bae0   atoi
+c007bbc0   close
+c007bca0   __TI_zero_init
+c007bd80   ltoa
+c007be60   memset
+c007bfa0   UARTConsoleInit
+c007bfd8   UARTConsolePutc
+c007c000   UARTConsoleGetc
+c007c020   printf
+c007c100   HOSTread
+c007c1c0   HOSTunlink
+c007c280   HOSTwrite
+c007c340   __c6xabi_divu
+c007c340   __divu
+c007c400   __c6xabi_remi
+c007c400   __remi
+c007c580   _doflush
+c007c640   _rd_ok
+c007c700   __TI_tls_init
+c007c7c0   HOSTclose
+c007c860   __c6xabi_remu
+c007c860   __remu
+c007c900   _cleanup
+c007cae0   _minit
+c007cc20   exit
+c007ccac   C$$EXIT
+c007ccac   abort
+c007cd60   lseek
+c007ce00   memcpy
+c007cf40   modf
+c007d080   USBVersionGet
+c007d084   USBEnableInt
+c007d0a4   USBClearInt
+c007d0c0   USBModuleClkEnable
+c007d0e8   USBModuleClkDisable
+c007d120   read
+c007d1c0   write
+c007d260   __c6xabi_fixdu
+c007d2e0   __c6xabi_llshl
+c007d360   readmsg
+c007d3e0   strcat
+c007d460   strncpy
+c007d4e0   remove
+c007d4e0   unlink
+c007d560   __TI_cpp_init
+c007d5c0   _subcull
+c007d620   fclose
+c007d680   fopen
+c007d6e0   memccpy
+c007d740   memcmp
+c007d7a0   strcpy
+c007d860   DelayTimerSetup
+c007d86c   delay
+c007d878   StartTimer
+c007d888   StopTimer
+c007d894   IsTimerElapsed
+c007d8c0   writemsg
+c007d918   C$$IO$$
+c007d920   __c6xabi_frcmpyd_div
+c007d960   __c6xabi_isinf
+c007d9e0   __c6xabi_llshru
+c007da20   _args_main
+c007da60   strcmp
+c007daa0   strlen
+c007dae0   __c6xabi_errno_addr
+c007db00   __c6xabi_negll
+c007db20   __c6xabi_trunc
+c007db40   _nop
+c007dba0   atof
+c007dbc0   __TI_decompress_none
+c007dbe0   __TI_decompress_rle24
+c007dc00   w4
+c007e100   w1
+c007e580   w2
+c007ea00   w3
+c007ee80   _ftable
+c007f100   b1
+c007f180   b2
+c007f200   b3
+c007f2f8   g_sCmdTable
+c007f370   g_sFresultStrings
+c007f430   b4
+c007f458   epInfo
+c007f4c0   _cleanup_ptr
+c007f4c4   _dtors_ptr
+c007f4c8   __TI_enable_exit_profile_output
+c007f4d8   _lock
+c007f4dc   _unlock
+c007f4e0   _ft_end
+c007f4e4   __errno
+c007f4e4   errno
+c007f4f0   _stack
+c00804f0   __TI_STACK_END
+c00804f0   _sys_memory
+c0081af8   _ctypes_
+c0081d60   g_sUSBEventDriver
+c0081d70   g_USBHostMSCClassDriver
+c0081da8   __CIOBUF_
+c0081ec8   __TI_STATIC_BASE
+c0081ec8   mem_count
+c0081ecc   upper_bound_m
+c0081ed0   upper_bound_s
+c0081ed4   USBHTimeOut
+c0081ed8   deviceRetryOnTimeOut
+c0081edc   g_ulMSCInstance
+c0081ee0   g_bUSBTimerInitialized
+c0081ee4   g_ulCurrentUSBTick
+c0081ee8   g_ulUSBSOFCount
+c0081f00   sp
+c0081f04   bitmap
+c0081f08   image
+c0081f0c   input_image
+c0081f10   g_ulSysTickCount
+c0081f14   g_ulLastTick
+c0081f18   g_eState
+c0081f1c   g_eUIState
+c0081f20   g_eCurrentUSBMode
+c0081f28   softmax_ran_once
+c0081f30   softmax_sum
+c0082000   _c_int00
+c0082080   m_mem
+c0c82080   s_mem
+c0e83670   __TI_Handler_Table_Base
+c0e8367c   __TI_Handler_Table_Limit
+c0e83698   __TI_CINIT_Base
+c0e836c8   __TI_CINIT_Limit
 ffffffff   __TI_pprof_out_hndl
 ffffffff   __TI_prof_data_size
 ffffffff   __TI_prof_data_start
@@ -439,4 +1314,4 @@ UNDEFED    __TI_INITARRAY_Limit
 UNDEFED    __TI_TLS_INIT_Base
 UNDEFED    __TI_TLS_INIT_Limit
 
-[117 symbols]
+[491 symbols]

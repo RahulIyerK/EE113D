@@ -44,6 +44,8 @@
 #include "bmp.h"
 #include "m_mem.h"
 #include "cnn.h"
+#include "CNN_weights.h"
+#include "stdint.h"
 
 #ifdef _TMS320C6X
 #include "dspcache.h"
@@ -63,12 +65,6 @@ static volatile unsigned int pageTable[4*1024]__attribute__((aligned(16*1024)));
 #endif
 
 unsigned char *bitmap;
-float* w1;
-float* w2;
-float* b1;
-float* b2;
-float* fc;
-float* bc;
 
 char* image;
 float* input_image;
@@ -1550,16 +1546,17 @@ int main(void)
 	///LAYER 1:
 	// 32 3x3 kernels on a 28 x 28 x 1 image
 	// output dimensions are 28 x 28 x 32
-//    float* result_conv_1 = (float*)m_malloc(28*28*32*sizeof(float));
-//    conv(input_image, w1, b1, result_conv_1, 28, 28, 1, 3, 32);
+
+	float* result_conv_1 = (float*)m_malloc(CONV1_INPUT_DIM*CONV1_INPUT_DIM*CONV1_NUM_KERNELS*sizeof(float));
+	conv(input_image, w1, b1, result_conv_1, CONV1_INPUT_DIM, CONV1_INPUT_DIM, CONV1_INPUT_CHANNELS, CONV1_KERNEL_DIM, CONV1_NUM_KERNELS);
 
 
 	///LAYER 2:
 	//2x2 pool
 	//input dimensions: 28 x 28 x 32
 	//output dims: 14 x 14 x 32
-	float* result_pool_1 = (float*)m_malloc(14*14*32*sizeof(float));
-	nn_pool(result_conv_1, result_pool_1, 28, 28, 32, 2);
+	float* result_pool_1 = (float*)m_malloc((POOL1_INPUT_DIM/POOL1_STRIDE)*(POOL1_INPUT_DIM/POOL1_STRIDE)*POOL1_INPUT_CHANNELS*sizeof(float));
+	nn_pool(result_conv_1, result_pool_1, POOL1_INPUT_DIM, POOL1_INPUT_DIM, POOL1_INPUT_CHANNELS, POOL1_STRIDE);
 	free(result_conv_1);
 
 
@@ -1567,17 +1564,17 @@ int main(void)
 	//input dims: 14 x 14 x 32
 	//32 3 x 3 x 32 kernels
 	//output: 14 x 14 x 32
-	float * result_conv_2 = (float*)m_malloc(14*14*32*sizeof(float));
-	conv(result_conv_1, w2, b2, result_conv_2, 14, 14, 32, 3, 32);
-	free(result_conv_1);
+	float* result_conv_2 = (float*)m_malloc(CONV2_INPUT_DIM*CONV2_INPUT_DIM*CONV2_NUM_KERNELS*sizeof(float));
+	conv(result_pool_1, w2, b2, result_conv_2, CONV2_INPUT_DIM, CONV2_INPUT_DIM, CONV2_INPUT_CHANNELS, CONV2_KERNEL_DIM, CONV2_NUM_KERNELS);
+	free(result_pool_1);
 
 	///LAYER 4: POOL
 	//2x2 pool
 	//input dims: 14 x 14 x 32
 	//output dims: 7 x 7 x 32
 
-	float * result_pool_2 = (float*)m_malloc(7*7*32*sizeof(float));
-	nn_pool(result_conv_2, result_pool_2, 14, 14, 32, 2);
+	float* result_pool_2 = (float*)m_malloc((POOL2_INPUT_DIM/POOL2_STRIDE)*(POOL2_INPUT_DIM/POOL2_STRIDE)*POOL2_INPUT_CHANNELS*sizeof(float));
+	nn_pool(result_conv_2, result_pool_2, POOL2_INPUT_DIM, POOL2_INPUT_DIM, POOL2_INPUT_CHANNELS, POOL2_STRIDE);
 	free(result_conv_2);
 
 
@@ -1585,22 +1582,32 @@ int main(void)
 	//input dims: 7 x 7 x 32
 	//32 3 x 3 x 32 kernels
 	//output: 7 x 7 x 32
-	float * result_conv_3 = (float*)m_malloc(7*7*32*sizeof(float));
-	conv(result_conv_2, w2, b2, result_conv_2, 14, 14, 32, 3, 32);
-	free(result_conv_2);
+	float* result_conv_3 = (float*)m_malloc(CONV3_INPUT_DIM*CONV3_INPUT_DIM*CONV3_NUM_KERNELS*sizeof(float));
+	conv(result_pool_2, w3, b3, result_conv_3, CONV3_INPUT_DIM, CONV3_INPUT_DIM, CONV3_INPUT_CHANNELS, CONV3_KERNEL_DIM, CONV3_NUM_KERNELS);
+	free(result_pool_2);
 
 	///LAYER 6: POOL
 	//4x4 pool
 	//input dims: 7 x 7 x 32
 	//output dims: 1 x 1 x 32
+	float* result_pool_3 = (float*)m_malloc((POOL3_INPUT_DIM/POOL3_STRIDE)*(POOL3_INPUT_DIM/POOL3_STRIDE)*POOL3_INPUT_CHANNELS*sizeof(float));
+	nn_pool(result_conv_3, result_pool_3, POOL3_INPUT_DIM, POOL3_INPUT_DIM, POOL3_INPUT_CHANNELS, POOL3_STRIDE);
+	free(result_conv_3);
 
 
+	//LAYER 7: DENSE
+	//input dims: 1 x 1 x 32 kernels
+	//output dims: 10x1 vector
+	double* res_dense = (double*)m_malloc(DENSE1_OUTPUT_DIM*sizeof(double));
+	dense(result_pool_3, w4, b4, res_dense, DENSE1_INPUT_DIM, DENSE1_OUTPUT_DIM);
+	free(result_pool_3);
 
-
-
-//	m_free(result_conv_1);
-//	m_free(w1);
-//	m_free(b1);
+	uint8_t max = res_dense[0];
+	for (i = 0; i < 10; i++)
+	{
+		if (res_dense[i] > max) max = res_dense[i];
+	}
+	printf("guess: %d\n", max);
 
 	while(1);
 }

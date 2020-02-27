@@ -1,1 +1,1 @@
-"./main_cnn.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+"./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 

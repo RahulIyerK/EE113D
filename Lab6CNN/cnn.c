@@ -138,5 +138,6 @@ void dense(float input[],float kernel[], float bias[], double output[], int inpu
     {
         output[i] = softmax(output, output[i], output_size);
     }
+    return;
 
 }

@@ -11,41 +11,41 @@ C_SRCS += \
 ../exit.c \
 ../fat_usbmsc.c \
 ../ff.c \
-../main_cnn.c 
+../usb.c 
 
 OBJS += \
 ./cnn.obj \
 ./exit.obj \
 ./fat_usbmsc.obj \
 ./ff.obj \
-./main_cnn.obj 
+./usb.obj 
 
 C_DEPS += \
 ./cnn.pp \
 ./exit.pp \
 ./fat_usbmsc.pp \
 ./ff.pp \
-./main_cnn.pp 
+./usb.pp 
 
 C_DEPS__QUOTED += \
 "cnn.pp" \
 "exit.pp" \
 "fat_usbmsc.pp" \
 "ff.pp" \
-"main_cnn.pp" 
+"usb.pp" 
 
 OBJS__QUOTED += \
 "cnn.obj" \
 "exit.obj" \
 "fat_usbmsc.obj" \
 "ff.obj" \
-"main_cnn.obj" 
+"usb.obj" 
 
 C_SRCS__QUOTED += \
 "../cnn.c" \
 "../exit.c" \
 "../fat_usbmsc.c" \
 "../ff.c" \
-"../main_cnn.c" 
+"../usb.c" 
 
 

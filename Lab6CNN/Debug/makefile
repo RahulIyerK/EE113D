@@ -8,7 +8,7 @@ CG_TOOL_ROOT := C:/ti/ccsv5/tools/compiler/c6000_7.4.4
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
-"./main_cnn.obj" \
+"./usb.obj" \
 "./ff.obj" \
 "./fat_usbmsc.obj" \
 "./exit.obj" \
@@ -132,8 +132,8 @@ usb_host_msc.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(C6000_EXECUTABLE_OUTPUTS__QUOTED) "usb_host_msc.out"
-	-$(RM) "cnn.pp" "exit.pp" "fat_usbmsc.pp" "ff.pp" "main_cnn.pp" 
-	-$(RM) "cnn.obj" "exit.obj" "fat_usbmsc.obj" "ff.obj" "main_cnn.obj" 
+	-$(RM) "cnn.pp" "exit.pp" "fat_usbmsc.pp" "ff.pp" "usb.pp" 
+	-$(RM) "cnn.obj" "exit.obj" "fat_usbmsc.obj" "ff.obj" "usb.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

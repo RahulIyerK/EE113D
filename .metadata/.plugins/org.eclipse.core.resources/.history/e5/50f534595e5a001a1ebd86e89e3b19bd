@@ -31,6 +31,8 @@ void conv(float input[], float kernel[], float bias[], float result[], int input
                         {
                             if((x + kx < pad_size) || (x + kx >= pad_size + input_width))
                             {
+                            	int asdf;
+                            	asdf = 0;
                                 continue;
                             }
                             else if((y + ky < pad_size) || (y + ky >= pad_size + input_height))
@@ -58,8 +60,6 @@ void conv(float input[], float kernel[], float bias[], float result[], int input
                 }
             }
         }
-    	int asdf;
-    	asdf =0;
     }
 }
 

@@ -4377,3 +4377,511 @@ usb_host_msc.out
 ' '
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project Lab3s2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab4 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab5 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project SamplingExperiments ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 1361: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 2689: warning: excess initializers are ignored
+"..\CNN_weights.h", line 14245: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+"..\CNN_weights.h", line 68093: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+"..\CNN_weights.h", line 68173: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../cnn.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="cnn.pp"  "../cnn.c"
+'Finished building: ../cnn.c'
+' '
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+"../usb.c", line 1656: error: identifier "softmax_ran_once" is undefined
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+1 error detected in the compilation of "../usb.c".
+
+>> Compilation failure
+gmake: *** [usb.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+>> Compilation failure
+"../usb.c", line 1656: error: identifier "softmax_ran_once" is undefined
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+1 error detected in the compilation of "../usb.c".
+gmake: *** [usb.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab3s2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab4 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab5 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+
+>> Compilation failure
+"../usb.c", line 1521: error: identifier "int_16t" is undefined
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+1 error detected in the compilation of "../usb.c".
+gmake: *** [usb.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project SamplingExperiments ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+error: symbol "softmax_ran_once" redefined: first defined in "./usb.obj";
+   redefined in "./cnn.obj"
+
+>> Compilation failure
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+error: errors encountered during linking; "usb_host_msc.out" not built
+gmake: *** [usb_host_msc.out] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 32977: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"..\CNN_weights.h", line 1361: warning: excess initializers are ignored
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+'Building file: ../usb.c'
+'Invoking: C6000 Compiler'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --include_path="C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/third_party/fatfs/src" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/hw" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/include/c674x/omapl138" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/grlib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/usblib/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/ipclite/include" --include_path="C:/ti/OMAPL138_StarterWare_1_10_04_01/nandlib/include" --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 --preproc_with_compile --preproc_dependency="usb.pp"  "../usb.c"
+"..\bmp.h", line 161: warning: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+"..\bmp.h", line 128: warning: variable "k" was declared but never referenced
+"../usb.c", line 170: warning: variable "g_cCmdBuf" was set but never used
+'Finished building: ../usb.c'
+' '
+'Building target: usb_host_msc.out'
+'Invoking: C6000 Linker'
+"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/bin/cl6x" -mv6740 --abi=eabi -g --gcc --define=omapl138 --define=lcdkOMAPL138 --define=DMA_MODE --diag_warning=225 -z --stack_size=0x1000 -m"Lab6CNN.map" --heap_size=0x1000 -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/lib" -i"C:/ti/ccsv5/tools/compiler/c6000_7.4.4/include" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/drivers/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/lcdkOMAPL138/platform/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/system_config/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/ipclite/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/omapl138/usblib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/utils/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/grlib/Debug" -i"C:/ti/OMAPL138_StarterWare_1_10_04_01/binary/c674x/cgt_ccs/nandlib/Debug" --reread_libs --warn_sections --xml_link_info="usb_host_msc_linkInfo.xml" --rom_model -o "usb_host_msc.out"  "./usb.obj" "./ff.obj" "./fat_usbmsc.obj" "./exit.obj" "./cnn.obj" "../usb_host_msc.cmd" -ldrivers.lib -lutils.lib -lplatform.lib -lsystem_config.lib -lusblib.lib -l"libc.a" 
+<Linking>
+warning: creating output section ".EXT_RAM" without a SECTIONS specification
+'Finished building target: usb_host_msc.out'
+' '
+A subdirectory or file ..\..\..\..\..\..\..\binary\c674x\cgt_ccs\omapl138\lcdkOMAPL138\usb_host_msc\Debug already exists.
+usb_host_msc.out
+        1 file(s) copied.
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab6CNN ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****

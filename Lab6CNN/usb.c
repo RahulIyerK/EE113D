@@ -1518,6 +1518,8 @@ msc_inti(void)
 // This is the main loop that runs the application.
 //
 //*****************************************************************************
+extern volatile int16_t softmax_ran_once;
+
 int main(void)
 {
 
@@ -1534,43 +1536,43 @@ int main(void)
 	{
 		if (a == 0)
 		{
-			bitmap = usb_imread("num0_1.bmp");
+			bitmap = usb_imread("num0.bmp");
 		}
 		else if (a == 1)
 		{
-			bitmap = usb_imread("num1_1.bmp");
+			bitmap = usb_imread("num1.bmp");
 		}
 		else if (a == 2)
 		{
-			bitmap = usb_imread("num2_1.bmp");
+			bitmap = usb_imread("num2.bmp");
 		}
 		else if (a == 3)
 		{
-			bitmap = usb_imread("num3_1.bmp");
+			bitmap = usb_imread("num3.bmp");
 		}
 		else if (a == 4)
 		{
-			bitmap = usb_imread("num4_1.bmp");
+			bitmap = usb_imread("num4.bmp");
 		}
 		else if (a == 5)
 		{
-			bitmap = usb_imread("num5_1.bmp");
+			bitmap = usb_imread("num5.bmp");
 		}
 		else if (a == 6)
 		{
-			bitmap = usb_imread("num6_1.bmp");
+			bitmap = usb_imread("num6.bmp");
 		}
 		else if (a == 7)
 		{
-			bitmap = usb_imread("num7_1.bmp");
+			bitmap = usb_imread("num7.bmp");
 		}
 		else if (a == 8)
 		{
-			bitmap = usb_imread("num8_1.bmp");
+			bitmap = usb_imread("num8.bmp");
 		}
 		else if (a == 9)
 		{
-			bitmap = usb_imread("num9_1.bmp");
+			bitmap = usb_imread("num9.bmp");
 		}
 		input_image = m_malloc(InfoHeader.Height*InfoHeader.Width*sizeof(float));
 		for(i = 0; i< InfoHeader.Height; i++){
@@ -1653,6 +1655,7 @@ int main(void)
 		}
 
 		printf("highest probability prediction: %d\n",max);
+		softmax_ran_once = 0;
 
 	}
 	while(1);

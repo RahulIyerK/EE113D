@@ -58,8 +58,7 @@ void conv(float input[], float kernel[], float bias[], float result[], int input
                 }
             }
         }
-    	int asdf;
-    	asdf =0;
+
     }
 }
 
